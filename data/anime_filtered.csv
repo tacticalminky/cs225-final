@@ -8,9 +8,9 @@ anime_id,name,genre,episodes,rating
 34358,Ocha-ken: Hotto Monogatari,"Kids, Slice of Life",13,6.67
 33083,Wa Wa Wa Wappi-chan,Kids,26,4.75
 34078,Ukkari Pénélope (2013),"Kids, Slice of Life",13,7
-32585,Telemonster,Adventure,Unknown,8.5
+32585,Telemonster,Adventure,-1,8.5
 30906,Malta no Bouken,"Kids, Slice of Life",12,5.33
-31692,Gogulyeoui Jeolm-eun Musadeul,Historical,Unknown,4.75
+31692,Gogulyeoui Jeolm-eun Musadeul,Historical,-1,4.75
 32821,Xiong Chu Mo Zhi Dongri Le Fantian,"Comedy, Kids",52,5.67
 32819,Xiong Chu Mo Zhi Conglin Zhongdongyuan,"Comedy, Kids",104,5.67
 30117,Monpy,"Adventure, Kids",18,5.67
@@ -21,9 +21,9 @@ anime_id,name,genre,episodes,rating
 32419,Chibinacs 3,Comedy,25,4.43
 32418,Chibinacs 2.0,Comedy,25,4.33
 33300,Manga Kotowaja Jiten,"Comedy, Historical",88,6.5
-32237,Burutabu-chan,"Comedy, Fantasy, Magic",Unknown,5
+32237,Burutabu-chan,"Comedy, Fantasy, Magic",-1,5
 29473,Toko-chan Chokkin,"Adventure, Historical, Kids, Slice of Life",3,6.67
-30129,Konna Ko Iru kana,Kids,Unknown,4
+30129,Konna Ko Iru kana,Kids,-1,4
 30116,Yancharu Moncha,Kids,80,7.33
 29740,Notteke Explet&#039;s,Kids,26,5.33
 30409,Nepos Napos,"Fantasy, Kids",26,7.67
@@ -40,12 +40,12 @@ anime_id,name,genre,episodes,rating
 30118,Futari wa Nakayoshi: Goo to Sue,"Kids, Slice of Life",84,4.75
 29209,Tomodachi de Iyou ne,"Kids, Slice of Life",26,7.5
 31691,Tam Mao Phieu Luu Ky Ta,"Comedy, Historical, Kids",25,6.1
-30121,Fushigina Ano Ko wa Sutekina Kono Ko,"Adventure, Kids",Unknown,4
+30121,Fushigina Ano Ko wa Sutekina Kono Ko,"Adventure, Kids",-1,4
 29369,Tick &amp; Tack,"Fantasy, Kids",10,5.5
-34207,Dochamon Junior 2,"Comedy, Kids",Unknown,6
+34207,Dochamon Junior 2,"Comedy, Kids",-1,6
 31696,Witch Village Story,Slice of Life,24,4.71
 29507,Hamster Sam,"Kids, Music",4,6
-29489,Karasu no Puuta,Kids,Unknown,8
+29489,Karasu no Puuta,Kids,-1,8
 29746,Kaden Manzai John TV Show!,Comedy,25,5.67
 29387,Momonga-mon,"Adventure, Kids",5,5.8
 30027,Meisaku World,"Adventure, Fantasy, Historical, Kids, Magic, Supernatural",39,8
@@ -56,7 +56,7 @@ anime_id,name,genre,episodes,rating
 29389,Shiro Hon,"Adventure, Kids",6,6.5
 30057,Mabeobsaui Adeul Koli,"Adventure, Comedy, Fantasy",13,4.2
 33310,Peach Command Shin Momotarou Densetsu,"Adventure, Comedy",24,6.6
-29435,Ongaku Sekai Ryokou,"Kids, Music",Unknown,2.67
+29435,Ongaku Sekai Ryokou,"Kids, Music",-1,2.67
 29759,Korokoro Animal 2,Kids,51,4.67
 32221,Robocar Poli 2,"Cars, Kids, Police",26,5.45
 30140,Xing Mao Lixian Ji Zhi Shu Fa Pian,"Adventure, Kids",26,6.33
@@ -66,7 +66,7 @@ anime_id,name,genre,episodes,rating
 29844,Nekoronde TV.,Comedy,12,4.55
 29373,Bip to Bap,"Adventure, Kids",4,4.2
 32136,Narara Superboard,"Action, Adventure, Comedy",54,4.83
-30120,Spoon-hime no Swing Kitchen,"Adventure, Kids",Unknown,9.6
+30120,Spoon-hime no Swing Kitchen,"Adventure, Kids",-1,9.6
 29401,Shiritori Oukoku,Kids,3,4.71
 29467,Bubaga,"Adventure, Kids",8,7.6
 29385,Chii-chan to Hige Ojisan,"Kids, Slice of Life",10,5.8
@@ -85,11 +85,11 @@ anime_id,name,genre,episodes,rating
 25589,Yeongsimi,"Comedy, Kids, School, Slice of Life",13,6.5
 27369,Eigo de Asobo: Tanken Goblin Tou,"Adventure, Comedy, Fantasy, Kids",100,5
 33383,Mask Masters,"Action, Adventure",26,8
-30914,Animax Taisou,"Kids, Sports",Unknown,4.67
+30914,Animax Taisou,"Kids, Sports",-1,4.67
 31701,Wu Lan Qi Qi Ge,"Historical, Kids",26,6.25
 31547,Ryouma 30 Seconds,Historical,5,8.8
 32630,Coral no Tanken,"Adventure, Kids, Music",50,6.14
-29487,Paniponi,"Kids, Slice of Life",Unknown,4.75
+29487,Paniponi,"Kids, Slice of Life",-1,4.75
 27453,Pororo-wa Noraehaeyo,"Kids, Music",14,5.36
 30048,Kkurukkuruwa Chingudeul,"Adventure, Comedy, Kids, Slice of Life",13,4.2
 23973,Fuku-chan,"Kids, Slice of Life",71,5
@@ -102,18 +102,18 @@ anime_id,name,genre,episodes,rating
 31893,The Legend of Huainanzi 2nd Season,"Adventure, Fantasy, Historical",26,7
 24041,Jarujio Animal,"Adventure, Comedy, Parody",10,8.33
 9956,The Primitives: Bongo and Grunge,Comedy,52,5.5
-21981,Pic-lele,Kids,Unknown,6.33
+21981,Pic-lele,Kids,-1,6.33
 32448,Kirin Ashita no Calendar,"Historical, Kids",1306,6.43
 26087,Mama Ohanashi Kikasete,"Fantasy, Kids",15,7.4
 27455,Porong Porong Pororo 3,"Kids, Sci-Fi",52,5.42
 21019,Nunbori,"Fantasy, Kids",26,6.17
 31674,Larva 3rd Season,Comedy,26,7.09
 24875,Barnacle Lou,Kids,52,6.33
-27551,Deko Boko Friends,"Comedy, Kids",Unknown,7.14
+27551,Deko Boko Friends,"Comedy, Kids",-1,7.14
 24465,Heli-Tako Puu-chan,"Comedy, Kids",42,6.86
 23347,Gan to Gon,"Comedy, Kids",260,6.7
-34234,Ohayou! Kokekkou-san,Comedy,Unknown,2.75
-29427,Mori no Ratio,"Adventure, Fantasy, Kids",Unknown,5
+34234,Ohayou! Kokekkou-san,Comedy,-1,2.75
+29427,Mori no Ratio,"Adventure, Fantasy, Kids",-1,5
 23015,Hazedon,"Adventure, Comedy, Kids",26,5.8
 29471,Saikin Ponta,"Kids, Slice of Life",12,6
 27467,Yoligongju Loopy,"Kids, Magic",6,5.47
@@ -129,8 +129,8 @@ anime_id,name,genre,episodes,rating
 21485,Dokkan! Robotendon,"Adventure, Kids, Slice of Life",26,6.29
 20003,Roppou Yabure-kun,Slice of Life,110,6.75
 18573,Noobow,"Kids, Slice of Life",26,6.25
-33099,Washimo 4th Season,"Comedy, Kids, School, Sci-Fi, Slice of Life",Unknown,5.6
-34235,Pittanko! Nekozakana,Comedy,Unknown,5.67
+33099,Washimo 4th Season,"Comedy, Kids, School, Sci-Fi, Slice of Life",-1,5.6
+34235,Pittanko! Nekozakana,Comedy,-1,5.67
 19993,Kaminari Boy Pikkaribee★,"Adventure, Comedy, Kids",54,6.2
 27457,Porong Porong Pororo 4,"Cars, Kids",26,5.25
 19325,Kwaegeol Longman Narongi,"Adventure, Kids",52,7.43
@@ -141,9 +141,9 @@ anime_id,name,genre,episodes,rating
 20005,Pinch to Punch,Comedy,156,5.71
 27459,Porong Porong Pororo 5,"Cars, Kids",26,5.63
 20173,Mori no Senshi Bonolon,"Adventure, Fantasy, Kids",26,4.57
-29431,Eddie the Fast Break,"Kids, Sports",Unknown,6.11
+29431,Eddie the Fast Break,"Kids, Sports",-1,6.11
 30131,Uwabaki Cook,Kids,13,4.57
-32842,Panpaka Pants,"Comedy, Kids",Unknown,4.17
+32842,Panpaka Pants,"Comedy, Kids",-1,4.17
 31698,Zhan Long Si Qu,"Cars, Kids",64,4.8
 19311,Turuturutu Narongi,"Adventure, Kids",52,6.25
 33630,Rainbow Sea,"Adventure, Fantasy, Sci-Fi",26,7.2
@@ -162,7 +162,7 @@ anime_id,name,genre,episodes,rating
 10953,Pants Pankurou,"Comedy, Kids, Slice of Life",85,6.38
 20147,Robokko Beeton,"Adventure, Comedy, Kids, Slice of Life",50,6.17
 19987,Kaitou Pride,"Adventure, Comedy, Kids",105,6.75
-33479,Muzumuzu Eighteen,Slice of Life,Unknown,3.8
+33479,Muzumuzu Eighteen,Slice of Life,-1,3.8
 21483,Sanchoume no Yuuhi,"Comedy, Slice of Life",27,7.33
 17599,Konpora Kid,"Comedy, Kids, Sci-Fi",26,5.75
 19991,Tobidase! Bacchiri,"Comedy, Kids, Mystery",132,7.63
@@ -170,13 +170,13 @@ anime_id,name,genre,episodes,rating
 12809,Wonder Bebil-kun,"Comedy, Fantasy",30,6.78
 23607,Gaki Deka,"Comedy, Ecchi, Kids, Parody, Shounen",22,5
 19965,Ikinari Dagon,"Adventure, Fantasy",12,5.63
-31150,Xi Yang Yang Yu Hui Tai Lang,"Adventure, Comedy, Kids",Unknown,5.87
+31150,Xi Yang Yang Yu Hui Tai Lang,"Adventure, Comedy, Kids",-1,5.87
 19999,Sobakasu Pucchi,"Adventure, Comedy, Kids",162,7.18
 15069,Robin-kun to 100 nin no Otomodachi Season 2,Kids,13,5.17
 9902,Hyper ERT,Kids,20,6
 19873,Marude Dameo,"Comedy, Sci-Fi, Shounen",47,6.2
 30602,Great Hunt,"Comedy, Music",6,4.75
-32663,Tama &amp; Friends: Uchi no Tama Shirimasenka?,"Adventure, Kids",Unknown,6.67
+32663,Tama &amp; Friends: Uchi no Tama Shirimasenka?,"Adventure, Kids",-1,6.67
 23799,Dango San Kyoudai Attoiuma Gekijou,"Kids, Music",50,7.3
 12793,Yanbo Ninbo Tonbo,Fantasy,39,5.82
 31239,Kotori Samba,"Comedy, Music",240,6.75
@@ -210,7 +210,7 @@ anime_id,name,genre,episodes,rating
 31385,Ginga Shounen Tai,"Action, Adventure, Kids, Space",92,6.38
 20001,Mouretsu Atarou,"Comedy, Kids, Slice of Life",90,6.33
 17457,Chingou Muchabee,"Adventure, Comedy",26,6.75
-34233,Kimoshiba,Comedy,Unknown,7
+34233,Kimoshiba,Comedy,-1,7
 10237,Ki-Fighter Taerang,"Adventure, Kids",26,5.92
 17624,Omakase Scrappers,"Adventure, Comedy, Sci-Fi",39,6.89
 20025,Itazura Tenshi Chippo-chan,"Comedy, Kids",240,7.33
@@ -221,10 +221,10 @@ anime_id,name,genre,episodes,rating
 15957,Dokachin,"Comedy, Kids",26,5.62
 10995,Ganbare!! Nattou-san,Comedy,4,5.75
 22065,The Adventures of T-Rex,"Action, Adventure, Comedy, Kids",52,5.9
-30119,Yowamushi Monsters,Kids,Unknown,6.33
+30119,Yowamushi Monsters,Kids,-1,6.33
 21549,Hitotsuboshi-ke no Ultra Baasan,"Comedy, Slice of Life",13,4.88
 20075,Obocchama-kun,"Comedy, Parody",164,6.47
-33002,Panpaka Pants W-O-New!,"Comedy, Kids",Unknown,4.5
+33002,Panpaka Pants W-O-New!,"Comedy, Kids",-1,4.5
 31746,Dochamon Junior,"Comedy, Kids",16,5.09
 17623,Futago no Monchhichi,"Comedy, Kids",130,4.86
 29529,Kagee Aesop Monogatari,"Adventure, Demons, Drama, Fantasy, Historical, Kids, Magic, Romance, Supernatural",26,7.17
@@ -238,7 +238,7 @@ anime_id,name,genre,episodes,rating
 20079,Ijiwaru Baasan,"Comedy, Slice of Life",39,7.33
 21539,Oraa Guzura Dado,"Comedy, Kids",52,6.63
 20201,Easy Cooking Animation: Seishun no Shokutaku,Comedy,25,5.2
-31640,Fuusen Inu Tinny 2nd Season,"Adventure, Kids",Unknown,3.75
+31640,Fuusen Inu Tinny 2nd Season,"Adventure, Kids",-1,3.75
 29527,Kagee Mukashibanashi,"Adventure, Demons, Drama, Fantasy, Historical, Kids, Magic, Romance, Samurai, Supernatural",65,7.5
 18939,Shimajirou Hesoka,"Adventure, Comedy, Fantasy, Kids, Magic",101,6.6
 14623,Chikyuu SOS Sore Ike Kororin,"Action, Comedy, Kids, Sci-Fi",26,5.78
@@ -248,11 +248,11 @@ anime_id,name,genre,episodes,rating
 9175,Tsuruhime Ja!,"Comedy, Kids, Shoujo, Slice of Life",49,5.54
 32230,Xi You Ji,"Adventure, Fantasy",52,8.07
 17106,Wala! Pyeon-uijeom The Animation,Slice of Life,24,5.33
-33727,Neko no Dayan: Fushigi Gekijou,Kids,Unknown,4.25
+33727,Neko no Dayan: Fushigi Gekijou,Kids,-1,4.25
 9821,McDull and Chinese Culture,"Comedy, Historical",5,6.79
 30605,Uwabaki Cook no Tekitou Uranai!,Comedy,125,4.6
 31892,The Legend of Huainanzi,"Adventure, Fantasy, Historical",26,5.75
-33782,Life!,"Comedy, Slice of Life",Unknown,5.25
+33782,Life!,"Comedy, Slice of Life",-1,5.25
 19547,Beompeoking Jaepeo,"Action, Cars",26,4.85
 33538,Shima Kousaku no Asia Risshi-den,"Drama, Seinen",26,6
 12835,Umeboshi Denka,"Comedy, Slice of Life",26,6.53
@@ -274,7 +274,7 @@ anime_id,name,genre,episodes,rating
 2708,Wankorobee,"Comedy, Fantasy, Kids",26,5.71
 21053,Ikemen Kyuugo-tai Nurse Angels,Comedy,10,5.44
 20087,Treasure Gaust,Game,5,3.82
-30470,Himitsukessha Taka no Tsume DO,"Comedy, Parody, Super Power",Unknown,6.2
+30470,Himitsukessha Taka no Tsume DO,"Comedy, Parody, Super Power",-1,6.2
 8521,Biriken Nandemo Shoukai,"Comedy, Kids",22,4.77
 28071,Itsumo Kokoro ni Taiyou wo!,"Comedy, Ecchi",16,5.75
 3243,Elec-king The Animation,Comedy,13,6.55
@@ -292,7 +292,7 @@ anime_id,name,genre,episodes,rating
 22247,Azumi Mamma★Mia,"Comedy, Kids",60,5.6
 10855,Penguin no Mondai Max,"Comedy, Kids",50,6.88
 25809,Ore-tachi Ijiwaru Kei,Comedy,14,5.71
-29399,Ousama Monogatari,"Adventure, Kids",Unknown,5.6
+29399,Ousama Monogatari,"Adventure, Kids",-1,5.6
 19087,Kaiketsu Tamagon,"Adventure, Comedy, Kids",195,5.65
 11203,Hero Hero-kun,"Adventure, Comedy, Game, Kids",104,6.33
 8685,Ryuuichi Manga Gekijou Onbu Obake,Supernatural,52,5.59
@@ -318,12 +318,12 @@ anime_id,name,genre,episodes,rating
 24663,Dororonpa!,"Comedy, Slice of Life, Supernatural",115,7.5
 2701,Susie-chan to Marvy,"Comedy, Kids",104,6.69
 31054,"Letchu, Getchu, Saru Getchu",Comedy,76,5.05
-22669,Gohan Kaijuu Pap,"Action, Comedy, Kids",Unknown,4.25
+22669,Gohan Kaijuu Pap,"Action, Comedy, Kids",-1,4.25
 8179,Eagle Sam,"Comedy, Sports",51,5.45
 22821,Himitsukessha Taka no Tsume EX,"Comedy, Parody, Super Power",38,6.7
-18941,Shimajirou no Wow!,"Adventure, Comedy, Fantasy, Kids, Magic",Unknown,6.5
+18941,Shimajirou no Wow!,"Adventure, Comedy, Fantasy, Kids, Magic",-1,6.5
 19501,Giga Tribe,"Comedy, Parody, Shounen, Super Power",39,5.5
-33267,Jinxiu Shenzhou Zhi Qi You Ji,"Adventure, Fantasy",Unknown,4.67
+33267,Jinxiu Shenzhou Zhi Qi You Ji,"Adventure, Fantasy",-1,4.67
 20115,Gekisou! Rubenkaiser,"Cars, Shounen, Sports",17,7.17
 17687,Bemubemu Hunter Kotengu Tenmaru,"Adventure, Fantasy",19,6.67
 16650,Pro Golfer Saru (1985),"Kids, Sports",143,6.77
@@ -342,7 +342,7 @@ anime_id,name,genre,episodes,rating
 9885,Shin Bikkuriman,"Comedy, Fantasy",72,5.29
 26163,Ganbare! Lulu Lolo 2nd Season,"Kids, Slice of Life",26,4.56
 17423,Pink Lady Monogatari: Eikou no Tenshi-tachi,"Drama, Music, Slice of Life",33,6.33
-24775,Koishite!! Namashi-chan,"Kids, Slice of Life",Unknown,6.14
+24775,Koishite!! Namashi-chan,"Kids, Slice of Life",-1,6.14
 5594,Fuusen no Doratarou,Kids,13,5.95
 22221,Monoshiri Daigaku: Ashita no Calendar,Historical,1274,6.8
 31019,Norasco (TV),"Comedy, Slice of Life",43,5.8
@@ -351,7 +351,7 @@ anime_id,name,genre,episodes,rating
 22755,Chikasugi Idol Akae-chan,"Comedy, Game, Parody",12,4.28
 13165,Paboo &amp; Mojies,Kids,52,4
 10989,Stray Sheep: Poe no Chicchana Daibouken,"Comedy, Kids",12,5.61
-22585,Nukko.,Comedy,Unknown,6.4
+22585,Nukko.,Comedy,-1,6.4
 31753,Ganbare! Lulu Lolo 3rd Season,"Kids, Slice of Life",10,6.29
 11245,Manga Nihonshi,Historical,52,6.2
 16393,Norakuro-kun,"Comedy, Mystery",50,7.17
@@ -374,11 +374,11 @@ anime_id,name,genre,episodes,rating
 18819,Alice Tantei Kyoku,Kids,56,6.13
 9540,Bucket de Gohan,Comedy,20,7.13
 6730,Tonde Mon Pe,Kids,42,6.94
-29361,Kareshi wa Hammerhead Shark,"Comedy, Kids, Slice of Life",Unknown,3.78
+29361,Kareshi wa Hammerhead Shark,"Comedy, Kids, Slice of Life",-1,3.78
 13455,Zumomo to Nupepe,Comedy,32,7
 18937,Hakken Taiken Daisuki! Shimajirou,"Adventure, Comedy, Fantasy, Kids, Magic",101,6.85
 17671,Animal 1,Sports,27,6.71
-18007,Dalam-iwa Goseumdochi,"Historical, Military",Unknown,6.47
+18007,Dalam-iwa Goseumdochi,"Historical, Military",-1,6.47
 9856,Manga Nihon Emaki,Historical,46,6.17
 23149,47 Todoufuken R,"Comedy, Kids",12,5.81
 12887,Uchuu Shounen Soran,"Action, Adventure, Sci-Fi",96,6.22
@@ -389,7 +389,7 @@ anime_id,name,genre,episodes,rating
 4547,RoboDz,Sci-Fi,26,5
 8832,Shounen Ashibe 2,"Comedy, Slice of Life",25,5.63
 6727,Mechakko Dotakon,"Comedy, Sci-Fi",28,6.36
-13457,Tomodachi 8-nin,Comedy,Unknown,5.42
+13457,Tomodachi 8-nin,Comedy,-1,5.42
 13207,Himitsukessha Taka no Tsume Gaiden: Mukashi no Yoshida-kun,"Comedy, Historical, Parody",9,5.37
 10889,Jungle Kurobee,Comedy,31,6.8
 8879,Dolphin Ouji,"Action, Adventure, Kids, Sci-Fi",3,5.58
@@ -400,7 +400,7 @@ anime_id,name,genre,episodes,rating
 10236,Kagee Grimm Douwa,"Adventure, Demons, Drama, Fantasy, Historical, Kids, Magic, Romance, Supernatural",52,5.94
 11609,"Shuukan Shimakou: Sono Toki, Shimakou ga Ugoita!",Comedy,11,5.52
 13177,Little Charo,Slice of Life,50,6.57
-13463,Panda no Taputapu,Kids,Unknown,6.55
+13463,Panda no Taputapu,Kids,-1,6.55
 25967,Backkom Sports,"Comedy, Kids, Sports",52,6.21
 30417,Panpaka Pants O-New!,"Comedy, Kids",26,3.6
 12181,Nihon Omoshiro Mukashibanashi,"Comedy, Historical, Parody",12,6.67
@@ -434,7 +434,7 @@ anime_id,name,genre,episodes,rating
 31965,Ba La La Xiao Mo Xian Zhi: Qiji Wubu,"Comedy, Magic, Shoujo",52,4.77
 4598,Urikupen Kyuujo-tai,"Adventure, Comedy, Kids",156,5.78
 30410,Gon 2nd Season,"Action, Adventure, Kids",26,5.92
-30151,Kamiusagi Rope: Warau Asa ni wa Fukuraitaru tte Maji ssuka!?,"Comedy, Slice of Life",Unknown,6.25
+30151,Kamiusagi Rope: Warau Asa ni wa Fukuraitaru tte Maji ssuka!?,"Comedy, Slice of Life",-1,6.25
 8345,Ukkari Pénélope,"Comedy, Slice of Life",26,6.38
 7750,DigiGirl Pop!: Strawberry &amp; Pop Mix Flavor,"Comedy, Sci-Fi",26,6
 13551,Shuukan Storyland,"Comedy, Drama, Seinen, Slice of Life",56,6.27
@@ -470,7 +470,7 @@ anime_id,name,genre,episodes,rating
 19121,Doctor Chichibuyama,"Ecchi, Parody, Seinen",2,6.15
 5821,Zenmai Zamurai,"Comedy, Kids",30,6.44
 30144,Nyuru Nyuru!! Kakusen-kun 2nd Season,Comedy,13,5.1
-10506,Shiawase Haitatsu Taneko,Comedy,Unknown,6.5
+10506,Shiawase Haitatsu Taneko,Comedy,-1,6.5
 3458,Pi Po Pa Po Patrol-kun,"Comedy, Kids",65,6.05
 10241,Sekai Monoshiri Ryoko,Comedy,1006,5.92
 23351,Youkaiden Nekome Kozou,"Adventure, Horror, Psychological, Seinen, Supernatural",25,8
@@ -484,8 +484,8 @@ anime_id,name,genre,episodes,rating
 3937,Takoyaki Mant-Man,"Comedy, Sci-Fi",77,6.75
 5089,Noramimi 2,Comedy,13,6.48
 8195,Guru Guru Town Hanamaru-kun,Kids,101,6.53
-33290,Gra-P &amp; Rodeo 2nd Season,"Comedy, Music",Unknown,3.92
-8244,Keshikasu-kun,"Comedy, Kids",Unknown,4.63
+33290,Gra-P &amp; Rodeo 2nd Season,"Comedy, Music",-1,3.92
+8244,Keshikasu-kun,"Comedy, Kids",-1,4.63
 19681,Hustle Punch,"Comedy, Fantasy, Kids",26,6.63
 9061,RPG Densetsu Hepoi,"Adventure, Fantasy",50,6.89
 5886,Kujira no Josephina,"Adventure, Fantasy",23,6.53
@@ -493,7 +493,7 @@ anime_id,name,genre,episodes,rating
 12139,Wanpaku Tanteidan,"Action, Mystery",35,6.56
 17467,Otoko Ippiki Gaki Daishou,"Action, Drama, Shounen",156,7.2
 5140,Karaoke Senshi Mike-tarou,"Kids, Music",20,7.05
-24845,Nyanfuru,"Comedy, Music",Unknown,5.54
+24845,Nyanfuru,"Comedy, Music",-1,5.54
 4684,Scarecrowman,"Fantasy, Kids",26,7.13
 12393,Oyako Club,"Comedy, Slice of Life",1818,6.18
 8191,Hoshi Shinichi Short Short,"Comedy, Sci-Fi",26,6.07
@@ -515,9 +515,9 @@ anime_id,name,genre,episodes,rating
 17521,Ookami Shounen Ken,"Adventure, Kids",86,5.65
 15875,Shin Kyojin no Hoshi,Sports,52,6.77
 10997,Fujilog 2nd Season,Comedy,13,5.72
-33540,Shima Kousaku no Asia Shinseki-den,"Cars, Drama, Seinen",Unknown,7
+33540,Shima Kousaku no Asia Shinseki-den,"Cars, Drama, Seinen",-1,7
 10774,Soccer Fever,"Historical, Sports",51,6.47
-10797,Kayoe! Chuugaku,"Comedy, School",Unknown,6.77
+10797,Kayoe! Chuugaku,"Comedy, School",-1,6.77
 19947,Ikkyuu-san (1978),"Action, School, Sports",26,7.23
 10539,Hato no Oyome-san,Comedy,22,3.62
 3414,Hula Kappa,Comedy,78,6.09
@@ -541,10 +541,10 @@ anime_id,name,genre,episodes,rating
 9371,Karl to Fushigi na Tou,Kids,26,5.14
 9284,Bakuhatsu Gorou,"Comedy, Sports",26,5.74
 27757,Anisava,"Comedy, Romance, Slice of Life",13,5.93
-24403,Nyanpuku Nyaruma,Comedy,Unknown,4
+24403,Nyanpuku Nyaruma,Comedy,-1,4
 8415,Oi! Ryouma,"Adventure, Drama, Historical",39,6.48
-33044,Asa da yo! Kaishain,Comedy,Unknown,4.33
-9947,Lan Mao,"Adventure, Comedy",Unknown,6.04
+33044,Asa da yo! Kaishain,Comedy,-1,4.33
+9947,Lan Mao,"Adventure, Comedy",-1,6.04
 5477,Gozonji! Gekkou Kamen-kun,"Comedy, Parody, Sci-Fi",25,7
 11873,Oraa Guzura Dado (1987),"Comedy, Kids",44,6.29
 21433,Chou Zenmairobo: Patrasche,"Comedy, Historical, Mecha, Parody, Sci-Fi",13,4.52
@@ -562,10 +562,10 @@ anime_id,name,genre,episodes,rating
 8786,Inakappe Taishou,"Comedy, Sports",104,6.8
 11589,Puu-Neko Shougekijou,Comedy,11,5.79
 8182,Bouken Shounen Shadar,"Adventure, Horror",156,6.65
-8336,Hanakappa,"Comedy, Kids",Unknown,5.42
+8336,Hanakappa,"Comedy, Kids",-1,5.42
 8025,Chi-Sui Maru,Comedy,41,5.63
 3869,Sakura Momoko Gekijou: Coji-Coji,"Comedy, Fantasy",100,6.65
-33398,Neko Konogoro,Comedy,Unknown,2.8
+33398,Neko Konogoro,Comedy,-1,2.8
 8891,Nihon-ichi no Otoko no Tamashii 2,"Comedy, Romance",16,6.57
 6981,Super Zugan,"Comedy, Game, Shounen",21,7.19
 30232,Tamagotchi! Tamatomo Daishuu GO,"Comedy, Fantasy, Kids",26,6.75
@@ -607,7 +607,7 @@ anime_id,name,genre,episodes,rating
 30851,Q Transformers: Saranaru Ninki Mono e no Michi,"Mecha, Parody, Slice of Life",13,6.15
 9770,Hello Kitty no Stump Village,"Fantasy, Kids",26,5.67
 8130,Mighty Orbots,"Adventure, Comedy, Mecha, Sci-Fi",13,6.13
-30411,Happy Jozy,Comedy,Unknown,5.38
+30411,Happy Jozy,Comedy,-1,5.38
 15865,Tamagotchi! Yume Kira Dream,"Comedy, Kids",49,6.41
 28595,Pac-World,"Adventure, Comedy, Sci-Fi",52,5.47
 4940,Sabaku no Kaizoku! Captain Kuppa,"Action, Adventure",26,7.16
@@ -622,7 +622,7 @@ anime_id,name,genre,episodes,rating
 3879,Paris no Isabelle,"Drama, Historical",13,6.19
 33562,Heibai Wushang,"Action, Comedy, Supernatural",12,7.6
 4553,Sukima no Kuni no Polta,Fantasy,13,5.67
-34156,PePePePengiin,Comedy,Unknown,7.24
+34156,PePePePengiin,Comedy,-1,7.24
 4574,Saikyou Robot Daioja,"Action, Mecha, Shounen",50,6.64
 5241,Mofu☆Mofu,Kids,11,4.67
 11275,Akadou Suzunosuke,"Adventure, Historical",52,5.63
@@ -635,7 +635,7 @@ anime_id,name,genre,episodes,rating
 6731,Ultraman Kids no Kotowaza Monogatari,"Comedy, Kids, Super Power",26,6.44
 10562,Machine Hayabusa,"Action, Cars, Shounen, Sports",21,6.36
 6481,Sugar Bunnies Fleur,Kids,26,5.88
-32402,Mim Mam Mint,Comedy,Unknown,4.1
+32402,Mim Mam Mint,Comedy,-1,4.1
 8240,Wanpaku Oomukashi Kum Kum,"Adventure, Comedy, Historical, Kids",26,6.35
 7605,Parasol Henbei,"Adventure, Comedy, Fantasy, Kids, Magic",200,6.54
 8139,Shin Minashigo Hutch,"Adventure, Comedy, Drama",26,6.62
@@ -686,7 +686,7 @@ anime_id,name,genre,episodes,rating
 4088,Wonder 3,"Action, Adventure, Comedy, Sci-Fi",52,6.73
 3870,Kick no Oni,"Shounen, Sports",26,7.25
 4709,Aesop&#039;s World,Kids,26,5.76
-32876,Nameko: Sekai no Tomodachi,Comedy,Unknown,5.6
+32876,Nameko: Sekai no Tomodachi,Comedy,-1,5.6
 30777,Kaijuu Sakaba Kanpai!,"Comedy, Supernatural",13,4.9
 6629,Asari-chan,"Comedy, Shoujo, Slice of Life",54,6.55
 8900,Saru Getchu: On Air 2nd,"Adventure, Comedy, Fantasy, Kids, Romance, Shounen",51,6.63
@@ -705,7 +705,7 @@ anime_id,name,genre,episodes,rating
 6012,Kinpatsu no Jeanie,"Drama, Historical",13,6.53
 10533,Fujilog,Comedy,13,5.75
 16027,Greek Roman Sinhwa: Olympus Guardian,"Adventure, Fantasy, Historical",39,6.57
-33655,Alps no Shoujo Heidi? Chara Onji,"Comedy, Parody",Unknown,6.79
+33655,Alps no Shoujo Heidi? Chara Onji,"Comedy, Parody",-1,6.79
 2226,Mori no Tonto-tachi,"Fantasy, Kids",23,6.23
 3876,Maeterlinck no Aoi Tori: Tyltyl Mytyl no Bouken Ryokou,"Adventure, Fantasy",26,6.58
 19305,Nyuru Nyuru!! Kakusen-kun,Comedy,25,5.44
@@ -739,7 +739,7 @@ anime_id,name,genre,episodes,rating
 5088,Fabre-sensei wa Meitantei,Mystery,26,6.49
 5131,Groizer X,"Mecha, Sci-Fi",36,6.53
 5344,Time Bokan Series: Itadakiman,Mecha,20,6.37
-30989,Bary-san no Imabari-ben Kouza,Comedy,Unknown,4.79
+30989,Bary-san no Imabari-ben Kouza,Comedy,-1,4.79
 6889,Time Bokan Series: Zenderman,"Action, Adventure, Comedy, Mecha, Sci-Fi, Super Power",52,6.22
 6658,Unko-san: Tsuiteru Hito ni Shika Mienai Yousei,"Comedy, Magic",13,3.25
 6520,Anime TV de Hakken! Tamagotchi,"Comedy, Fantasy, Kids, Slice of Life",27,6.32
@@ -763,7 +763,7 @@ anime_id,name,genre,episodes,rating
 3885,Sugar Bunnies,Kids,26,6.61
 4054,Norimono Oukoku BuBu ChaCha,"Comedy, Slice of Life",26,6.99
 6674,Reporter Blues,"Comedy, Mystery",52,6.46
-32568,Kamiwaza Wanda,"Kids, Sci-Fi",Unknown,5.29
+32568,Kamiwaza Wanda,"Kids, Sci-Fi",-1,5.29
 3819,Sasurai no Taiyou,"Drama, Music",26,6.42
 11307,Ginga Patrol PJ,"Drama, Military, Sci-Fi, Space",26,6.66
 6822,Ukkari Pénélope (2009),"Comedy, Slice of Life",26,6.35
@@ -809,7 +809,7 @@ anime_id,name,genre,episodes,rating
 3877,Sasurai no Shoujo Nell,"Adventure, Historical, Shoujo",26,6.32
 1139,Monkey Magic,"Adventure, Fantasy, Kids",13,6.28
 6311,Sarutobi Ecchan,"Comedy, Kids, Magic, School",26,6.08
-28921,Disney Tsum Tsum,Kids,Unknown,6.61
+28921,Disney Tsum Tsum,Kids,-1,6.61
 8890,Nihon-ichi no Otoko no Tamashii,"Comedy, Romance",16,6.64
 10623,Hayan Ma-eum Baeggu,Adventure,13,7.06
 3723,Koala Boy Kokki,Comedy,26,6.32
@@ -907,7 +907,7 @@ anime_id,name,genre,episodes,rating
 9200,Dae Jang Geum: Jang Geum&#039;s Dream 2,"Adventure, Comedy, Historical",26,7.11
 4083,Wonder Beat Scramble,"Action, Sci-Fi, Space",26,6.92
 3129,Kaibutsu-kun,"Comedy, Horror",49,6.93
-32582,Duel Masters VSRF,"Action, Adventure, Comedy, Shounen",Unknown,5.13
+32582,Duel Masters VSRF,"Action, Adventure, Comedy, Shounen",-1,5.13
 3264,Lemon Angel (1988/II),Ecchi,8,6.05
 31068,Hime Chen! Otogi Chikku Idol Lilpri (2011),"Magic, Shoujo",51,6.98
 5375,Gakkyuu Ou Yamazaki,Comedy,53,6.4
@@ -941,8 +941,8 @@ anime_id,name,genre,episodes,rating
 12483,Gregory Horror Show: The Last Train,"Comedy, Demons, Horror, Mystery, Supernatural, Vampire",26,6.8
 4615,Yama Nezumi Rocky Chuck,"Adventure, Fantasy, Kids",52,6.15
 4411,Mirai Robo Daltanias,"Comedy, Mecha, Shounen, Space",47,6.86
-4459,Ojarumaru,"Adventure, Comedy, Fantasy",Unknown,6.48
-32670,Battle Spirits: Double Drive,"Action, Kids",Unknown,6.46
+4459,Ojarumaru,"Adventure, Comedy, Fantasy",-1,6.48
+32670,Battle Spirits: Double Drive,"Action, Kids",-1,6.46
 6452,Akuu Daisakusen Srungle,"Action, Mecha, Sci-Fi",53,6.55
 27943,Nano Invaders,"Action, Adventure, Shounen, Super Power",52,7.08
 5091,Manga Sarutobi Sasuke,"Adventure, Comedy, Historical, Supernatural",24,7
@@ -998,7 +998,7 @@ anime_id,name,genre,episodes,rating
 2694,Hidamari no Ki,"Drama, Historical",25,6.27
 4199,Entaku no Kishi Monogatari: Moero Arthur,"Adventure, Drama, Historical, Romance",30,6.72
 4024,Sanrio Anime Sekai Meisaku Gekijou,"Adventure, Fantasy, Kids",13,6.35
-32572,Neko Neko Nihonshi,"Historical, Parody",Unknown,5.9
+32572,Neko Neko Nihonshi,"Historical, Parody",-1,5.9
 3023,Esper Mami,"Comedy, Ecchi, Magic, School, Super Power, Supernatural",119,6.78
 5763,Uchuu Kuubo Blue Noah,"Action, Drama, Military, Sci-Fi, Space",24,6.91
 3704,Zenryoku Usagi,"Comedy, Kids",52,6.47
@@ -1044,7 +1044,7 @@ anime_id,name,genre,episodes,rating
 4651,Yume no Crayon Oukoku,"Adventure, Comedy, Fantasy, Shoujo",70,7.12
 3505,Yuusha Shirei Dagwon,"Action, Adventure, Martial Arts, Mecha, School, Super Power",48,7.21
 21523,Baku Tech! Bakugan Gachi,"Action, Game, Shounen",39,6.26
-33434,Heybot!,"Comedy, Kids, Sci-Fi",Unknown,5.22
+33434,Heybot!,"Comedy, Kids, Sci-Fi",-1,5.22
 2892,Hakushon Daimaou,"Comedy, Fantasy",52,6.18
 5292,Getter Robo Go,"Action, Adventure, Mecha, Military, Shounen",50,6.46
 5891,Kousoku Denjin Albegus,Mecha,45,6.99
@@ -1079,7 +1079,7 @@ anime_id,name,genre,episodes,rating
 8964,Stitch!: Zutto Saikou no Tomodachi,"Adventure, Comedy, Kids",29,6.25
 2771,Chou Kuse ni Narisou,"Comedy, Romance, School, Shoujo, Slice of Life",39,6.59
 2487,Kyouryuu Boukenki Jura Tripper,"Adventure, Drama, Fantasy, Sci-Fi",39,7.02
-32353,Bonobono (2016),Comedy,Unknown,6.16
+32353,Bonobono (2016),Comedy,-1,6.16
 4532,Taiyou no Yuusha Fighbird,"Action, Mecha, Sci-Fi",48,6.95
 1667,Barom One,"Action, Sci-Fi, Shounen, Supernatural",13,5.67
 17707,Glass no Kamen Desu ga,"Comedy, Parody",3,5.74
@@ -1141,8 +1141,8 @@ anime_id,name,genre,episodes,rating
 3182,Massugu ni Ikou. 2nd Season,"Comedy, Josei, Romance, Slice of Life",5,6.85
 20945,Iron Kid,"Action, Adventure, Comedy, Sci-Fi",26,7.03
 5440,Ougon Yuusha Goldran,"Action, Adventure, Fantasy, Mecha, Sci-Fi, Shounen",48,7.25
-31539,Kyoufu! Zombie Neko,Comedy,Unknown,5.71
-32785,Future Card Buddyfight DDD,Game,Unknown,6.39
+31539,Kyoufu! Zombie Neko,Comedy,-1,5.71
+32785,Future Card Buddyfight DDD,Game,-1,6.39
 4051,Net Ghost Pipopa,"Action, Adventure, Comedy, Kids, Sci-Fi, Shounen",51,7.09
 3399,Rokushin Gattai GodMars,"Action, Mecha, Sci-Fi, Space",64,6.52
 7867,Gon,"Action, Adventure, Kids",50,6.25
@@ -1158,7 +1158,7 @@ anime_id,name,genre,episodes,rating
 4853,Tezuka Osamu no Don Dracula,"Comedy, Horror, Supernatural, Vampire",8,6.44
 2576,Araiguma Rascal,"Drama, Historical, Slice of Life",52,6.82
 2757,Juuni Senshi Bakuretsu Eto Ranger,"Action, Comedy, Fantasy",39,6.97
-1960,Sore Ike! Anpanman,"Comedy, Fantasy, Kids",Unknown,6.61
+1960,Sore Ike! Anpanman,"Comedy, Fantasy, Kids",-1,6.61
 5250,God Mazinger,"Action, Fantasy, Mecha",23,6.83
 3035,Chouon Senshi Borgman,"Action, Demons, Sci-Fi, Shounen",35,6.66
 2612,Spoon Oba-san,"Kids, Magic",130,6.83
@@ -1222,7 +1222,7 @@ anime_id,name,genre,episodes,rating
 3345,Mikan Enikki,"Comedy, Romance, Shoujo, Slice of Life",30,7.38
 4050,Kouchuu Ouja Mushiking: Mori no Tami no Densetsu,Fantasy,52,6.78
 4067,Shin Megami Tensei Devil Children,"Action, Adventure, Demons, Fantasy, Game, Kids, Magic, Sci-Fi, Supernatural",50,6.63
-6149,Chibi Maruko-chan (1995),"Comedy, Kids, School, Slice of Life",Unknown,7.37
+6149,Chibi Maruko-chan (1995),"Comedy, Kids, School, Slice of Life",-1,7.37
 5075,Yuusha Keisatsu J-Decker,"Action, Adventure, Mecha, Police, Sci-Fi",48,7.62
 32274,Ketsuekigata-kun! 4,Comedy,12,6.55
 3609,Kikou Kantai Dairugger XV,"Action, Adventure, Mecha, Sci-Fi, Shounen",52,6.58
@@ -1238,11 +1238,11 @@ anime_id,name,genre,episodes,rating
 3335,Haikara-san ga Tooru,"Drama, Historical, Romance, Shoujo, Slice of Life",42,7.39
 5153,Kikou Kai Galient,"Action, Fantasy, Mecha, Sci-Fi",25,6.64
 4086,Muka Muka Paradise,"Adventure, Comedy",51,6.97
-7643,Domo-kun,"Comedy, Kids, Slice of Life",Unknown,7.09
+7643,Domo-kun,"Comedy, Kids, Slice of Life",-1,7.09
 4061,Grimm Masterpiece Theater II,"Adventure, Comedy, Fantasy, Kids, Magic",23,7.58
 3271,Bakuto Sengen Daigander,"Adventure, Mecha, Sci-Fi, Shounen",39,6.79
 17147,Gakkatsu! 2nd Season,"Comedy, School",25,6.51
-33490,Kaitou Joker 4th Season,"Adventure, Comedy, Mystery, Shounen",Unknown,7.12
+33490,Kaitou Joker 4th Season,"Adventure, Comedy, Mystery, Shounen",-1,7.12
 23229,Meshimase Lodoss-tou Senki: Sorette Oishii no?,Comedy,13,5.94
 2283,Red Baron,"Action, Mecha, Sci-Fi, Shounen",49,7.27
 16906,Line Offline: Salaryman,Comedy,114,6.75
@@ -1268,7 +1268,7 @@ anime_id,name,genre,episodes,rating
 3761,Wanwan Sanjuushi,"Adventure, Historical",26,6.78
 8373,Shin Mitsubachi Maya no Bouken,"Adventure, Comedy",52,6.47
 2552,Tetsuko no Tabi,"Comedy, Seinen, Slice of Life",13,6.63
-32308,Rilu Rilu Fairilu: Yousei no Door,"Fantasy, Magic",Unknown,6.36
+32308,Rilu Rilu Fairilu: Yousei no Door,"Fantasy, Magic",-1,6.36
 19871,Gaist Crusher,"Action, Fantasy, Supernatural",51,6.12
 3327,Giant Gorg,"Adventure, Mecha, Sci-Fi",26,7.16
 832,Ginsoukikou Ordian,"Mecha, Sci-Fi",24,5.93
@@ -1287,7 +1287,7 @@ anime_id,name,genre,episodes,rating
 3332,Stop!! Hibari-kun!,Comedy,35,7.12
 2234,Panda-Z: The Robonimation,"Action, Comedy, Kids, Mecha, Parody, Sci-Fi, Shounen",30,6.56
 6902,Saikyou Bushouden: Sangoku Engi,Historical,52,7.07
-34077,Cardfight!! Vanguard G: Next,"Action, Game, Shounen",Unknown,7.16
+34077,Cardfight!! Vanguard G: Next,"Action, Game, Shounen",-1,7.16
 30039,Future Card Buddyfight 100,Game,50,6.98
 1188,Momoiro Sisters,"Comedy, Slice of Life",24,6.3
 25999,Minna Atsumare! Falcom Gakuen SC,"Comedy, Parody, School, Seinen",12,6.09
@@ -1307,7 +1307,7 @@ anime_id,name,genre,episodes,rating
 1893,Azuki-chan,"Comedy, Romance, Shoujo, Slice of Life",117,6.83
 17127,Chokkyuu Hyoudai Robot Anime: Straight Title,"Comedy, Mecha",12,6.01
 677,Sentimental Journey,"Drama, Romance, Shoujo",12,6.55
-31044,Kamisama Minarai: Himitsu no Cocotama,"Fantasy, Kids, Magic",Unknown,6.17
+31044,Kamisama Minarai: Himitsu no Cocotama,"Fantasy, Kids, Magic",-1,6.17
 3110,Kaze no Naka no Shoujo: Kinpatsu no Jeanie,"Drama, Historical",52,7.17
 32084,"Watashitachi, Luck Logic-bu!","Comedy, School",12,5.55
 926,Transformers Victory,"Adventure, Mecha, Sci-Fi, Shounen",44,6.83
@@ -1347,11 +1347,11 @@ anime_id,name,genre,episodes,rating
 4056,Masuda Kousuke Gekijou Gag Manga Biyori 3,Comedy,12,7.36
 13679,Tottoko Hamtarou Hai!,"Adventure, Kids",77,6.67
 1884,Himesama Goyoujin,Comedy,12,6.49
-33541,Bishoujo Yuugi Unit Crane Game Girls Galaxy,"Comedy, Game, Space",Unknown,5.04
-32571,Shounen Ashibe: Go! Go! Goma-chan,"Comedy, Slice of Life",Unknown,5.94
+33541,Bishoujo Yuugi Unit Crane Game Girls Galaxy,"Comedy, Game, Space",-1,5.04
+32571,Shounen Ashibe: Go! Go! Goma-chan,"Comedy, Slice of Life",-1,5.94
 332,Dokidoki Densetsu: Mahoujin Guru Guru,"Adventure, Comedy, Fantasy, Magic, Shounen",38,7.42
 22735,Oreca Battle,Game,51,6.07
-2406,Sazae-san,"Comedy, Slice of Life",Unknown,6.35
+2406,Sazae-san,"Comedy, Slice of Life",-1,6.35
 3193,Asobot Senki Gokuu,"Comedy, Sci-Fi",52,6.91
 3137,Tsurikichi Sanpei,"Adventure, Sports",109,7.17
 3024,Ribbon no Kishi,"Action, Fantasy, Mystery, Romance",52,6.81
@@ -1456,10 +1456,10 @@ anime_id,name,genre,episodes,rating
 518,Mahou no Princess Minky Momo,"Magic, Shoujo",63,6.79
 1300,Omishi Mahou Gekijou: Risky/Safety,"Comedy, Shoujo",24,6.83
 4591,Yoiko,"Comedy, School, Slice of Life",20,6.4
-33026,Time Bokan 24,"Adventure, Comedy, Mecha",Unknown,5.28
+33026,Time Bokan 24,"Adventure, Comedy, Mecha",-1,5.28
 13185,Juusen Battle Monsuno,"Action, Adventure",52,6.55
 2364,Virus: Virus Buster Serge,"Action, Adventure, Mecha, Police, Sci-Fi",12,5.59
-1199,Nintama Rantarou,"Comedy, Shounen",Unknown,7.18
+1199,Nintama Rantarou,"Comedy, Shounen",-1,7.18
 2579,Anime 80-nichikan Sekai Isshuu,"Adventure, Historical, Kids, Romance",26,6.86
 28207,Ketsuekigata-kun! 2,Comedy,12,6.74
 2089,Choujikuu Seiki Orguss,"Action, Adventure, Mecha, Romance, Sci-Fi, Shounen",35,6.8
@@ -1472,7 +1472,7 @@ anime_id,name,genre,episodes,rating
 8961,Tono to Issho: Ippunkan Gekijou,"Comedy, Samurai, Seinen",12,6.42
 2577,Tom Sawyer no Bouken,"Adventure, Drama, Historical, Slice of Life",49,7.15
 10177,DD Hokuto no Ken,"Parody, Seinen",12,6.28
-23539,Gudetama,"Comedy, Kids",Unknown,7.36
+23539,Gudetama,"Comedy, Kids",-1,7.36
 234,Dan Doh!!,"Adventure, Shounen, Sports",26,6.82
 6130,Marie &amp; Gali,Comedy,40,6.48
 3079,Aoki Ryuusei SPT Layzner,"Mecha, Military, Sci-Fi, Shounen, Space",38,7.22
@@ -1546,7 +1546,7 @@ anime_id,name,genre,episodes,rating
 980,Rikujou Bouei-tai Mao-chan,"Comedy, Kids, Magic, Military, Sci-Fi",26,6.4
 3579,Getter Robo,"Action, Mecha, Sci-Fi, Shounen",51,7.07
 349,Magical Canan,"Drama, Fantasy, Magic, Supernatural",13,6.42
-8687,Doraemon (2005),"Comedy, Kids, Sci-Fi, Shounen",Unknown,7.59
+8687,Doraemon (2005),"Comedy, Kids, Sci-Fi, Shounen",-1,7.59
 3012,Gekitou! Crush Gear Turbo,"Shounen, Sports",68,6.86
 2495,Chance Triangle Session,"Drama, Music, Slice of Life",13,6.77
 2569,Jungle Book Shounen Mowgli,"Adventure, Drama",52,6.99
@@ -1568,7 +1568,7 @@ anime_id,name,genre,episodes,rating
 1069,Chou Denji Machine Voltes V,"Action, Adventure, Drama, Mecha, Sci-Fi, Shounen",40,7.54
 965,Yoshinaga-san&#039;chi no Gargoyle,"Comedy, Fantasy, Slice of Life",13,6.9
 1597,Panyo Panyo Di Gi Charat,Comedy,48,6.89
-31049,Beyblade Burst,"Action, Adventure, Sci-Fi, Shounen, Sports",Unknown,6.31
+31049,Beyblade Burst,"Action, Adventure, Sci-Fi, Shounen, Sports",-1,6.31
 2713,Rockman.EXE Beast+,"Action, Adventure, Game, Mecha, Sci-Fi, Shounen",26,7.11
 22733,Dragon Collection,"Fantasy, Shounen",51,6.39
 301,Cinderella Boy,"Action, Adventure, Comedy, Mystery",13,6.38
@@ -1593,7 +1593,7 @@ anime_id,name,genre,episodes,rating
 19067,Future Card Buddyfight,Game,64,7.17
 2486,Rumiko Takahashi Anthology,"Comedy, Drama, Romance, Shounen, Slice of Life, Supernatural",13,7.39
 511,Kidou Shinsengumi Moeyo Ken TV,"Adventure, Comedy, Fantasy, Historical",13,6.33
-33240,Chi&#039;s Sweet Home (2016),Slice of Life,Unknown,6.57
+33240,Chi&#039;s Sweet Home (2016),Slice of Life,-1,6.57
 1651,Uchuu Senkan Yamato 2,"Action, Adventure, Drama, Military, Sci-Fi, Space",26,7.63
 1837,Dokkoida,"Action, Adventure, Comedy, Parody, Sci-Fi, Shounen",12,6.98
 14563,Maji de Otaku na English! Ribbon-chan: Eigo de Tatakau Mahou Shoujo,"Comedy, Magic",12,5.36
@@ -1620,7 +1620,7 @@ anime_id,name,genre,episodes,rating
 684,Tenshi no Shippo Chu!,"Fantasy, Magic, Romance",11,6.64
 31227,Kindaichi Shounen no Jikenbo Returns 2nd Season,"Mystery, Shounen",22,7.5
 1550,Attack No.1,"Drama, Shoujo, Sports",104,6.85
-33314,Digimon Universe: Appli Monsters,"Action, Adventure, Comedy, Fantasy, Kids",Unknown,6.41
+33314,Digimon Universe: Appli Monsters,"Action, Adventure, Comedy, Fantasy, Kids",-1,6.41
 7081,Danball Senki,"Action, Kids, Mecha",44,7.29
 1663,Haha wo Tazunete Sanzenri,"Adventure, Drama, Historical, Slice of Life",52,7.39
 1161,Maze☆Bakunetsu Jikuu (TV),"Adventure, Comedy, Fantasy, Mecha, Shounen",25,6.8
@@ -1678,7 +1678,7 @@ anime_id,name,genre,episodes,rating
 163,Power Stone,"Adventure, Comedy, Fantasy, Historical, Shounen",26,6.57
 20267,Wooser no Sono Higurashi: Kakusei-hen,"Comedy, Fantasy, Slice of Life",12,6.77
 5032,Cobra The Animation,"Action, Adventure, Sci-Fi, Space",13,7.18
-32772,Puzzle &amp; Dragons Cross,"Game, Kids",Unknown,6.03
+32772,Puzzle &amp; Dragons Cross,"Game, Kids",-1,6.03
 1985,UFO Robo Grendizer,"Mecha, Sci-Fi, Shounen",74,7.66
 3576,Kodai Ouja Kyouryuu King,"Adventure, Fantasy, Kids",49,6.14
 3670,Kikou Souseiki Mospeada,"Action, Mecha, Military",25,7.27
@@ -1688,7 +1688,7 @@ anime_id,name,genre,episodes,rating
 580,Kogepan,Comedy,10,7.04
 386,H2,"Comedy, Romance, Shounen, Sports",41,7.39
 2828,Ie Naki Ko,"Adventure, Drama, Historical, Kids, Slice of Life",51,7.9
-32717,Aikatsu Stars!,"Music, School, Shoujo, Slice of Life",Unknown,7.17
+32717,Aikatsu Stars!,"Music, School, Shoujo, Slice of Life",-1,7.17
 33419,12-sai.: Chicchana Mune no Tokimeki 2nd Season,"Romance, School, Shoujo",12,6.85
 6582,Tentai Senshi Sunred 2nd Season,"Comedy, Parody, Seinen, Super Power",26,8.07
 20329,Koroshiya-san: The Hired Gun,"Action, Comedy, Police, Seinen, Thriller",10,5.69
@@ -1765,7 +1765,7 @@ anime_id,name,genre,episodes,rating
 1279,Taiyou no Ko Esteban,"Adventure, Historical, Sci-Fi",39,7.74
 32309,Tabi Machi Late Show,Drama,4,6.27
 1022,Generator Gawl,"Action, Adventure, Comedy, Drama, Sci-Fi, Shounen",12,7.13
-32977,Aggressive Retsuko,"Comedy, Music",Unknown,7.38
+32977,Aggressive Retsuko,"Comedy, Music",-1,7.38
 18771,Gifuu Doudou!!: Kanetsugu to Keiji,"Action, Historical, Martial Arts, Samurai, Seinen",25,6.56
 930,Densetsu Kyojin Ideon,"Drama, Mecha, Sci-Fi, Space",39,7.1
 2252,Devilman,"Action, Demons, Horror, Supernatural",39,6.55
@@ -1873,7 +1873,7 @@ anime_id,name,genre,episodes,rating
 1578,Koisuru Tenshi Angelique: Kokoro no Mezameru Toki,"Adventure, Comedy, Drama, Fantasy, Magic, Romance, Sci-Fi, Shoujo",13,7.03
 30549,Soukyuu no Fafner: Dead Aggressor - Exodus 2nd Season,"Action, Drama, Mecha, Military, Sci-Fi",13,7.74
 364,Gallery Fake,"Mystery, Seinen",37,7.62
-13163,Furusato Saisei: Nihon no Mukashibanashi,"Historical, Kids, Supernatural",Unknown,7.09
+13163,Furusato Saisei: Nihon no Mukashibanashi,"Historical, Kids, Supernatural",-1,7.09
 21835,Majin Bone,Game,52,6.84
 31631,Monster Hunter Stories: Ride On,Fantasy,48,6.03
 1126,Figure 17: Tsubasa &amp; Hikaru,"Sci-Fi, Slice of Life",13,7.34
@@ -1896,7 +1896,7 @@ anime_id,name,genre,episodes,rating
 31578,JK Meshi!,Comedy,26,4.71
 115,El Hazard: The Alternative World,"Adventure, Comedy, Fantasy",13,6.94
 1929,Futari wa Precure: Max Heart,"Action, Comedy, Fantasy, Magic, Shoujo",47,7.03
-32829,Nobunaga no Shinobi,"Comedy, Historical",Unknown,6.65
+32829,Nobunaga no Shinobi,"Comedy, Historical",-1,6.65
 1988,Himawari!!,"Comedy, Romance",13,6.58
 7463,Weiß Survive R,"Comedy, Ecchi, Game",12,6.3
 852,Gokinjo Monogatari,"Comedy, Drama, Romance, Slice of Life",50,7.56
@@ -1906,7 +1906,7 @@ anime_id,name,genre,episodes,rating
 31890,Nurse Witch Komugi-chan R,"Comedy, Magic, Parody",12,6.09
 5505,Viper&#039;s Creed,"Action, Military, Sci-Fi",12,6.87
 111,Corrector Yui,"Adventure, Comedy, Magic, Sci-Fi",52,6.9
-33814,Ao Oni The Animation,Horror,Unknown,4.88
+33814,Ao Oni The Animation,Horror,-1,4.88
 23787,Hi☆sCoool! SeHa Girls,"Comedy, Game",13,6.6
 915,Ginga Densetsu Weed,"Adventure, Drama, Shounen",26,7.31
 141,Jinki:Extend,"Mecha, Sci-Fi",12,6.29
@@ -1918,7 +1918,7 @@ anime_id,name,genre,episodes,rating
 15045,Litchi DE Hikari Club,"Comedy, Drama, Horror, Psychological, Romance",8,5.36
 2043,Cat&#039;s Eye,"Action, Adventure, Comedy, Mystery, Romance",73,7.21
 1517,Silent Mobius,"Action, Comedy, Drama, Fantasy, Horror, Magic, Romance, Sci-Fi",26,6.95
-23135,PriPara,"Music, School, Shoujo, Slice of Life",Unknown,7.17
+23135,PriPara,"Music, School, Shoujo, Slice of Life",-1,7.17
 2523,Izumo: Takeki Tsurugi no Senki,"Adventure, Drama, Fantasy, Martial Arts, Romance, Supernatural",12,6.38
 337,Psychic Academy,"Comedy, Romance, Supernatural",24,6.36
 21267,Go! Go! 575,Slice of Life,4,5.8
@@ -1947,7 +1947,7 @@ anime_id,name,genre,episodes,rating
 22817,Kindaichi Shounen no Jikenbo Returns,"Mystery, Shounen",25,7.42
 2409,Gokudou-kun Manyuuki,"Adventure, Comedy, Fantasy, Magic",26,7.61
 1021,Kaikan Phrase,"Drama, Music, Romance, Shoujo",44,7.55
-19157,Youkai Watch,"Comedy, Kids, Supernatural",Unknown,6.95
+19157,Youkai Watch,"Comedy, Kids, Supernatural",-1,6.95
 11457,Chibi☆Devi!,"Fantasy, Shoujo, Supernatural",75,6.86
 1471,City Hunter 2,"Action, Comedy, Mystery, Shounen",63,8.12
 28861,Takamiya Nasuno Desu!: Teekyuu Spin-off,"Comedy, Shounen",12,6.57
@@ -1966,7 +1966,7 @@ anime_id,name,genre,episodes,rating
 110,Chuuka Ichiban!,"Action, Comedy, Drama, Shounen",52,7.69
 29,Zipang,"Action, Drama, Historical, Military, Sci-Fi, Seinen",26,7.56
 909,Geneshaft,"Adventure, Mecha, Sci-Fi, Space",13,6.49
-32881,Tiger Mask W,"Action, Drama, Shounen, Sports",Unknown,6.44
+32881,Tiger Mask W,"Action, Drama, Shounen, Sports",-1,6.44
 2076,Kindaichi Shounen no Jikenbo (TV),"Mystery, Shounen",148,7.96
 10330,Bakugan Battle Brawlers: Mechtanium Surge,"Action, Adventure, Fantasy, Game, Shounen",46,6.29
 1629,Devilman Lady,"Action, Drama, Horror, Psychological",26,6.92
@@ -2057,7 +2057,7 @@ anime_id,name,genre,episodes,rating
 3614,Yakushiji Ryouko no Kaiki Jikenbo,"Mystery, Police, Supernatural",13,7.19
 9493,Dororon Enma-kun Meeramera,"Action, Comedy, Ecchi, Fantasy, Magic, Super Power, Supernatural",12,6.65
 1264,Yoroiden Samurai Troopers,"Adventure, Samurai, Sci-Fi, Shounen",39,7.21
-34034,Pokemon Sun &amp; Moon,"Action, Game, Kids, School",Unknown,7.23
+34034,Pokemon Sun &amp; Moon,"Action, Game, Kids, School",-1,7.23
 13145,Cardfight!! Vanguard: Asia Circuit-hen,"Action, Adventure, Demons, Game, Shounen",39,7.06
 942,Nishi no Yoki Majo: Astraea Testament,"Comedy, Drama, Fantasy, Mystery, Romance",13,6.91
 32682,Kagewani: Shou,"Horror, Mystery, Supernatural, Thriller",13,6.54
@@ -2292,7 +2292,7 @@ anime_id,name,genre,episodes,rating
 86,Mobile Suit Gundam ZZ,"Comedy, Drama, Mecha, Military, Sci-Fi, Space",47,6.81
 812,Chikyuu Shoujo Arjuna,"Adventure, Drama, Magic, Sci-Fi",13,6.98
 573,Saber Marionette J,"Action, Adventure, Comedy, Drama, Harem, Martial Arts, Mecha, Romance, Sci-Fi, Shounen",25,7.45
-21639,Yu☆Gi☆Oh! Arc-V,"Action, Fantasy, Game, Shounen",Unknown,7.61
+21639,Yu☆Gi☆Oh! Arc-V,"Action, Fantasy, Game, Shounen",-1,7.61
 5307,Sora wo Kakeru Shoujo,"Adventure, Comedy, Sci-Fi, Space",26,7.09
 383,Galaxy Angel,"Comedy, Sci-Fi",24,7.14
 603,Futari wa Precure,"Action, Comedy, Fantasy, Magic, Shoujo",49,6.99
@@ -2466,7 +2466,7 @@ anime_id,name,genre,episodes,rating
 3298,Hatenkou Yuugi,"Adventure, Comedy, Drama, Fantasy, Romance, Shoujo",10,7.3
 252,Madlax,"Drama, Magic, Military, Mystery, Psychological, Shounen, Supernatural",26,7.17
 5041,Guin Saga,"Adventure, Fantasy",26,7.29
-966,Crayon Shin-chan,"Comedy, Ecchi, Kids, School, Shounen, Slice of Life",Unknown,7.73
+966,Crayon Shin-chan,"Comedy, Ecchi, Kids, School, Shounen, Slice of Life",-1,7.73
 33222,Fudanshi Koukou Seikatsu,"Comedy, School, Shoujo, Slice of Life",12,6.63
 290,Seikai no Monshou,"Action, Military, Romance, Sci-Fi, Space",13,7.83
 9510,Mitsudomoe Zouryouchuu!,"Comedy, School, Slice of Life",8,7.82
@@ -3245,7 +3245,7 @@ anime_id,name,genre,episodes,rating
 5909,Seitokai no Ichizon,"Comedy, Harem, Parody, School",12,7.52
 4999,Asu no Yoichi!,"Comedy, Ecchi, Harem, Martial Arts, Romance, Shounen",12,7.02
 28025,Tsukimonogatari,"Comedy, Mystery, Supernatural",4,8.21
-30694,Dragon Ball Super,"Action, Adventure, Comedy, Fantasy, Martial Arts, Shounen, Super Power",Unknown,7.4
+30694,Dragon Ball Super,"Action, Adventure, Comedy, Fantasy, Martial Arts, Shounen, Super Power",-1,7.4
 29095,Grisaia no Rakuen,"Drama, Harem, Psychological, Romance",10,8.08
 14199,Oniichan dakedo Ai Sae Areba Kankeinai yo ne!,"Comedy, Ecchi, Harem, Romance, School",12,6.78
 27,Trinity Blood,"Action, Supernatural, Vampire",24,7.44
@@ -3254,7 +3254,7 @@ anime_id,name,genre,episodes,rating
 5300,Zoku Natsume Yuujinchou,"Drama, Fantasy, Shoujo, Slice of Life, Supernatural",13,8.64
 28977,Gintama°,"Action, Comedy, Historical, Parody, Samurai, Sci-Fi, Shounen",51,9.25
 24455,Madan no Ou to Vanadis,"Adventure, Ecchi, Fantasy, Harem, Romance",13,7.28
-235,Detective Conan,"Adventure, Comedy, Mystery, Police, Shounen",Unknown,8.25
+235,Detective Conan,"Adventure, Comedy, Mystery, Police, Shounen",-1,8.25
 27991,K: Return of Kings,"Action, Super Power, Supernatural",13,7.82
 2926,Myself; Yourself,"Drama, Romance, School",13,7.41
 27833,Durarara!!x2 Ketsu,"Action, Mystery, Supernatural",12,8.23
@@ -3636,11 +3636,11 @@ anime_id,name,genre,episodes,rating
 5081,Bakemonogatari,"Mystery, Romance, Supernatural, Vampire",15,8.39
 1,Cowboy Bebop,"Action, Adventure, Comedy, Drama, Sci-Fi, Space",26,8.82
 22199,Akame ga Kill!,"Action, Adventure, Fantasy",24,7.84
-21,One Piece,"Action, Adventure, Comedy, Drama, Fantasy, Shounen, Super Power",Unknown,8.58
+21,One Piece,"Action, Adventure, Comedy, Drama, Fantasy, Shounen, Super Power",-1,8.58
 18679,Kill la Kill,"Action, Comedy, School, Super Power",24,8.23
 13601,Psycho-Pass,"Action, Police, Psychological, Sci-Fi",22,8.5
 20507,Noragami,"Action, Adventure, Shounen, Supernatural",12,8.17
-1735,Naruto: Shippuuden,"Action, Comedy, Martial Arts, Shounen, Super Power",Unknown,7.94
+1735,Naruto: Shippuuden,"Action, Comedy, Martial Arts, Shounen, Super Power",-1,7.94
 11111,Another,"Horror, Mystery, School, Supernatural, Thriller",12,7.88
 8074,Highschool of the Dead,"Action, Ecchi, Horror, Supernatural",12,7.46
 21881,Sword Art Online II,"Action, Adventure, Fantasy, Game, Romance",24,7.35
@@ -3667,122 +3667,122 @@ anime_id,name,genre,episodes,rating
 11757,Sword Art Online,"Action, Adventure, Fantasy, Game, Romance",25,7.83
 16498,Shingeki no Kyojin,"Action, Drama, Fantasy, Shounen, Super Power",25,8.54
 1535,Death Note,"Mystery, Police, Psychological, Supernatural, Thriller",37,8.71
-34501,Kenka Banchou Otome: Girl Beats Boys,,Unknown,
-34474,Tsukipro The Animation,,Unknown,
-34393,Room Mate: One Room Side M,,Unknown,
-34392,One Room,,Unknown,
-34338,Finis,,Unknown,
-34292,Kamigami no Ki,,Unknown,4.33
-33850,Nil Admirari no Tenbin: Teito Genwaku Kitan,,Unknown,
+34501,Kenka Banchou Otome: Girl Beats Boys,,-1,
+34474,Tsukipro The Animation,,-1,
+34393,Room Mate: One Room Side M,,-1,
+34392,One Room,,-1,
+34338,Finis,,-1,
+34292,Kamigami no Ki,,-1,4.33
+33850,Nil Admirari no Tenbin: Teito Genwaku Kitan,,-1,
 33589,ViVid Strike!,,12,6.96
-32981,Hand Shakers,,Unknown,
+32981,Hand Shakers,,-1,
 31078,PikkaPika Summer,,31,5.67
-33733,Inazuma Eleven: Ares no Tenbin,Sports,Unknown,
-27783,Sword Gai (TV),Seinen,Unknown,
-34208,Escha Chron,Sci-Fi,Unknown,
-31422,Minami Kamakura Koukou Joshi Jitensha-bu,"School, Shounen, Sports",Unknown,
-33840,Kabukibu!,School,Unknown,
+33733,Inazuma Eleven: Ares no Tenbin,Sports,-1,
+27783,Sword Gai (TV),Seinen,-1,
+34208,Escha Chron,Sci-Fi,-1,
+31422,Minami Kamakura Koukou Joshi Jitensha-bu,"School, Shounen, Sports",-1,
+33840,Kabukibu!,School,-1,
 33836,Seiren,School,12,
-34102,Sakurada Reset,"Mystery, School, Super Power, Supernatural",Unknown,
-32830,Chou Shounen Tanteidan Neo,Mystery,Unknown,
-33788,Marginal#4: Kiss kara Tsukuru Big Bang,"Music, Shoujo",Unknown,
-32212,Ensemble Stars!,"Music, Shoujo",Unknown,
-34177,Tenshi no 3P!,"Music, School, Slice of Life",Unknown,
-33362,Starmyu 2nd Season,"Music, School, Slice of Life",Unknown,
-33203,Fukumenkei Noise,"Music, Romance, Shoujo",Unknown,
-34028,Idol Jihen,Music,Unknown,
-33573,BanG Dream!,Music,Unknown,
-33737,Megaton-kyuu Musashi,"Mecha, School",Unknown,
-34427,Frame Arms Girl,Mecha,Unknown,
-32615,Youjo Senki,"Magic, Military",Unknown,
-33532,Kaitou Tenshi Twin Angel (TV),Magic,Unknown,
-29643,6HP (Six Hearts Princess),Magic,Unknown,
-30223,Shishou Series,"Horror, School, Seinen, Supernatural",Unknown,
+34102,Sakurada Reset,"Mystery, School, Super Power, Supernatural",-1,
+32830,Chou Shounen Tanteidan Neo,Mystery,-1,
+33788,Marginal#4: Kiss kara Tsukuru Big Bang,"Music, Shoujo",-1,
+32212,Ensemble Stars!,"Music, Shoujo",-1,
+34177,Tenshi no 3P!,"Music, School, Slice of Life",-1,
+33362,Starmyu 2nd Season,"Music, School, Slice of Life",-1,
+33203,Fukumenkei Noise,"Music, Romance, Shoujo",-1,
+34028,Idol Jihen,Music,-1,
+33573,BanG Dream!,Music,-1,
+33737,Megaton-kyuu Musashi,"Mecha, School",-1,
+34427,Frame Arms Girl,Mecha,-1,
+32615,Youjo Senki,"Magic, Military",-1,
+33532,Kaitou Tenshi Twin Angel (TV),Magic,-1,
+29643,6HP (Six Hearts Princess),Magic,-1,
+30223,Shishou Series,"Horror, School, Seinen, Supernatural",-1,
 33983,Onihei,"Historical, Seinen",13,
-30485,ChäoS;Child,"Harem, Mystery, Psychological, Sci-Fi, Supernatural",Unknown,
-32407,Clockwork Planet,"Fantasy, Sci-Fi",Unknown,
-34223,Mori no Yousei: Kinoko no Musume,"Fantasy, Music",Unknown,
-34497,Death March kara Hajimaru Isekai Kyousoukyoku,Fantasy,Unknown,
-31629,Granblue Fantasy The Animation,Fantasy,Unknown,
-33834,Sin: Nanatsu no Taizai,"Ecchi, Fantasy",Unknown,
-34383,Netsuzou TRap,"Drama, Shoujo Ai",Unknown,
-33012,Island,"Drama, Sci-Fi",Unknown,
-32949,Kuzu no Honkai,"Drama, Romance, School, Seinen",Unknown,
-33337,ACCA: 13-ku Kansatsu-ka,"Drama, Police",Unknown,
-34522,"Wake Up, Girls! Shin Shou","Drama, Music",Unknown,
-33095,Shouwa Genroku Rakugo Shinjuu: Sukeroku Futatabi-hen,"Drama, Josei",Unknown,
-33502,Shuumatsu Nani Shitemasu ka? Isogashii desu ka? Sukutte Moratte Ii desu ka?,"Drama, Fantasy, Romance, Sci-Fi",Unknown,
+30485,ChäoS;Child,"Harem, Mystery, Psychological, Sci-Fi, Supernatural",-1,
+32407,Clockwork Planet,"Fantasy, Sci-Fi",-1,
+34223,Mori no Yousei: Kinoko no Musume,"Fantasy, Music",-1,
+34497,Death March kara Hajimaru Isekai Kyousoukyoku,Fantasy,-1,
+31629,Granblue Fantasy The Animation,Fantasy,-1,
+33834,Sin: Nanatsu no Taizai,"Ecchi, Fantasy",-1,
+34383,Netsuzou TRap,"Drama, Shoujo Ai",-1,
+33012,Island,"Drama, Sci-Fi",-1,
+32949,Kuzu no Honkai,"Drama, Romance, School, Seinen",-1,
+33337,ACCA: 13-ku Kansatsu-ka,"Drama, Police",-1,
+34522,"Wake Up, Girls! Shin Shou","Drama, Music",-1,
+33095,Shouwa Genroku Rakugo Shinjuu: Sukeroku Futatabi-hen,"Drama, Josei",-1,
+33502,Shuumatsu Nani Shitemasu ka? Isogashii desu ka? Sukutte Moratte Ii desu ka?,"Drama, Fantasy, Romance, Sci-Fi",-1,
 34445,Yuuki Yuuna wa Yuusha de Aru: Yuusha no Shou,"Drama, Fantasy, Magic, Slice of Life",6,
 34284,Yuuki Yuuna wa Yuusha de Aru: Washio Sumi no Shou,"Drama, Fantasy, Magic, Slice of Life",6,
-33743,Fuuka,"Drama, Ecchi, Music, Romance, School, Shounen",Unknown,
-34467,Yami Shibai 4th Season,"Dementia, Horror, Supernatural",Unknown,
-34309,Nananin no Ayakashi: Chimi Chimi Mouryou!! Gendai Monogatari,"Comedy, Supernatural",Unknown,
-34257,Cinderella Girls Gekijou,"Comedy, Slice of Life",Unknown,
-34148,Nyanko Days,"Comedy, Slice of Life",Unknown,
-33948,Hinako Note,"Comedy, Slice of Life",Unknown,
-33447,Piace: Watashi no Italian,"Comedy, Slice of Life",Unknown,
-32924,Urara Meirochou,"Comedy, Seinen, Slice of Life",Unknown,
-33731,Gabriel DropOut,"Comedy, School, Shounen, Supernatural",Unknown,
-33839,Alice in Deadly School,"Comedy, School, Shounen",Unknown,
-34264,Ninja Bear,"Comedy, School",Unknown,
-33852,Mekakucity Reload,"Comedy, Romance, Sci-Fi, Super Power, Supernatural",Unknown,
-32262,Renai Boukun,"Comedy, Romance, School, Supernatural",Unknown,
-34106,Kyoukai no Rinne (TV) 3rd Season,"Comedy, Romance, School, Shounen, Supernatural",Unknown,
-21877,High Score Girl,"Comedy, Romance, School, Seinen",Unknown,
-31445,Minna Atsumare! Falcom Gakuen 3rd Season,"Comedy, Parody, School, Seinen",Unknown,
-34488,Gan Gan Ganko-chan,"Comedy, Kids, Sci-Fi",Unknown,
-33487,Masamune-kun no Revenge,"Comedy, Harem, Romance, School, Shounen",Unknown,
-34525,Centaur no Nayami,"Comedy, Fantasy, Slice of Life, Supernatural",Unknown,
-33206,Kobayashi-san Chi no Maid Dragon,"Comedy, Fantasy, Slice of Life",Unknown,
-33988,Demi-chan wa Kataritai,"Comedy, Fantasy, School, Seinen",Unknown,
-33019,Reikenzan: Hoshikuzu-tachi no Utage 2nd Season,"Comedy, Fantasy, Magic",Unknown,
-34403,Hajimete no Gal,"Comedy, Ecchi, Romance, School, Shounen",Unknown,
-30727,Saenai Heroine no Sodatekata ♭,"Comedy, Ecchi, Harem, Romance, School",Unknown,
-32447,Nora to Oujo to Noraneko Heart,"Comedy, Ecchi",Unknown,
-31783,Yowamushi Pedal: New Generation,"Comedy, Drama, Shounen, Sports",Unknown,
-33417,Super Lovers 2,"Comedy, Drama, Romance, Shounen Ai",Unknown,
-32901,Eromanga-sensei,"Comedy, Drama, Romance",Unknown,
-34076,Uchouten Kazoku 2,"Comedy, Drama, Fantasy, Slice of Life",Unknown,
-34494,Sakura Quest,Comedy,Unknown,
-34456,Sentai Hero Sukiyaki Force,Comedy,Unknown,
-34350,Alice to Zouroku,"Adventure, Mystery, Seinen",Unknown,
-32936,Gin no Guardian,"Adventure, Fantasy",Unknown,
-32937,Kono Subarashii Sekai ni Shukufuku wo! 2,"Adventure, Comedy, Fantasy, Magic, Supernatural",Unknown,
-33489,Little Witch Academia (TV),"Adventure, Comedy, Fantasy, Magic, School",Unknown,
-33354,Cardcaptor Sakura: Clear Card-hen,"Adventure, Comedy, Fantasy, Magic, Romance, Shoujo",Unknown,
-32596,The Snack World (TV),"Adventure, Comedy, Fantasy, Kids",Unknown,
-33089,Kemono Friends,"Adventure, Comedy",Unknown,
-34449,THE REFLECTION,"Action, Super Power",Unknown,
-33027,Infini-T Force,"Action, Seinen, Super Power",Unknown,
-32878,ēlDLIVE,"Action, Sci-Fi, Space",Unknown,
-34289,Schoolgirl Strikers: Animation Channel,"Action, School",Unknown,
-32843,Senki Zesshou Symphogear 5th Season,"Action, Music, Sci-Fi",Unknown,
-32836,Senki Zesshou Symphogear 4th Season,"Action, Music, Sci-Fi",Unknown,
-30455,Kantai Collection: KanColle Zoku-hen,"Action, Military, School, Sci-Fi, Slice of Life",Unknown,
-33371,Atom: The Beginning,"Action, Mecha, Sci-Fi, Seinen",Unknown,
-31931,Full Metal Panic! IV,"Action, Mecha, Military",Unknown,
-32271,Dies Irae,"Action, Magic, Super Power",Unknown,
-34088,Chiruran: Nibun no Ichi,"Action, Historical",Unknown,
-34451,Kekkai Sensen &amp; Beyond,"Action, Fantasy, Super Power, Supernatural, Vampire",Unknown,
-34104,Knight&#039;s &amp; Magic,"Action, Fantasy, Mecha, School",Unknown,
-32951,Rokudenashi Majutsu Koushi to Akashic Records,"Action, Fantasy, Magic, School",Unknown,
-33047,Fate/Extra Last Encore,"Action, Fantasy, Magic",Unknown,
-34176,Zero kara Hajimeru Mahou no Sho,"Action, Fantasy",Unknown,
-33018,Touken Ranbu,"Action, Fantasy",Unknown,
-25777,Shingeki no Kyojin Season 2,"Action, Drama, Fantasy, Shounen, Super Power",Unknown,
-33889,Saredo Tsumibito wa Ryuu to Odoru,"Action, Drama, Fantasy, Sci-Fi",Unknown,
-33506,Ao no Exorcist: Kyoto Fujouou-hen,"Action, Demons, Fantasy, Shounen, Supernatural",Unknown,
+33743,Fuuka,"Drama, Ecchi, Music, Romance, School, Shounen",-1,
+34467,Yami Shibai 4th Season,"Dementia, Horror, Supernatural",-1,
+34309,Nananin no Ayakashi: Chimi Chimi Mouryou!! Gendai Monogatari,"Comedy, Supernatural",-1,
+34257,Cinderella Girls Gekijou,"Comedy, Slice of Life",-1,
+34148,Nyanko Days,"Comedy, Slice of Life",-1,
+33948,Hinako Note,"Comedy, Slice of Life",-1,
+33447,Piace: Watashi no Italian,"Comedy, Slice of Life",-1,
+32924,Urara Meirochou,"Comedy, Seinen, Slice of Life",-1,
+33731,Gabriel DropOut,"Comedy, School, Shounen, Supernatural",-1,
+33839,Alice in Deadly School,"Comedy, School, Shounen",-1,
+34264,Ninja Bear,"Comedy, School",-1,
+33852,Mekakucity Reload,"Comedy, Romance, Sci-Fi, Super Power, Supernatural",-1,
+32262,Renai Boukun,"Comedy, Romance, School, Supernatural",-1,
+34106,Kyoukai no Rinne (TV) 3rd Season,"Comedy, Romance, School, Shounen, Supernatural",-1,
+21877,High Score Girl,"Comedy, Romance, School, Seinen",-1,
+31445,Minna Atsumare! Falcom Gakuen 3rd Season,"Comedy, Parody, School, Seinen",-1,
+34488,Gan Gan Ganko-chan,"Comedy, Kids, Sci-Fi",-1,
+33487,Masamune-kun no Revenge,"Comedy, Harem, Romance, School, Shounen",-1,
+34525,Centaur no Nayami,"Comedy, Fantasy, Slice of Life, Supernatural",-1,
+33206,Kobayashi-san Chi no Maid Dragon,"Comedy, Fantasy, Slice of Life",-1,
+33988,Demi-chan wa Kataritai,"Comedy, Fantasy, School, Seinen",-1,
+33019,Reikenzan: Hoshikuzu-tachi no Utage 2nd Season,"Comedy, Fantasy, Magic",-1,
+34403,Hajimete no Gal,"Comedy, Ecchi, Romance, School, Shounen",-1,
+30727,Saenai Heroine no Sodatekata ♭,"Comedy, Ecchi, Harem, Romance, School",-1,
+32447,Nora to Oujo to Noraneko Heart,"Comedy, Ecchi",-1,
+31783,Yowamushi Pedal: New Generation,"Comedy, Drama, Shounen, Sports",-1,
+33417,Super Lovers 2,"Comedy, Drama, Romance, Shounen Ai",-1,
+32901,Eromanga-sensei,"Comedy, Drama, Romance",-1,
+34076,Uchouten Kazoku 2,"Comedy, Drama, Fantasy, Slice of Life",-1,
+34494,Sakura Quest,Comedy,-1,
+34456,Sentai Hero Sukiyaki Force,Comedy,-1,
+34350,Alice to Zouroku,"Adventure, Mystery, Seinen",-1,
+32936,Gin no Guardian,"Adventure, Fantasy",-1,
+32937,Kono Subarashii Sekai ni Shukufuku wo! 2,"Adventure, Comedy, Fantasy, Magic, Supernatural",-1,
+33489,Little Witch Academia (TV),"Adventure, Comedy, Fantasy, Magic, School",-1,
+33354,Cardcaptor Sakura: Clear Card-hen,"Adventure, Comedy, Fantasy, Magic, Romance, Shoujo",-1,
+32596,The Snack World (TV),"Adventure, Comedy, Fantasy, Kids",-1,
+33089,Kemono Friends,"Adventure, Comedy",-1,
+34449,THE REFLECTION,"Action, Super Power",-1,
+33027,Infini-T Force,"Action, Seinen, Super Power",-1,
+32878,ēlDLIVE,"Action, Sci-Fi, Space",-1,
+34289,Schoolgirl Strikers: Animation Channel,"Action, School",-1,
+32843,Senki Zesshou Symphogear 5th Season,"Action, Music, Sci-Fi",-1,
+32836,Senki Zesshou Symphogear 4th Season,"Action, Music, Sci-Fi",-1,
+30455,Kantai Collection: KanColle Zoku-hen,"Action, Military, School, Sci-Fi, Slice of Life",-1,
+33371,Atom: The Beginning,"Action, Mecha, Sci-Fi, Seinen",-1,
+31931,Full Metal Panic! IV,"Action, Mecha, Military",-1,
+32271,Dies Irae,"Action, Magic, Super Power",-1,
+34088,Chiruran: Nibun no Ichi,"Action, Historical",-1,
+34451,Kekkai Sensen &amp; Beyond,"Action, Fantasy, Super Power, Supernatural, Vampire",-1,
+34104,Knight&#039;s &amp; Magic,"Action, Fantasy, Mecha, School",-1,
+32951,Rokudenashi Majutsu Koushi to Akashic Records,"Action, Fantasy, Magic, School",-1,
+33047,Fate/Extra Last Encore,"Action, Fantasy, Magic",-1,
+34176,Zero kara Hajimeru Mahou no Sho,"Action, Fantasy",-1,
+33018,Touken Ranbu,"Action, Fantasy",-1,
+25777,Shingeki no Kyojin Season 2,"Action, Drama, Fantasy, Shounen, Super Power",-1,
+33889,Saredo Tsumibito wa Ryuu to Odoru,"Action, Drama, Fantasy, Sci-Fi",-1,
+33506,Ao no Exorcist: Kyoto Fujouou-hen,"Action, Demons, Fantasy, Shounen, Supernatural",-1,
 34502,Inazma Delivery,"Action, Comedy, Sci-Fi",10,
-33486,Boku no Hero Academia 2nd Season,"Action, Comedy, School, Shounen, Super Power",Unknown,
-34134,One Punch Man 2,"Action, Comedy, Parody, Sci-Fi, Seinen, Super Power, Supernatural",Unknown,
-34096,Gintama (2017),"Action, Comedy, Historical, Parody, Samurai, Sci-Fi, Shounen",Unknown,
-34019,Tsugumomo,"Action, Comedy, Ecchi, School, Seinen, Supernatural",Unknown,
-33010,FLCL (TV),"Action, Comedy, Dementia, Mecha, Parody, Sci-Fi",Unknown,
+33486,Boku no Hero Academia 2nd Season,"Action, Comedy, School, Shounen, Super Power",-1,
+34134,One Punch Man 2,"Action, Comedy, Parody, Sci-Fi, Seinen, Super Power, Supernatural",-1,
+34096,Gintama (2017),"Action, Comedy, Historical, Parody, Samurai, Sci-Fi, Shounen",-1,
+34019,Tsugumomo,"Action, Comedy, Ecchi, School, Seinen, Supernatural",-1,
+33010,FLCL (TV),"Action, Comedy, Dementia, Mecha, Parody, Sci-Fi",-1,
 28833,Chain Chronicle: Haecceitas no Hikari,"Action, Adventure, Fantasy, Magic, Shounen",12,
 34086,Tales of Zestiria the X (2017),"Action, Adventure, Fantasy",12,
-34051,Akiba&#039;s Trip The Animation,"Action, Adventure, Ecchi, Supernatural",Unknown,
-31537,Shingeki no Bahamut: Manaria Friends,"Action, Adventure, Demons, Fantasy, Magic, Supernatural",Unknown,
+34051,Akiba&#039;s Trip The Animation,"Action, Adventure, Ecchi, Supernatural",-1,
+31537,Shingeki no Bahamut: Manaria Friends,"Action, Adventure, Demons, Fantasy, Magic, Supernatural",-1,
 30736,Shingeki no Bahamut: Virgin Soul,"Action, Adventure, Demons, Fantasy, Magic, Supernatural",24,
-34055,Berserk (2017),"Action, Adventure, Demons, Drama, Fantasy, Horror, Magic, Military, Romance, Supernatural",Unknown,
-32887,Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka Gaiden: Sword Oratoria,"Action, Adventure, Comedy, Fantasy",Unknown,
-33726,Saiyuuki Reload Blast,"Action, Adventure, Comedy, Drama, Josei, Supernatural",Unknown,
+34055,Berserk (2017),"Action, Adventure, Demons, Drama, Fantasy, Horror, Magic, Military, Romance, Supernatural",-1,
+32887,Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka Gaiden: Sword Oratoria,"Action, Adventure, Comedy, Fantasy",-1,
+33726,Saiyuuki Reload Blast,"Action, Adventure, Comedy, Drama, Josei, Supernatural",-1,
