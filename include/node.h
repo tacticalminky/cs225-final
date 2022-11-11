@@ -12,12 +12,10 @@ The struct for each node / show
 #include "edge_list.h"
 
 struct Node {
-    unsigned int id;
+    unsigned id;
     std::string name;
     std::vector<std::string> genres;
     int episodes;
     double rating;
-    unsigned int members;
-     
-    EdgeList neighbors;
+    unsigned members;
 };
