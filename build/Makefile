@@ -4,7 +4,7 @@ LIBS = -I../include
 
 MAIN = ../entry/main.cpp
 # Add src files here
-_SRC = 
+_SRC = ../src/edge_list.cpp
 SRC = $(patsubst %,../src/%,$(_SRC))
 
 all: main

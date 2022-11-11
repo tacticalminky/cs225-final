@@ -9,6 +9,8 @@ The struct for each node / show
 #include <string>
 #include <vector>
 
+#include "edge_list.h"
+
 struct Node {
     unsigned int id;
     std::string name;
@@ -19,8 +21,3 @@ struct Node {
      
     EdgeList neighbors;
 };
-
-// I know you need some sort of declartion of edge_list.h to put it in the struct,
-// I just dont know where so im putting it here
-
-#include "edge_list.h"
