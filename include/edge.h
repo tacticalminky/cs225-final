@@ -17,7 +17,7 @@ class Edge {
 
     Edge(Node* a, Node* b, unsigned int weight) : first(a), second(b), weight_(weight) { }
 
-    unsigned getWeight() const { return weight; }
+    unsigned getWeight() const { return weight_; }
 
     bool operator< (const Edge& other) const { return weight_ < other.weight_; }
 

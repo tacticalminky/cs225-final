@@ -9,8 +9,6 @@ The struct for each node / show
 #include <string>
 #include <vector>
 
-#include "edge_list.h"
-
 struct Node {
     unsigned id;
     std::string name;
