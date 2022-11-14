@@ -22,9 +22,9 @@ class Edge {
     bool operator< (const Edge& other) const { return weight_ < other.weight_; }
 
     bool operator== (const Edge& other) const {
-        if (first->id != other.first->id) { return false; }
-        if (second->id != other.second->id) { return false; }
-        return true;
+        if (first->id == other.first->id && second->id == other.second->id) { return true; }
+        if (first->id == other.second->id && second->id == other.first->id) { return true; }
+        return false;
     }
 
     private:

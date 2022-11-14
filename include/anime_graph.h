@@ -6,10 +6,10 @@ The graph of nodes and edges
 
 */
 
+#include <unordered_map>
+
 #include "node.h"
 #include "edge.h"
-
-#include <unordered_map>
 
 class AnimeGraph {
 
@@ -18,7 +18,7 @@ class AnimeGraph {
     AnimeGraph();
     ~AnimeGraph();
     
-    void makeGraph(std::string anime_list_frame, std::string rating_list_frame);
+    void makeGraph(std::string anime_list_fname, std::string rating_list_fname);
 
     std::unordered_map<Node*, Edge*> getAdjacentEdges(Node* node) const;
     Edge* getEdge(Node* first, Node* second) const;
@@ -33,6 +33,6 @@ class AnimeGraph {
 
     std::unordered_map<Node*, std::unordered_map<Node*, Edge*>> adjacency_list;
 
-    void importAnime(std::string frame);
-    void importRatings(std::string frame);
+    void importAnime(std::string fname);
+    void importRatings(std::string fname);
 };
