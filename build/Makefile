@@ -4,7 +4,7 @@ LIBS = -I../include
 
 MAIN = ../entry/main.cpp
 # Add src files here
-_SRC = 
+_SRC = anime_graph.cpp
 SRC = $(patsubst %,../src/%,$(_SRC))
 
 all: main
