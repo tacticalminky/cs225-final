@@ -38,19 +38,19 @@ Node* AnimeGraph::getMostPopular() const {
     }
 
     auto it = adjacency_list.begin();
-    Node* biggest = &(it->first);
+    Node* biggest = it->first;
     it++;
 
     for (; it != adjacency_list.end(); it++) {
 
-        if (it->first.members == biggest->members) {
-            if (it->first.rating > biggest->rating) {
-                biggest = &(it->first);
+        if (it->first->members == biggest->members) {
+            if (it->first->rating > biggest->rating) {
+                biggest = it->first;
             }
         }
 
-        if (it->first.members > biggest->members) {
-            biggest = &(it->first);
+        if (it->first->members > biggest->members) {
+            biggest = it->first;
         }
     }
     
@@ -60,8 +60,8 @@ Node* AnimeGraph::getMostPopular() const {
 // Returns the node associated with the specified anime_name. If it does not exist, return NULL
 Node* AnimeGraph::getNode(std::string anime_name) const {
     for (auto it = adjacency_list.begin(); it != adjacency_list.end(); it++) {
-        if (it->first.name == anime_name) {
-            return &(it->first);
+        if (it->first->name == anime_name) {
+            return it->first;
         }
     }
     return NULL;
@@ -70,8 +70,8 @@ Node* AnimeGraph::getNode(std::string anime_name) const {
 // Returns the node associated with the specified anime_name. If it does not exist, return NULL
 Node* AnimeGraph::getNode(unsigned anime_id) const { 
     for (auto it = adjacency_list.begin(); it != adjacency_list.end(); it++) {
-        if (it->first.id == anime_id) {
-            return &(it->first);
+        if (it->first->id == anime_id) {
+            return it->first;
         }
     }
     return NULL;
