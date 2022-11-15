@@ -25,7 +25,7 @@ class AnimeGraph {
     Node* getMostPopular() const;
     Node* getNode(std::string anime_name) const;
     Node* getNode(unsigned anime_id) const; 
-
+    
     bool nodeExists(Node* node) const;
     bool edgeExists(Node* first, Node* second) const;
 
