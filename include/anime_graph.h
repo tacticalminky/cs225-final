@@ -29,7 +29,7 @@ class AnimeGraph {
     bool nodeExists(Node* node) const;
     bool edgeExists(Node* first, Node* second) const;
 
-    private:
+    // private:
 
     std::unordered_map<Node*, std::unordered_map<Node*, Edge*>> adjacency_list;
 
