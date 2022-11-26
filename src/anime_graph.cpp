@@ -18,7 +18,8 @@ AnimeGraph::~AnimeGraph() {
 void AnimeGraph::makeGraph(std::string anime_list_frame, std::string rating_list_frame) { 
     // TODO: Implement function
     importAnime(anime_list_frame);
-    (void)rating_list_frame;
+    importRatings(rating_list_frame);
+    
 }
     
 /* Graph Getters*/
@@ -138,6 +139,18 @@ void AnimeGraph::importAnime(std::string frame) {
     }
 }
 void AnimeGraph::importRatings(std::string frame) { 
-    // TODO: Implement function
-    (void)frame;
+    std::fstream f(frame);
+    std::string line;
+    std::getline(f, line); 
+    int userid;
+    int animeid;
+    while (std::getline(f, line)) {
+        size_t pos1 = 0;
+        size_t pos2 = line.find(",", pos1);
+        userid = std::stoi(line.substr(pos1, pos2 - pos1));
+        pos1 = pos2 + 1;
+        pos2 = line.find(",", pos1);
+        animeid = std::stoi(line.substr(pos1, pos2 - pos1));
+        animeidtouserid[animeid].push_back(userid);
+    }
 }
