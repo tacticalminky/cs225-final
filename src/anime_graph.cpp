@@ -138,7 +138,7 @@ void AnimeGraph::importAnime(std::string frame) {
         adjacency_list[anime] = std::unordered_map<Node*, Edge*>();
     }
 }
-std::unordered_map AnimeGraph::importRatings(std::string frame) { 
+std::unordered_map<int,int> AnimeGraph::importRatings(std::string frame) { 
         
     std::unordered_map<int, int> anime_ratings:
     
