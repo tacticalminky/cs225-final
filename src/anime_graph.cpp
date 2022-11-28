@@ -138,7 +138,10 @@ void AnimeGraph::importAnime(std::string frame) {
         adjacency_list[anime] = std::unordered_map<Node*, Edge*>();
     }
 }
-void AnimeGraph::importRatings(std::string frame) { 
+std::unordered_map AnimeGraph::importRatings(std::string frame) { 
+        
+    std::unordered_map<int, int> anime_ratings:
+    
     std::fstream f(frame);
     std::string line;
     std::getline(f, line); 
@@ -151,6 +154,8 @@ void AnimeGraph::importRatings(std::string frame) {
         pos1 = pos2 + 1;
         pos2 = line.find(",", pos1);
         animeid = std::stoi(line.substr(pos1, pos2 - pos1));
-        animeidtouserid[animeid].push_back(userid);
+        anime_ratings[animeid].push_back(userid);
     }
+    
+    return anime_ratings;
 }
