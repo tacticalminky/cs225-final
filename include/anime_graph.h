@@ -32,7 +32,7 @@ class AnimeGraph {
     private:
 
     std::unordered_map<Node*, std::unordered_map<Node*, Edge*>> adjacency_list;
-    std::unordered_map<int, std::vector<int>> animeidtouserid;
+    
     
 
     void importAnime(std::string fname);
