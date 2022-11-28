@@ -36,6 +36,6 @@ class AnimeGraph {
     
 
     void importAnime(std::string fname);
-    std::unordered_map<int,int> importRatings(std::string fname);
+    std::unordered_map<int,std::vector<int>> importRatings(std::string fname);
 };
 
