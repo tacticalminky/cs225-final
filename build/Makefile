@@ -3,13 +3,17 @@ CXXFLAGS = -std=c++20 -Wall -Wextra -Werror -pedantic
 LIBS = -I../include
 
 MAIN = ../entry/main.cpp
+TESTS = ../tests/tests.cpp
 # Add src files here
 _SRC = anime_graph.cpp
 SRC = $(patsubst %,../src/%,$(_SRC))
 
-all: main
+all: main tests
 
 main: $(MAIN) $(SRC)
+	$(CXX) $(CXXFLAGS) $^ -o $@ $(LIBS)
+
+tests: &(TESTS) $(SRC)
 	$(CXX) $(CXXFLAGS) $^ -o $@ $(LIBS)
 
 clean:

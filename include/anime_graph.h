@@ -11,6 +11,9 @@ The graph of nodes and edges
 #include "node.h"
 #include "edge.h"
 
+// typedef std::unordered_map<Node*, Edge*> EdgeList;
+// typedef std::unordered_map<Node*, EdgeList> AdjacencyList;
+
 class AnimeGraph {
 
     public:
