@@ -13,7 +13,7 @@ all: main tests
 main: $(MAIN) $(SRC)
 	$(CXX) $(CXXFLAGS) $^ -o $@ $(LIBS)
 
-tests: &(TESTS) $(SRC)
+tests: $(TESTS) $(MAIN) $(SRC)
 	$(CXX) $(CXXFLAGS) $^ -o $@ $(LIBS)
 
 clean:
