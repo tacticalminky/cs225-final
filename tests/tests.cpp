@@ -91,7 +91,7 @@ TEST_CASE("AnimeGraph::makeGraph Tests", "") {
 
 TEST_CASE("AnimeGraph::getAdjacentEdges Tests", "") {
   AnimeGraph a;
-  a.makeGraph("../data/test_anime.csv", "../data/test_rating.csv");
+  a.makeGraph("../tests/data/test_anime.csv", "../tests/data/test_rating.csv");
   Node* node = a.getNode(7);
   std::unordered_map<Node*, Edge*> edges = a.getAdjacentEdges(node);
   REQUIRE(edges.size() == 3);
