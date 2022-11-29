@@ -3,26 +3,46 @@
 #include "edge.h"
 #include "anime_graph.h"
 
-// TEST_CASE("Edge Tests", "") {
-//   Node* n1 = new Node(1, "test1", std::vector<std::string>, -1, 0, 1);
-//   Node* n2 = new Node(2, "test2", std::vector<std::string>, -1, 0, 1);
-//   Node* n3 = new Node(3, "test3", std::vector<std::string>, -1, 0, 1);
+TEST_CASE("Edge Tests", "") {
+  Node* n1 = new Node;
+  n1->id = 1;
+  n1->name = "test1";
+  n1->genres = std::vector<std::string>();
+  n1->episodes = -1;
+  n1->rating = 0;
+  n1->members = 1;
 
-//   Edge e1(n1, n2, 0);
-//   Edge e1_reverse(n2, n1, 0);
-//   Edge e2(n1, n3, 0);
-//   Edge e3(n2, n3, 0);
+  Node* n2 = new Node;
+  n2->id = 2;
+  n2->name = "test2";
+  n2->genres = std::vector<std::string>();
+  n2->episodes = -1;
+  n2->rating = 0;
+  n2->members = 1;
 
-//   REQUIRE(e1 == e1);
-//   REQUIRE(e1 == e1_reverse);
-//   REQUIRE(e1 != e2);
-//   REQUIRE(e1 != e3);
-//   REQUIRE(e2 != e3);
+  Node* n3 = new Node;
+  n3->id = 3;
+  n3->name = "test3";
+  n3->genres = std::vector<std::string>();
+  n3->episodes = -1;
+  n3->rating = 0;
+  n3->members = 1;
 
-//   delete n1;
-//   delete n2;
-//   delete n3;
-// }
+  Edge e1(n1, n2, 0);
+  Edge e1_reverse(n2, n1, 0);
+  Edge e2(n1, n3, 0);
+  Edge e3(n2, n3, 0);
+
+  REQUIRE(e1 == e1);
+  REQUIRE(e1 == e1_reverse);
+  REQUIRE(!(e1 == e2));
+  REQUIRE(!(e1 == e3));
+  REQUIRE(!(e2 == e3));
+
+  delete n1;
+  delete n2;
+  delete n3;
+}
 
 TEST_CASE("AnimeGraph::importAnime Tests", "") {
   AnimeGraph a;
