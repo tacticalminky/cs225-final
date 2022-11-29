@@ -140,7 +140,7 @@ void AnimeGraph::importAnime(std::string frame) {
 }
 std::unordered_map<int,std::vector<int>> AnimeGraph::importRatings(std::string frame) { 
         
-    std::unordered_map<int, std::vector<int>> anime_ratings:
+    std::unordered_map<int, std::vector<int>> anime_ratings;
     
     std::fstream f(frame);
     std::string line;
