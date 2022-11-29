@@ -59,7 +59,6 @@ TEST_CASE("AnimeGraph::importAnime Tests", "") {
 }
 
 TEST_CASE("AnimeGraph::importRatings Tests", "") {
-  // TODO: Implement tests
   AnimeGraph a;
   a.makeGraph("../tests/data/test_anime.csv", "../tests/data/test_rating.csv");
   std::unordered_map<int,std::vector<int>> r = a.testImportRatings("../tests/data/test_rating.csv");
@@ -109,19 +108,4 @@ TEST_CASE("AnimeGraph::getAdjacentEdges Tests", "") {
   REQUIRE(edges.find(a.getNode(6)) != edges.end());
   REQUIRE(edges.find(a.getNode(8)) != edges.end());
   REQUIRE(edges.find(a.getNode(7)) == edges.end());
-}
-
-TEST_CASE("AnimeGraph::getEdge Tests", "") {
-  // TODO: Implement tests
-  REQUIRE(0);
-}
-
-TEST_CASE("AnimeGraph::getNode Tests", "") {
-  // TODO: Implement tests
-  REQUIRE(0);
-}
-
-TEST_CASE("AnimeGraph::nodeExists Tests", "") {
-  // TODO: Implement tests
-  REQUIRE(0);
 }

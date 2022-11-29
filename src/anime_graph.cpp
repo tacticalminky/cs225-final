@@ -16,8 +16,7 @@ AnimeGraph::~AnimeGraph() {
     
 /* Graph Creator */
 
-void AnimeGraph::makeGraph(std::string anime_list_frame, std::string rating_list_frame) { 
-    // TODO: Implement function
+void AnimeGraph::makeGraph(std::string anime_list_frame, std::string rating_list_frame) {
     importAnime(anime_list_frame);
     std::unordered_map<int, std::vector<int>> anime_ratings = importRatings(rating_list_frame);
     for (auto pair1 : anime_ratings) {
@@ -122,8 +121,7 @@ bool AnimeGraph::edgeExists(Node* first, Node* second) const {
 
 /* Private Helpers */
 
-void AnimeGraph::importAnime(std::string frame) { 
-    // TODO: Implement function
+void AnimeGraph::importAnime(std::string frame) {
     std::fstream f(frame);
     std::string line;
     std::getline(f, line); //skip first line
