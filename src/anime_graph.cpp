@@ -1,6 +1,7 @@
 #include "anime_graph.h"
 #include <fstream>
 #include <iostream>
+#include <algorithm>
 
 /* Constructor and Deconstructor */
 

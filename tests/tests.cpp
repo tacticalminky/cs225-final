@@ -33,11 +33,11 @@ TEST_CASE("AnimeGraph::importAnime Tests", "") {
   REQUIRE(a.nodeExists(a.getNode(8)));
   REQUIRE(a.nodeExists(a.getNode(15)));
   
-  Node* node = a.getNode(7);
-  REQUIRE(node->id == 7);
+  Node* node = a.getNode(1);
+  REQUIRE(node->id == 1);
   REQUIRE(node->name == "Cowboy Bebop");
   REQUIRE(node->genres.size() == 6);
-  REQUIRE(node->genres[2] == "Adventure");
+  REQUIRE(node->genres[1] == "Adventure");
   REQUIRE(node->episodes == 26);
   REQUIRE(node->rating == 8.82);
   REQUIRE(node->members == 486824);
@@ -45,7 +45,8 @@ TEST_CASE("AnimeGraph::importAnime Tests", "") {
   node = a.getNode(8);
   REQUIRE(node->id == 8);
   REQUIRE(node->name == "Beet the Vandel Buster");
-  REQUIRE(node->genres.size() == 0);
+  REQUIRE(node->genres.size() == 1);
+  REQUIRE(node->genres[0] == "Default");
   REQUIRE(node->episodes == -1);
   REQUIRE(node->rating == -1);
   REQUIRE(node->members == 9848);
