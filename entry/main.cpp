@@ -4,7 +4,7 @@
 int main() {
     AnimeGraph a;
     a.makeGraph("/workspaces/cs225/final/cs225-final/data/anime-filtered.csv", "");
-    std::cout << a.adjacency_list.size() << std::endl;
+    // std::cout << a.adjacency_list.size() << std::endl;
     // for (auto entry : a.adjacency_list) {
     //     std::cout << entry.first->id << std::endl;
     //     std::cout << entry.first->name << std::endl;
