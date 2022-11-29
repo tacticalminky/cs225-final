@@ -46,7 +46,7 @@ TEST_CASE("Edge Tests", "") {
 
 TEST_CASE("AnimeGraph::importAnime Tests", "") {
   AnimeGraph a;
-  a.makeGraph("../data/test_anime.csv", "../data/test_rating.csv");
+  a.makeGraph("./data/test_anime.csv", "./data/test_rating.csv");
   REQUIRE(a.nodeExists(a.getNode(1)));
   REQUIRE(a.nodeExists(a.getNode(6)));
   REQUIRE(a.nodeExists(a.getNode(7)));
@@ -79,7 +79,7 @@ TEST_CASE("AnimeGraph::importRatings Tests", "") {
 
 TEST_CASE("AnimeGraph::makeGraph Tests", "") {
   AnimeGraph a;
-  a.makeGraph("../data/test_anime.csv", "../data/test_rating.csv");
+  a.makeGraph("./data/test_anime.csv", "./data/test_rating.csv");
   Node* node1 = a.getNode(1);
   Node* node2 = a.getNode(6);
   Node* node3 = a.getNode(7);
