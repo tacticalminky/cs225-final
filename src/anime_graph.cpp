@@ -182,3 +182,7 @@ std::unordered_map<int,std::vector<int>> AnimeGraph::importRatings(std::string f
     
     return anime_ratings;
 }
+
+std::unordered_map<int,std::vector<int>> AnimeGraph::testImportRatings(std::string fname) {
+    return importRatings(fname);
+}

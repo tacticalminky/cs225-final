@@ -2,6 +2,7 @@
 
 #include "edge.h"
 #include "anime_graph.h"
+#include "iostream"
 
 TEST_CASE("Edge Tests", "") {
   Node* n1 = new Node;
@@ -59,7 +60,16 @@ TEST_CASE("AnimeGraph::importAnime Tests", "") {
 
 TEST_CASE("AnimeGraph::importRatings Tests", "") {
   // TODO: Implement tests
-  REQUIRE(0);
+  AnimeGraph a;
+  a.makeGraph("../tests/data/test_anime.csv", "../tests/data/test_rating.csv");
+  std::unordered_map<int,std::vector<int>> r = a.testImportRatings("../tests/data/test_rating.csv");
+  REQUIRE(r.size() == 4);
+  REQUIRE(r.at(1).size() == 3);
+  REQUIRE(r.at(6).size() == 2);
+  REQUIRE(r.at(7).size() == 3);
+  REQUIRE(r.at(8).size() == 1);
+  REQUIRE(r.at(6).at(0) == 1);
+  REQUIRE(r.at(6).at(1) == 3); 
 }
 
 TEST_CASE("AnimeGraph::makeGraph Tests", "") {
