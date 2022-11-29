@@ -6,27 +6,12 @@
 TEST_CASE("Edge Tests", "") {
   Node* n1 = new Node;
   n1->id = 1;
-  n1->name = "test1";
-  n1->genres = std::vector<std::string>();
-  n1->episodes = -1;
-  n1->rating = 0;
-  n1->members = 1;
 
   Node* n2 = new Node;
   n2->id = 2;
-  n2->name = "test2";
-  n2->genres = std::vector<std::string>();
-  n2->episodes = -1;
-  n2->rating = 0;
-  n2->members = 1;
 
   Node* n3 = new Node;
   n3->id = 3;
-  n3->name = "test3";
-  n3->genres = std::vector<std::string>();
-  n3->episodes = -1;
-  n3->rating = 0;
-  n3->members = 1;
 
   Edge e1(n1, n2, 0);
   Edge e1_reverse(n2, n1, 0);
@@ -35,9 +20,9 @@ TEST_CASE("Edge Tests", "") {
 
   REQUIRE(e1 == e1);
   REQUIRE(e1 == e1_reverse);
-  REQUIRE(!(e1 == e2));
-  REQUIRE(!(e1 == e3));
-  REQUIRE(!(e2 == e3));
+  REQUIRE_FALSE(e1 == e2);
+  REQUIRE_FALSE(e1 == e3);
+  REQUIRE_FALSE(e2 == e3);
 
   delete n1;
   delete n2;
@@ -46,7 +31,7 @@ TEST_CASE("Edge Tests", "") {
 
 TEST_CASE("AnimeGraph::importAnime Tests", "") {
   AnimeGraph a;
-  a.makeGraph("./data/test_anime.csv", "./data/test_rating.csv");
+  a.makeGraph("../tests/data/test_anime.csv", "../tests/data/test_rating.csv");
   REQUIRE(a.nodeExists(a.getNode(1)));
   REQUIRE(a.nodeExists(a.getNode(6)));
   REQUIRE(a.nodeExists(a.getNode(7)));
@@ -79,7 +64,7 @@ TEST_CASE("AnimeGraph::importRatings Tests", "") {
 
 TEST_CASE("AnimeGraph::makeGraph Tests", "") {
   AnimeGraph a;
-  a.makeGraph("./data/test_anime.csv", "./data/test_rating.csv");
+  a.makeGraph("../tests/data/test_anime.csv", "../tests/data/test_rating.csv");
   Node* node1 = a.getNode(1);
   Node* node2 = a.getNode(6);
   Node* node3 = a.getNode(7);
