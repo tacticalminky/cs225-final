@@ -18,7 +18,30 @@ AnimeGraph::~AnimeGraph() {
 void AnimeGraph::makeGraph(std::string anime_list_frame, std::string rating_list_frame) { 
     // TODO: Implement function
     importAnime(anime_list_frame);
-    makeEdges(importRatings(rating_list_frame));
+    std::unordered_map<int, std::vector<int>> anime_ratings = importRatings(rating_list_frame);
+    for (auto pair1 : anime_ratings) {
+        for (auto pair2 : anime_ratings) {
+            if (pair1.first != pair2.first) {
+                for (int user : pair1.second) {
+                    if (std::find(pair2.second.begin(), pair2.second.end(), user) != pair2.second.end()) {
+                        Node* anime1 = getNode(pair1.first);
+                        Node* anime2 = getNode(pair2.first);
+                        if (edgeExists(anime1, anime2) && edgeExists(anime2, anime1)) {
+                            Edge* edge = getEdge(anime1, anime2);
+                            edge->setWeight(edge->getWeight() + 1);
+                        } else {
+                            if (edgeExists(anime2, anime1)) {
+                                adjacency_list[anime1][anime2] = getEdge(anime2, anime1);
+                            } else {
+                                Edge* edge = new Edge (anime1, anime2, 1);
+                                adjacency_list[anime1][anime2] = edge;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
     
 /* Graph Getters*/
@@ -157,26 +180,4 @@ std::unordered_map<int,std::vector<int>> AnimeGraph::importRatings(std::string f
     }
     
     return anime_ratings;
-}
-
-void AnimeGraph::makeEdges(std::unordered_map<int, std::vector<int>> anime_ratings) {
-    for (auto pair1 : anime_ratings) {
-        for (auto pair2 : anime_ratings) {
-            if (pair1.first != pair2.first) {
-                for (int user : pair1.second) {
-                    if (std::find(pair2.second.begin(), pair2.second.end(), user) != pair2.second.end()) {
-                        Node* anime1 = getNode(pair1.first);
-                        Node* anime2 = getNode(pair2.first);
-                        if (adjacency_list[anime1].find(anime2) != adjacency_list[anime1].end()) {
-                            Edge* edge = adjacency_list[anime1][anime2];
-                            edge->setWeight(edge->getWeight() + 1);
-                        } else {
-                            Edge* edge = new Edge (anime1, anime2, 1);
-                            adjacency_list[anime1][anime2] = edge;
-                        }
-                    }
-                }
-            }
-        }
-    }
 }

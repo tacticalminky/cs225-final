@@ -37,6 +37,5 @@ class AnimeGraph {
 
     void importAnime(std::string fname);
     std::unordered_map<int,std::vector<int>> importRatings(std::string fname);
-    void makeEdges(std::unordered_map<int, std::vector<int>> anime_ratings);
 };
 

@@ -4,7 +4,6 @@
 int main() {
     AnimeGraph a;
     a.makeGraph("../data/test_anime.csv", "../data/test_rating.csv");
-    std::cout << "here" << std::endl;
     Node* anime1 = a.getNode(1);
     Node* anime2 = a.getNode(6);
     Node* anime3 = a.getNode(7);
