@@ -181,6 +181,24 @@ std::unordered_map<int,std::vector<int>> AnimeGraph::importRatings(std::string f
     return anime_ratings;
 }
 
+/* Public Helpers */
+
 std::unordered_map<int,std::vector<int>> AnimeGraph::testImportRatings(std::string fname) {
     return importRatings(fname);
+}
+
+// Writes the graph as a CSV from an anime to its top twenty closest shows.
+// *Note* the output_location is the file you want it to write to. If the file already
+// exists, it will overwrite the data within that file, if the file doesn't exists, it will
+// create that file for you. The default value for output_location should be 
+// output_location = "../data/output-graph.csv"
+void AnimeGraph::writeToCSV(std::string output_location) const {
+    
+    std::ofstream outputGraph;
+    outputGraph.open(output_location);
+    if (!fs.is_open()) {
+        std::cout << "Issue with opening the file" << std::endl;
+        return;
+    }
+
 }
