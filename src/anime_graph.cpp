@@ -1,6 +1,7 @@
 #include "anime_graph.h"
 #include <fstream>
 #include <iostream>
+#include <algorithm>
 
 /* Constructor and Deconstructor */
 
@@ -15,10 +16,32 @@ AnimeGraph::~AnimeGraph() {
     
 /* Graph Creator */
 
-void AnimeGraph::makeGraph(std::string anime_list_frame, std::string rating_list_frame) { 
-    // TODO: Implement function
+void AnimeGraph::makeGraph(std::string anime_list_frame, std::string rating_list_frame) {
     importAnime(anime_list_frame);
-    (void)rating_list_frame;
+    std::unordered_map<int, std::vector<int>> anime_ratings = importRatings(rating_list_frame);
+    for (auto pair1 : anime_ratings) {
+        for (auto pair2 : anime_ratings) {
+            if (pair1.first != pair2.first) {
+                for (int user : pair1.second) {
+                    if (std::find(pair2.second.begin(), pair2.second.end(), user) != pair2.second.end()) {
+                        Node* anime1 = getNode(pair1.first);
+                        Node* anime2 = getNode(pair2.first);
+                        if (edgeExists(anime1, anime2) && edgeExists(anime2, anime1)) {
+                            Edge* edge = getEdge(anime1, anime2);
+                            edge->setWeight(edge->getWeight() + 1);
+                        } else {
+                            if (edgeExists(anime2, anime1)) {
+                                adjacency_list[anime1][anime2] = getEdge(anime2, anime1);
+                            } else {
+                                Edge* edge = new Edge (anime1, anime2, 1);
+                                adjacency_list[anime1][anime2] = edge;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
     
 /* Graph Getters*/
@@ -29,7 +52,7 @@ std::unordered_map<Node*, Edge*> AnimeGraph::getAdjacentEdges(Node* node) const 
 }
 
 // Returns the edges of two nodes. This function assumes the node exists within the graph
-Edge* AnimeGraph::getEdge(Node* first, Node* second) const { 
+Edge* AnimeGraph::getEdge(Node* first, Node* second) const {
     return adjacency_list.at(first).at(second);
 }
 
@@ -98,8 +121,7 @@ bool AnimeGraph::edgeExists(Node* first, Node* second) const {
 
 /* Private Helpers */
 
-void AnimeGraph::importAnime(std::string frame) { 
-    // TODO: Implement function
+void AnimeGraph::importAnime(std::string frame) {
     std::fstream f(frame);
     std::string line;
     std::getline(f, line); //skip first line
@@ -137,7 +159,28 @@ void AnimeGraph::importAnime(std::string frame) {
         adjacency_list[anime] = std::unordered_map<Node*, Edge*>();
     }
 }
-void AnimeGraph::importRatings(std::string frame) { 
-    // TODO: Implement function
-    (void)frame;
+std::unordered_map<int,std::vector<int>> AnimeGraph::importRatings(std::string frame) { 
+        
+    std::unordered_map<int, std::vector<int>> anime_ratings;
+    
+    std::fstream f(frame);
+    std::string line;
+    std::getline(f, line); 
+    int userid;
+    int animeid;
+    while (std::getline(f, line)) {
+        size_t pos1 = 0;
+        size_t pos2 = line.find(",", pos1);
+        userid = std::stoi(line.substr(pos1, pos2 - pos1));
+        pos1 = pos2 + 1;
+        pos2 = line.find(",", pos1);
+        animeid = std::stoi(line.substr(pos1, pos2 - pos1));
+        anime_ratings[animeid].push_back(userid);
+    }
+    
+    return anime_ratings;
+}
+
+std::unordered_map<int,std::vector<int>> AnimeGraph::testImportRatings(std::string fname) {
+    return importRatings(fname);
 }
