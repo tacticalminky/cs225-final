@@ -5,7 +5,7 @@
 
 /* Constructor and Deconstructor */
 
-AnimeGraph::AnimeGraph() { 
+AnimeGraph::AnimeGraph() : tree(NULL) { 
     // TODO: Implement function
     adjacency_list = std::unordered_map<Node*, std::unordered_map<Node*, Edge*>>();
 }
@@ -42,6 +42,7 @@ void AnimeGraph::makeGraph(std::string anime_list_frame, std::string rating_list
             }
         }
     }
+    tree = new KDTree(adjacency_list);
 }
     
 /* Graph Getters*/
@@ -102,6 +103,9 @@ Node* AnimeGraph::getNode(unsigned anime_id) const {
     }
     return NULL;
 }
+
+// Returns a constant pointer to the KDTree
+KDTree* AnimeGraph::getTree() const { return tree; }
 
 /* Check existence of node or edge */
 
