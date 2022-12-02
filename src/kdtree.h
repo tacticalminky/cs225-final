@@ -3,7 +3,8 @@
 #include <unordered_map>
 #include <vector>
 
-#include "anime_graph.h"
+#include "node.h"
+#include "edge.h"
 
 class KDTree {
     public:
@@ -26,12 +27,14 @@ class KDTree {
         TreeNode* root;
         size_t size;
 
-        int partition(vector<Node*>& arr, int start, int end, int p_idx, int d);
-        int median(vector<Node*>& arr, int start, int end, int k, int d);
-        void buildTree(vector<Node*>& arr, int start, int end, int d, TreeNode*& curr);
+        int partition(std::vector<Node*>& arr, int start, int end, int p_idx, int d);
+        int median(std::vector<Node*>& arr, int start, int end, int k, int d);
+        void buildTree(std::vector<Node*>& arr, int start, int end, int d, TreeNode*& curr);
         void buildCopy(TreeNode*& curr, const TreeNode* other);
         void deleteNode(TreeNode*& root);
-        Node* findNearestNeighbor(const Node*& query, int d, TreeNode* curr) const;
-        bool shouldReplace(const Node*& target, const Node*& currentBest, const Node*& potential) const;
-        bool smallerDimVal(const Node*& first, const Node*& second, int curDim) const;
-}
+        Node* findNearestNeighbor(const Node* query, int d, TreeNode* curr) const;
+        bool shouldReplace(const Node* target, const Node* currentBest, const Node* potential) const;
+        bool smallerDimVal(const Node* first, const Node* second, int curDim) const;
+        double getRadius(const Node* node1, const Node* node2) const;
+        double getSplitDist(const Node* node1, const Node* node2, int d) const;
+};

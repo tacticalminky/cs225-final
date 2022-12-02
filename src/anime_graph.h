@@ -10,6 +10,7 @@ The graph of nodes and edges
 
 #include "node.h"
 #include "edge.h"
+#include "kdtree.h"
 
 // typedef std::unordered_map<Node*, Edge*> EdgeList;
 // typedef std::unordered_map<Node*, EdgeList> AdjacencyList;
@@ -32,13 +33,14 @@ class AnimeGraph {
     bool nodeExists(Node* node) const;
     bool edgeExists(Node* first, Node* second) const;
 
+    KDTree* getTree() const;
+
     std::unordered_map<int,std::vector<int>> testImportRatings(std::string fname); 
 
     private:
 
     std::unordered_map<Node*, std::unordered_map<Node*, Edge*>> adjacency_list;
-    
-    
+    KDTree* tree;
 
     void importAnime(std::string fname);
     std::unordered_map<int,std::vector<int>> importRatings(std::string fname);

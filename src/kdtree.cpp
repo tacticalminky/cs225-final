@@ -1,8 +1,8 @@
+#include <algorithm>
+
 #include "kdtree.h"
 
-using namespace KDTree;
-
-KDTree(const std::unordered_map<Node*, std::unordered_map<Node*, Edge*>>& adjacency_list) {
+KDTree::KDTree(const std::unordered_map<Node*, std::unordered_map<Node*, Edge*>>& adjacency_list) {
     if (adjacency_list.empty()) {
       root = nullptr;
       size = 0;
@@ -14,35 +14,34 @@ KDTree(const std::unordered_map<Node*, std::unordered_map<Node*, Edge*>>& adjace
     size = adjacency_list.size();
 }
 
-KDTree(const KDTree& other) {
-    if (other == NULL) return;
-    traverse_build(root, other->root);
-    size = other->size;
+KDTree::KDTree(const KDTree& other) {
+    buildCopy(root, other.root);
+    size = other.size;
 }
 
-KDTree const& operator=(const KDTree& other) {
-    if (*this == other) return *this;
+KDTree const& KDTree::operator=(const KDTree& other) {
+    if (this->root == other.root) return *this;
     this->~KDTree();
-    this = new KDTree(other);
+    *this = KDTree(other);
     return *this;
 }
 
-~KDTree() {
+KDTree::~KDTree() {
     size = 0;
-    removeTree(root);
+    deleteNode(root);
 }
 
-Node* findNearestNeighbor(const Node* query) const return findNearestNeighbor(query, 0, root);
+Node* KDTree::findNearestNeighbor(const Node* query) const { return findNearestNeighbor(query, 0, root); }
 
-int partition(vector<Node*>& arr, int start, int end, int p_idx, int d) {
-    Point<Dim> pivot_value = arr[p_idx];
-    Point<Dim> temp = arr[end];
+int KDTree::partition(std::vector<Node*>& arr, int start, int end, int p_idx, int d) {
+    Node* pivot_value = arr[p_idx];
+    Node* temp = arr[end];
     arr[end] = arr[p_idx];
     arr[p_idx] = temp;
     int idx = start;
     for (int i = start; i < end; i++) {
         if (smallerDimVal(arr[i], pivot_value, d)) {
-        Point<Dim> t = arr[i];
+        Node* t = arr[i];
         arr[i] = arr[idx];
         arr[idx] = t;
         idx++;
@@ -54,7 +53,7 @@ int partition(vector<Node*>& arr, int start, int end, int p_idx, int d) {
     return idx;
 }
 
-int median(vector<Node*>& arr, int start, int end, int k, int d) {
+int KDTree::median(std::vector<Node*>& arr, int start, int end, int k, int d) {
     if (start == end) return start;
     int p_idx = k;
     p_idx = partition(arr, start, end, p_idx, d);
@@ -63,11 +62,11 @@ int median(vector<Node*>& arr, int start, int end, int k, int d) {
     return median(arr, p_idx + 1, end, k, d);
 }
 
-void buildTree(vector<Node*>& arr, int start, int end, int d, TreeNode*& curr) {
+void KDTree::buildTree(std::vector<Node*>& arr, int start, int end, int d, TreeNode*& curr) {
     if (start <= end) {
     int middle = median(arr, start, end, (start+end)/2, d);
     curr = new TreeNode(arr[middle]);
-    d = (d + 1 == Dim) ? 0 : d + 1;
+    d = (d + 1) % 4;
     buildTree(arr, start, middle - 1, d, curr->left);
     buildTree(arr, middle + 1, end, d, curr->right);
   } else {
@@ -75,9 +74,9 @@ void buildTree(vector<Node*>& arr, int start, int end, int d, TreeNode*& curr) {
   }
 }
 
-void buildCopy(TreeNode*& curr, const TreeNode* other) {
+void KDTree::buildCopy(TreeNode*& curr, const TreeNode* other) {
     if (other != NULL) {
-    curr = new TreeNode(other->point);
+    curr = new TreeNode(other->anime);
     buildCopy(curr->left, other->left);
     buildCopy(curr->right, other->right);
     } else {
@@ -85,7 +84,7 @@ void buildCopy(TreeNode*& curr, const TreeNode* other) {
     }
 }
 
-void deleteNode(TreeNode*& root) {
+void KDTree::deleteNode(TreeNode*& root) {
     if (root) {
     deleteNode(root->left);
     deleteNode(root->right);
@@ -94,25 +93,71 @@ void deleteNode(TreeNode*& root) {
   }
 }
 
-Node* findNearestNeighbor(const Node*& query, int d, TreeNode* curr) const {
-    if (!curr->left && !curr->right) return curr->point;
-    int next_d = d + 1 % Dim;
-    Node* nearest = curr->point;
-    if (smallerDimVal(query, curr->point, d) && curr->left) nearest = findNearestNeighbor(query, next_d, curr->left);
-    else if (!smallerDimVal(query, curr->point, d) && curr->right) nearest = findNearestNeighbor(query, next_d, curr->right);
-    if (shouldReplace(query, nearest, curr->point)) nearest = curr->point;
-    double radius = 0;
-    for (int i = 0; i < Dim; i++) radius += (query[i] - nearest[i]) * (query[i] - nearest[i]);
-    double splitDist = (curr->point[d] - query[d]) * (curr->point[d] - query[d]);
+Node* KDTree::findNearestNeighbor(const Node* query, int d, TreeNode* curr) const {
+    if (!curr->left && !curr->right) return curr->anime;
+    int next_d = (d + 1) % 4;
+    Node* nearest = curr->anime;
+    if (smallerDimVal(query, curr->anime, d) && curr->left) nearest = findNearestNeighbor(query, next_d, curr->left);
+    else if (!smallerDimVal(query, curr->anime, d) && curr->right) nearest = findNearestNeighbor(query, next_d, curr->right);
+    if (shouldReplace(query, nearest, curr->anime)) nearest = curr->anime;
+    double radius = getRadius(query, nearest);
+    double splitDist = getSplitDist(query, curr->anime, d);
     if (radius >= splitDist) {
-        Node* temp = curr->point;
-        if (smallerDimVal(query, curr->point, d) && curr->right) temp =findNearestNeighbor(query, next_d, curr->right);
-        else if (!smallerDimVal(query, curr->point, d) && curr->left) temp = findNearestNeighbor(query, next_d, curr->left);
+        Node* temp = curr->anime;
+        if (smallerDimVal(query, curr->anime, d) && curr->right) temp = findNearestNeighbor(query, next_d, curr->right);
+        else if (!smallerDimVal(query, curr->anime, d) && curr->left) temp = findNearestNeighbor(query, next_d, curr->left);
         if (shouldReplace(query, nearest, temp)) nearest = temp;
     }
     return nearest;
 }
 
-bool shouldReplace(const Node*& target, const Node*& currentBest, const Node*& potential) const {}
+bool KDTree::shouldReplace(const Node* target, const Node* currentBest, const Node* potential) const {
+    double curr_dist = getRadius(target, currentBest);
+    double new_dist = getRadius(target, potential);
+    return ((curr_dist != new_dist) ? new_dist < curr_dist : potential < currentBest);
+}
 
-bool smallerDimVal(const Node*& first, const Node*& second, int curDim) const {}
+bool KDTree::smallerDimVal(const Node* first, const Node* second, int curDim) const {
+    switch(curDim) {
+        case 0:
+            for (std::string genre : first->genres) if (std::find(second->genres.begin(), second->genres.end(), genre) != second->genres.end()) return true;
+            return false;
+        case 1:
+            return first->episodes < second->episodes;
+        case 2:
+            return first->rating < second->rating;
+        case 3: 
+            return first->members < second->members;
+    }
+    return false;
+}
+
+double KDTree::getRadius(const Node* node1, const Node* node2) const {
+    double radius = 0;
+    for (int i = 0; i < 4; i++) radius += getSplitDist(node1, node2, i);
+    return radius;
+}
+
+double KDTree::getSplitDist(const Node* node1, const Node* node2, int d) const {
+    switch(d) {
+        case 0: {
+            // scale weight of each missing genre by 10
+            double dist = 0;
+            bool found = false;
+            for (std::string genre : node1->genres) {
+                if (std::find(node2->genres.begin(), node2->genres.end(), genre) == node2->genres.end()) {
+                    dist += 10;
+                }
+            }
+            return dist;
+        }
+        case 1:
+            return (node1->episodes - node2->episodes) * (node1->episodes - node2->episodes);
+        case 2:
+            return (node1->rating - node2->rating) * (node1->rating - node2->rating);
+        case 3:
+            // scale weight of members down by 10000^2
+            return (node1->members - node2->members) * (node1->members - node2->members) / 100000000;
+    }
+    return 0;
+}
