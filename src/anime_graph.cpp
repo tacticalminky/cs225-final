@@ -5,8 +5,7 @@
 
 /* Constructor and Deconstructor */
 
-AnimeGraph::AnimeGraph() : tree(NULL) { 
-    // TODO: Implement function
+AnimeGraph::AnimeGraph() : tree(NULL) {
     adjacency_list = std::unordered_map<unsigned, Node*>();
 }
 
@@ -149,28 +148,6 @@ void AnimeGraph::importAnime(std::string frame) {
 }
 
 void AnimeGraph::importRatings(std::string frame) { 
-    // std::unordered_map<unsigned, std::vector<unsigned>> anime_ratings;
-    
-    // std::fstream f(frame);
-    // std::string line;
-    // std::getline(f, line); // skip first line
-    // while (std::getline(f, line)) {
-    //     size_t pos1 = 0;
-    //     size_t pos2 = line.find(",", pos1);
-    //     unsigned userid = std::stoi(line.substr(pos1, pos2 - pos1));
-
-    //     pos1 = pos2 + 1;
-    //     pos2 = line.find(",", pos1);
-    //     unsigned animeid = std::stoi(line.substr(pos1, pos2 - pos1));
-
-    //     anime_ratings[animeid].push_back(userid);
-    // }
-
-    // // sort each vector
-    // for (auto& [anime_id, user_ids] : anime_ratings) {
-    //     std::sort(user_ids.begin(), user_ids.end());
-    // }
-
     std::vector<unsigned> animes;
     
     std::fstream f(frame);
@@ -208,30 +185,4 @@ void AnimeGraph::importRatings(std::string frame) {
         ++count;
     }
     std::cout << std::endl;
-
-    // unsigned count = 1;
-    // // for (const auto& [anime_id_1, user_ids_1] : anime_ratings) {
-    // for (auto iter_1 = anime_ratings.begin(); std::next(iter_1) != anime_ratings.end(); ++iter_1) {
-    // //     for (const auto& [anime_id_2, user_ids_2] : anime_ratings) {
-    //     std::cout << count << " / " << anime_ratings.size() << std::endl;
-    //     for (auto iter_2 = std::next(iter_1); iter_2 != anime_ratings.end(); ++iter_2) {
-    //         for (unsigned user : iter_1->second) {
-    //             if (std::binary_search(iter_2->second.begin(), iter_2->second.end(), user)) {
-    //                 Node* anime1 = getNode(iter_1->first);
-    //                 Node* anime2 = getNode(iter_2->first);
-    //                 if (edgeExists(anime1, anime2)) {
-    //                     Edge* edge = getEdge(anime1, anime2);
-    //                     edge->setWeight(edge->getWeight() + 1);
-    //                 } else {
-    //                     Edge* edge = new Edge (anime1, anime2, 1);
-    //                     adjacency_list[anime1][anime2] = edge;
-    //                     adjacency_list[anime2][anime1] = edge;
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     ++count;
-    // }
-    
-    // return anime_ratings;
 }
