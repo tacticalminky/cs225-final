@@ -193,16 +193,33 @@ std::unordered_map<int,std::vector<int>> AnimeGraph::testImportRatings(std::stri
 
 // Writes the graph as a CSV from an anime to its top twenty closest shows.
 // *Note* the output_location is the file you want it to write to. If the file already
-// exists, it will overwrite the data within that file, if the file doesn't exists, it will
+// exists, it will overwrite the data within that file (clearing everything in its), if the file doesn't exists, it will
 // create that file for you. The default value for output_location should be 
-// output_location = "../data/output-graph.csv"
+// output_location = "../output-graph.csv"
 void AnimeGraph::writeToCSV(std::string output_location) const {
     
     std::ofstream outputGraph;
     outputGraph.open(output_location);
-    if (!fs.is_open()) {
-        std::cout << "Issue with opening the file" << std::endl;
+    if (!outputGraph.is_open()) {
+        std::cout << "Issue with opening / creating the file" << std::endl;
         return;
     }
 
+    // First Line
+    outputGraph << "anime,top_related" << std::endl;
+
+    // Write from anime_ID,"[ top1_id, top2_id, top3_id, ... top20_id]"
+    // Only writing top20_id to cut runtime and to highlights connected components better
+    for (auto node : adjacency_list) {
+        outputGraph << node.first->name;
+        unsigned iterated = 0;
+        for (auto list : node.second) {
+            if (iterated == 20) { break; }
+            outputGraph << ',' << list.first->name << ',' << list.second->getWeight();
+            iterated++;
+        }
+        outputGraph << '\n';
+    }
+
+    outputGraph.close();
 }

@@ -34,10 +34,10 @@ class AnimeGraph {
     bool edgeExists(Node* first, Node* second) const;
 
     std::unordered_map<int,std::vector<int>> testImportRatings(std::string fname);
-    void writeToCSV(std::string output_location) const; 
+    
     KDTree* getTree() const;
 
-    std::unordered_map<int,std::vector<int>> testImportRatings(std::string fname); 
+    void writeToCSV(std::string output_location) const; 
 
     private:
 
