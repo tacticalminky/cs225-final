@@ -8,7 +8,7 @@
 
 class KDTree {
     public:
-        KDTree(const std::unordered_map<Node*, std::unordered_map<Node*, Edge*>>& adjacency_list);
+        KDTree(const std::unordered_map<unsigned, Node*>& adjacency_list);
         KDTree(const KDTree& other);
         KDTree const& operator=(const KDTree& other);
         ~KDTree();
