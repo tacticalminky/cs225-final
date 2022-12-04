@@ -109,3 +109,57 @@ TEST_CASE("AnimeGraph::getAdjacentEdges Tests", "") {
   REQUIRE(edges.find(a.getNode(8)) != edges.end());
   REQUIRE(edges.find(a.getNode(7)) == edges.end());
 }
+
+TEST_CASE("KDTree::findNearestNeighbor Exact Tests", "") {
+  AnimeGraph a;
+  a.makeGraph("../tests/data/test_anime.csv", "../tests/data/test_rating.csv");
+  KDTree* tree = a.getTree();
+  
+  Node* test1 = new Node{21, "test1", std::vector<std::string> {"Action", "Adventure", "Comedy", "Drama", "Sci-Fi", "Space"}, 26, 8.82, 486824};
+  Node* actual1 = a.getNode(1);
+  REQUIRE(tree->findNearestNeighbor(test1) == actual1);
+  
+  Node* test2 = new Node{22, "test2", std::vector<std::string> {"Action, Comedy, Sci-Fi"}, 26, 8.32, 283069};
+  Node* actual2 = a.getNode(6);
+  REQUIRE(tree->findNearestNeighbor(test2) == actual2);
+
+  Node* test3 = new Node{23, "test3", std::vector<std::string> {"Action, Drama, Magic, Mystery, Police, Supernatural"}, 26, 7.36, 64905};
+  Node* actual3 = a.getNode(7);
+  REQUIRE(tree->findNearestNeighbor(test3) == actual3);
+
+  Node* test4 = new Node{24, "test4", std::vector<std::string> {"Action, Comedy, Shounen, Sports"}, 145, 8.08, 83648};
+  Node* actual4 = a.getNode(15);
+  REQUIRE(tree->findNearestNeighbor(test4) == actual4);
+  
+  delete test1;
+  delete test2;
+  delete test3;
+  delete test4;
+}
+
+TEST_CASE("KDTree::findNearestNeighbor Closest Tests", "") {
+  AnimeGraph a;
+  a.makeGraph("../tests/data/test_anime.csv", "../tests/data/test_rating.csv");
+  KDTree* tree = a.getTree();
+  
+  Node* test1 = new Node{21, "test1", std::vector<std::string> {"Action", "Adventure", "Comedy"}, 25, 9.00, 486000};
+  Node* actual1 = a.getNode(1);
+  REQUIRE(tree->findNearestNeighbor(test1) == actual1);
+  
+  Node* test2 = new Node{22, "test2", std::vector<std::string> {"Action, Sci-Fi"}, 27, 8.00, 283000};
+  Node* actual2 = a.getNode(6);
+  REQUIRE(tree->findNearestNeighbor(test2) == actual2);
+
+  Node* test3 = new Node{23, "test3", std::vector<std::string> {"Police, Supernatural"}, 26, 7.00, 64000};
+  Node* actual3 = a.getNode(7);
+  REQUIRE(tree->findNearestNeighbor(test3) == actual3);
+
+  Node* test4 = new Node{24, "test4", std::vector<std::string> {"Shounen"}, 150, 8.00, 83000};
+  Node* actual4 = a.getNode(15);
+  REQUIRE(tree->findNearestNeighbor(test4) == actual4);
+
+  delete test1;
+  delete test2;
+  delete test3;
+  delete test4;
+}
