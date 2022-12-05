@@ -36,8 +36,7 @@ class AnimeGraph {
     std::unordered_map<int,std::vector<int>> testImportRatings(std::string fname);
     
     KDTree* getTree() const;
-
-    void writeToCSV(std::string output_location) const; 
+    void writeToCSV() const; 
 
     private:
 

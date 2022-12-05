@@ -192,14 +192,14 @@ std::unordered_map<int,std::vector<int>> AnimeGraph::testImportRatings(std::stri
 }
 
 // Writes the graph as a CSV from an anime to its top twenty closest shows.
-// *Note* the output_location is the file you want it to write to. If the file already
-// exists, it will overwrite the data within that file (clearing everything in its), if the file doesn't exists, it will
-// create that file for you. The default value for output_location should be 
-// output_location = "../output-graph.csv"
-void AnimeGraph::writeToCSV(std::string output_location) const {
+// *Note* The default value for the output of the CSV is in the data subfolder.
+// We want the output to be in the same place as the python script, as that calls the file from
+// the same folder it exists in. If we want the user to choose the output, we would need to change the python script
+// to tell the user where to pick the CSV from.
+void AnimeGraph::writeToCSV() const {
     
     std::ofstream outputGraph;
-    outputGraph.open(output_location);
+    outputGraph.open("../data/output-graph.csv");
     if (!outputGraph.is_open()) {
         std::cout << "Issue with opening / creating the file" << std::endl;
         return;
