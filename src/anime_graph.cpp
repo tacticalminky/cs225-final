@@ -195,7 +195,7 @@ void AnimeGraph::importRatings(std::string frame) {
         }
         ++count;
     }
-    std::cout << std::endl;
+    //std::cout << std::endl;
 }
 
 // Writes the graph as a CSV from an anime to its top twenty closest shows.
@@ -213,16 +213,16 @@ void AnimeGraph::writeToCSV() const {
     }
 
     // First Line
-    outputGraph << "anime,top_related" << std::endl;
+    outputGraph << "anime_id,top_related_id,weight" << std::endl;
 
     // Write from anime_ID,"[ top1_id, top2_id, top3_id, ... top20_id]"
     // Only writing top20_id to cut runtime and to highlights connected components better
-    for (auto node : adjacency_list) {
-        outputGraph << node.first->name;
+    for (auto node : node_list) {
+        outputGraph << node.first;
         unsigned iterated = 0;
-        for (auto list : node.second) {
+        for (auto edge : node.second->edges) {
             if (iterated == 20) { break; }
-            outputGraph << ',' << list.first->name << ',' << list.second->getWeight();
+            outputGraph << ',' << edge.first << ',' << edge.second->getWeight();
             iterated++;
         }
         outputGraph << '\n';

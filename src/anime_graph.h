@@ -30,6 +30,7 @@ class AnimeGraph {
         bool edgeExists(unsigned id_1, unsigned id_2) const;
 
         KDTree* getTree() const;
+        void writeToCSV() const;
 
     private:
         std::unordered_map<unsigned, Node*> node_list;
