@@ -151,7 +151,7 @@ TEST_CASE("AnimeGraph::dfsSearch Tests", "") {
   AnimeGraph a;
   a.makeGraph("../tests/data/test_anime.csv", "../tests/data/test_rating.csv");
   std::unordered_map<unsigned, Edge*> default_edges;
-  Node* test1 = new Node{0, "Cowboy Bebop", std::vector<std::string>(), 0, 0, 0, default_edges};
+  Node test1{0, "Cowboy Bebop", std::vector<std::string>(), 0, 0, 0, default_edges};
   std::vector<unsigned> rec = a.dfsSearch(test1);
   REQUIRE(rec.size() == 4);
   REQUIRE(rec[0] == 1);
@@ -159,7 +159,7 @@ TEST_CASE("AnimeGraph::dfsSearch Tests", "") {
   REQUIRE(rec[2] == 7);
   REQUIRE(rec[3] == 8);
 
-  Node* test2 = new Node{0, "", std::vector<std::string> {"Action", "Adventure", "Comedy"}, 25, 9.00, 486000, default_edges};
+  Node test2{0, "", std::vector<std::string> {"Action", "Adventure", "Comedy"}, 25, 9.00, 486000, default_edges};
   std::vector<unsigned> rec2 = a.dfsSearch(test2);
   REQUIRE(rec2.size() == 4);
   REQUIRE(rec2[0] == 1);

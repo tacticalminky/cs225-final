@@ -199,11 +199,12 @@ void AnimeGraph::importRatings(std::string frame) {
     std::cout << std::endl;
 }
 
-std::vector<unsigned> AnimeGraph::dfsSearch(Node* node) const {
+std::vector<unsigned> AnimeGraph::dfsSearch(Node node) const {
     std::vector<unsigned> rec;
     std::stack<unsigned> stack;
-    Node* first = getNode(node->name);
-    if (first == NULL) first = tree->findNearestNeighbor(node);
+    Node* first = getNode(node.id);
+    if (first == NULL) first = getNode(node.name);
+    if (first == NULL) first = tree->findNearestNeighbor(&node);
     rec.push_back(first->id);
     for (const auto& e : first->edges) stack.push(e.first);
     for (int i = 0; i < 9; i++) {
