@@ -18,6 +18,8 @@ class Edge {
         void setWeight(int weight) { weight_ = weight; }
 
         bool operator< (const Edge& other) const { return weight_ < other.weight_; }
+        
+        bool operator> (const Edge& other) const { return weight_ > other.weight_; }
 
         bool operator== (const Edge& other) const {
             if (id_1 == other.id_1 && id_2 == other.id_2) return true;

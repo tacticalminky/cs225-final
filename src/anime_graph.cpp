@@ -1,7 +1,9 @@
 #include "anime_graph.h"
+
 #include <fstream>
 #include <iostream>
 #include <algorithm>
+#include <queue>
 
 /* Constructor and Deconstructor */
 
@@ -20,7 +22,7 @@ void AnimeGraph::makeGraph(std::string anime_list_frame, std::string rating_list
     importRatings(rating_list_frame);
     tree = new KDTree(node_list);
 }
-    
+ 
 /* Graph Getters*/
 
 // Returns the adjacent edges of a node. This function assumes the node exists within the graph
@@ -94,6 +96,16 @@ bool AnimeGraph::edgeExists(unsigned id_1, unsigned id_2) const {
     }
 
     return node_list.at(id_1)->edges.contains(id_2);
+}
+
+std::vector<std::string> AnimeGraph::findTop10Related(Node query) const {
+    Node* potential_query = getNode(query.id);
+    if (potential_query != NULL) return top10Related(potential_query);
+
+    potential_query = getNode(query.name);
+    if (potential_query != NULL) return top10Related(potential_query);
+
+    return top10Related(tree->findNearestNeighbor(&query));
 }
 
 /* Private Helpers */
@@ -196,4 +208,52 @@ void AnimeGraph::importRatings(std::string frame) {
         ++count;
     }
     std::cout << std::endl;
+}
+
+
+std::vector<std::string> AnimeGraph::top10Related(Node* query) const {
+    std::unordered_map<unsigned, unsigned> visited;
+    for (const auto& [id, node] : node_list) visited[id] = 0;
+    visited[query->id] = -1;
+
+    auto cost = [&query, &visited, this] (unsigned id_1, unsigned id_2) {
+        if (id_1 == query->id) return getEdge(query->id, id_2)->getWeight();
+        if (id_2 == query->id) return getEdge(query->id, id_1)->getWeight();
+
+        unsigned prev_weight = (visited.at(id_1) != 0) ? visited.at(id_1) : visited.at(id_2);
+
+        return (prev_weight + getEdge(id_1, id_2)->getWeight()) / 2;
+    };
+
+    std::priority_queue<Edge, std::vector<Edge>, std::greater<Edge>> queue;
+    for (const auto& [id, edge] : query->edges) queue.push(*edge);
+    
+    std::vector<Edge> top10;
+    for (int i = 0; i < 10; ++i) top10.push_back(queue.top());
+
+    for (const Edge& edge : top10) {
+        unsigned curr_id = (edge.id_1 != query->id) ? edge.id_1 : edge.id_2;
+        Node* node = getNode(curr_id);
+        
+        visited.at(curr_id) = getEdge(query->id, curr_id)->getWeight();
+        
+        for (const auto& [id, edge] : node->edges) {
+            if (id != query->id) {
+                Edge e = *edge;
+                e.setWeight(cost(e.id_1, e.id_2));
+                if (e.id_1 == curr_id) e.id_1 = query->id;
+                else if (e.id_2 == curr_id) e.id_2 = query->id;
+                queue.push(e);
+            }
+        }
+    }
+    
+    std::vector<std::string> ret;
+    for (int i = 0; i < 10; ++i) {
+        unsigned curr_id = (queue.top().id_1 != query->id) ? queue.top().id_1 : queue.top().id_2;
+        queue.pop();
+        ret.push_back(getNode(curr_id)->name);
+    }
+    
+    return ret;
 }
