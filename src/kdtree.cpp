@@ -2,14 +2,14 @@
 
 #include "kdtree.h"
 
-KDTree::KDTree(const std::unordered_map<Node*, std::unordered_map<Node*, Edge*>>& adjacency_list) {
+KDTree::KDTree(const std::unordered_map<unsigned, Node*>& adjacency_list) {
     if (adjacency_list.empty()) {
       root = nullptr;
       size = 0;
       return;
     }
     std::vector<Node*> points;
-    for (auto pair : adjacency_list) points.push_back(pair.first);
+    for (auto pair : adjacency_list) points.push_back(pair.second);
     buildTree(points, 0, points.size() - 1, 0, root);
     size = adjacency_list.size();
 }

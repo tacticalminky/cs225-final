@@ -9,6 +9,8 @@ The struct for each node / show
 #include <string>
 #include <vector>
 
+#include "edge.h"
+
 struct Node {
     unsigned id;
     std::string name;
@@ -16,4 +18,5 @@ struct Node {
     int episodes;
     double rating;
     unsigned members;
+    std::unordered_map<unsigned, Edge*> edges;
 };
