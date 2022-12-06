@@ -58,19 +58,6 @@ TEST_CASE("AnimeGraph::importAnime Tests", "") {
   REQUIRE(node->members == 9848);
 }
 
-// TEST_CASE("AnimeGraph::importRatings Tests", "") {
-//   AnimeGraph a;
-//   a.makeGraph("../tests/data/test_anime.csv", "../tests/data/test_rating.csv");
-//   std::unordered_map<int,std::vector<int>> r = a.testImportRatings("../tests/data/test_rating.csv");
-//   REQUIRE(r.size() == 4);
-//   REQUIRE(r.at(1).size() == 3);
-//   REQUIRE(r.at(6).size() == 2);
-//   REQUIRE(r.at(7).size() == 3);
-//   REQUIRE(r.at(8).size() == 1);
-//   REQUIRE(r.at(6).at(0) == 1);
-//   REQUIRE(r.at(6).at(1) == 3); 
-// }
-
 TEST_CASE("AnimeGraph::makeGraph Tests", "") {
   AnimeGraph a;
   a.makeGraph("../tests/data/test_anime.csv", "../tests/data/test_rating.csv");

@@ -6,7 +6,7 @@
 /* Constructor and Deconstructor */
 
 AnimeGraph::AnimeGraph() : tree(NULL) {
-    adjacency_list = std::unordered_map<unsigned, Node*>();
+    node_list = std::unordered_map<unsigned, Node*>();
 }
 
 AnimeGraph::~AnimeGraph() { 
@@ -18,7 +18,7 @@ AnimeGraph::~AnimeGraph() {
 void AnimeGraph::makeGraph(std::string anime_list_frame, std::string rating_list_frame) {
     importAnime(anime_list_frame);
     importRatings(rating_list_frame);
-    tree = new KDTree(adjacency_list);
+    tree = new KDTree(node_list);
 }
     
 /* Graph Getters*/
@@ -27,7 +27,7 @@ void AnimeGraph::makeGraph(std::string anime_list_frame, std::string rating_list
 std::unordered_map<unsigned, Edge*> AnimeGraph::getAdjacentEdges(unsigned node) const {
     if (!nodeExists(node)) return std::unordered_map<unsigned, Edge*>();
 
-    return adjacency_list.at(node)->edges;
+    return node_list.at(node)->edges;
 }
 
 // Returns the edges of two nodes. This function assumes the node exists within the graph
@@ -36,18 +36,18 @@ Edge* AnimeGraph::getEdge(unsigned first, unsigned second) const {
         return NULL;
     }
 
-    return adjacency_list.at(first)->edges.at(second);
+    return node_list.at(first)->edges.at(second);
 }
 
 // Return the node with the largest # of members. If two shows have the same # of members, the better rated shows gets taken.
 // If the map is empty, returns NULL
 Node* AnimeGraph::getMostPopular() const { 
-    if (adjacency_list.empty()) { 
+    if (node_list.empty()) { 
         return NULL;
     }
 
     Node* biggest = NULL;
-    for (const auto& [id, node] : adjacency_list) {
+    for (const auto& [id, node] : node_list) {
         if (!biggest) {
             biggest = node;
         } else if (node->members > biggest->members) {
@@ -62,9 +62,9 @@ Node* AnimeGraph::getMostPopular() const {
 
 // Returns the node associated with the specified anime_name. If it does not exist, return NULL
 Node* AnimeGraph::getNode(std::string anime_name) const {
-    for (auto it = adjacency_list.begin(); it != adjacency_list.end(); it++) {
-        if (it->second->name == anime_name) {
-            return it->second;
+    for (const auto& [id, node] : node_list) {
+        if (node->name == anime_name) {
+            return node;
         }
     }
     return NULL;
@@ -72,9 +72,9 @@ Node* AnimeGraph::getNode(std::string anime_name) const {
 
 // Returns the node associated with the specified anime_name. If it does not exist, return NULL
 Node* AnimeGraph::getNode(unsigned anime_id) const {
-    if (!adjacency_list.contains(anime_id)) return NULL;
+    if (!node_list.contains(anime_id)) return NULL;
 
-    return adjacency_list.at(anime_id);
+    return node_list.at(anime_id);
 }
 
 // Returns a constant pointer to the KDTree
@@ -83,17 +83,17 @@ KDTree* AnimeGraph::getTree() const { return tree; }
 /* Check existence of node or edge */
 
 // Returns whether the node exists in adjacency_list
-bool AnimeGraph::nodeExists(unsigned node) const { 
-    return adjacency_list.contains(node); 
+bool AnimeGraph::nodeExists(unsigned anime_id) const { 
+    return node_list.contains(anime_id); 
 }
 
 // Returns whether the edge between two nodes exists
-bool AnimeGraph::edgeExists(unsigned first, unsigned second) const { 
-    if (!nodeExists(first) || !nodeExists(second)) {
+bool AnimeGraph::edgeExists(unsigned id_1, unsigned id_2) const { 
+    if (!nodeExists(id_1) || !nodeExists(id_2)) {
         return false;
     }
 
-    return adjacency_list.at(first)->edges.contains(second);
+    return node_list.at(id_1)->edges.contains(id_2);
 }
 
 /* Private Helpers */
@@ -143,7 +143,7 @@ void AnimeGraph::importAnime(std::string frame) {
 
         anime->edges = std::unordered_map<unsigned, Edge*>();
         
-        adjacency_list[anime->id] = anime;
+        node_list[anime->id] = anime;
     }
 }
 
@@ -154,9 +154,20 @@ void AnimeGraph::importRatings(std::string frame) {
     std::string line;
     std::getline(f, line); // skip first line
     unsigned curr_userid = 0;
-    int count = 1;
+    int count = 0;
     while (std::getline(f, line)) {
-        std::cout << count << " / " << 5283600 << "\t\r";
+        if (count % 52836 == 0) {
+            std::cout << "[";
+            int pos = count / 52836;
+            for (int i = 0; i < 99; ++i) {
+                if (i < pos) std::cout << "=";
+                else if (i == pos) std::cout << ">";
+                else std::cout << " ";
+            }
+            std::cout << "] " << count / 52836 << "%\r";
+            std::cout.flush();
+        }
+
         size_t pos1 = 0;
         size_t pos2 = line.find(",", pos1);
         unsigned userid = std::stoi(line.substr(pos1, pos2 - pos1));
@@ -171,13 +182,13 @@ void AnimeGraph::importRatings(std::string frame) {
             animes.push_back(animeid);
         } else {
             for (unsigned anime : animes) {
-                if (adjacency_list[animeid]->edges.find(anime) != adjacency_list[animeid]->edges.end()) {
+                if (node_list[animeid]->edges.find(anime) != node_list[animeid]->edges.end()) {
                     Edge* edge = getEdge(animeid, anime);
                     edge->setWeight(edge->getWeight() + 1);
                 } else {
                     Edge* edge = new Edge (animeid, anime, 1);
-                    adjacency_list[animeid]->edges[anime] = edge;
-                    adjacency_list[anime]->edges[animeid] = edge;
+                    node_list[animeid]->edges[anime] = edge;
+                    node_list[anime]->edges[animeid] = edge;
                 }
             }
             animes.push_back(animeid);
