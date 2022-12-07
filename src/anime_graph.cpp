@@ -100,12 +100,10 @@ bool AnimeGraph::edgeExists(unsigned id_1, unsigned id_2) const {
 
 std::vector<std::string> AnimeGraph::findTop10Related(Node query) const {
     Node* potential_query = getNode(query.id);
-    if (potential_query != NULL) return top10Related(potential_query);
-
-    potential_query = getNode(query.name);
-    if (potential_query != NULL) return top10Related(potential_query);
-
-    return top10Related(tree->findNearestNeighbor(&query));
+    if (potential_query == NULL) potential_query = getNode(query.name);
+    if (potential_query == NULL) potential_query = tree->findNearestNeighbor(&query);
+    
+    return top10Related(potential_query);
 }
 
 /* Private Helpers */
@@ -228,10 +226,11 @@ std::vector<std::string> AnimeGraph::top10Related(Node* query) const {
     std::priority_queue<Edge, std::vector<Edge>, std::greater<Edge>> queue;
     for (const auto& [id, edge] : query->edges) queue.push(*edge);
     
-    std::vector<Edge> top10;
-    for (int i = 0; i < 10; ++i) top10.push_back(queue.top());
+    std::vector<Edge> top_edges;
+    unsigned top_num = (queue.size() >= 10) ? 10 : queue.size();
+    for (unsigned i = 0; i < top_num; ++i) top_edges.push_back(queue.top());
 
-    for (const Edge& edge : top10) {
+    for (const Edge& edge : top_edges) {
         unsigned curr_id = (edge.id_1 != query->id) ? edge.id_1 : edge.id_2;
         Node* node = getNode(curr_id);
         
@@ -249,7 +248,8 @@ std::vector<std::string> AnimeGraph::top10Related(Node* query) const {
     }
     
     std::vector<std::string> ret;
-    for (int i = 0; i < 10; ++i) {
+    top_num = (queue.size() >= 10) ? 10 : queue.size();
+    for (unsigned i = 0; i < top_num; ++i) {
         unsigned curr_id = (queue.top().id_1 != query->id) ? queue.top().id_1 : queue.top().id_2;
         queue.pop();
         ret.push_back(getNode(curr_id)->name);
