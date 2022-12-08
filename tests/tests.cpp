@@ -91,6 +91,35 @@ TEST_CASE("AnimeGraph::getAdjacentEdges Tests", "") {
   REQUIRE(edges.find(7) == edges.end());
 }
 
+TEST_CASE("AnimeGraph::findTop10Related", "") {
+  AnimeGraph a;
+  a.makeGraph("../tests/data/test_anime.csv", "../tests/data/test_rating.csv");
+
+  std::vector<std::string> sol{"Witch Hunter Robin", "Trigun", "Beet the Vandel Buster"};
+  
+  Node q1, q2, q3;
+
+  q1.id = 1;
+  std::vector<std::string> top10_1 = a.findTop10Related(q1);
+  REQUIRE(top10_1.size() == 3);
+  REQUIRE(top10_1 == sol);
+
+  q2.name = "Cowboy Bebop";
+  std::vector<std::string> top10_2 = a.findTop10Related(q2);
+  REQUIRE(top10_2.size() == 3);
+  REQUIRE(top10_2 == sol);
+  
+  q3.genres = std::vector<std::string>{"Action", "Adventure", "Comedy", "Drama", "Sci-Fi", "Space"};
+  std::vector<std::string> top10_3 = a.findTop10Related(q3);
+
+  for (const std::string& s : top10_3) std::cout << s << " | ";
+  std::cout << std::endl;
+
+  REQUIRE(top10_3.size() == 4);
+  sol = std::vector<std::string>{"Cowboy Bebop", "Witch Hunter Robin", "Trigun", "Beet the Vandel Buster"};
+  REQUIRE(top10_3 == sol);
+}
+
 TEST_CASE("KDTree::findNearestNeighbor Exact Tests", "") {
   AnimeGraph a;
   a.makeGraph("../tests/data/test_anime.csv", "../tests/data/test_rating.csv");
