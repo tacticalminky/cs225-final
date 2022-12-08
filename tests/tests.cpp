@@ -111,10 +111,6 @@ TEST_CASE("AnimeGraph::findTop10Related", "") {
   
   q3.genres = std::vector<std::string>{"Action", "Adventure", "Comedy", "Drama", "Sci-Fi", "Space"};
   std::vector<std::string> top10_3 = a.findTop10Related(q3);
-
-  for (const std::string& s : top10_3) std::cout << s << " | ";
-  std::cout << std::endl;
-
   REQUIRE(top10_3.size() == 4);
   sol = std::vector<std::string>{"Cowboy Bebop", "Witch Hunter Robin", "Trigun", "Beet the Vandel Buster"};
   REQUIRE(top10_3 == sol);
