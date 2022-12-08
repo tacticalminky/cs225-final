@@ -34,6 +34,8 @@ class AnimeGraph {
 
         KDTree* getTree() const;
 
+        std::vector<unsigned> dfsSearch(Node node) const;
+
     private:
         std::unordered_map<unsigned, Node*> node_list;
         KDTree* tree;
