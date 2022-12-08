@@ -3,7 +3,11 @@
 #include <fstream>
 #include <iostream>
 #include <algorithm>
+<<<<<<< HEAD
 #include <queue>
+=======
+#include <stack>
+>>>>>>> main
 
 /* Constructor and Deconstructor */
 
@@ -308,4 +312,27 @@ void AnimeGraph::writeToCSV() const {
     }
 
     outputGraph.close();
+}
+
+std::vector<unsigned> AnimeGraph::dfsSearch(Node node) const {
+    std::vector<unsigned> rec;
+    std::stack<unsigned> stack;
+    Node* first = getNode(node.id);
+    if (first == NULL) first = getNode(node.name);
+    if (first == NULL) first = tree->findNearestNeighbor(&node);
+    rec.push_back(first->id);
+    for (const auto& e : first->edges) stack.push(e.first);
+    for (int i = 0; i < 9; i++) {
+        if (stack.empty()) return rec;
+        unsigned to_add = stack.top();
+        stack.pop();
+        while (std::find(rec.begin(), rec.end(), to_add) != rec.end()) {
+            if (stack.empty()) return rec;
+            to_add = stack.top();
+            stack.pop();
+        }
+        rec.push_back(to_add);
+        for (const auto& e : getNode(to_add)->edges) stack.push(e.first);
+    }
+    return rec;
 }
