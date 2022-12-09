@@ -212,7 +212,7 @@ std::vector<unsigned> AnimeGraph::Node15(Node query) const {
     if (first == NULL) first = tree->findNearestNeighbor(&query);
     rec.push_back(first->id);
     for (const auto& e : first->edges) stack.push(e.first);
-    for (int i = 0; i < 14; i++) {
+    for (int i = 0; i < 15; i++) {
         if (stack.empty()) return rec;
         unsigned to_add = stack.top();
         stack.pop();
@@ -269,8 +269,8 @@ void AnimeGraph::writeToCSV() const {
         // Push top_related
         std::vector<unsigned> top = Node15(*node);
         std::vector<Node*> top15;
-        for (unsigned x : top) {
-            top15.push_back( node_list.at(x) );
+        for (unsigned x = 1; x < top.size(); x++) {
+            top15.push_back( node_list.at( top[x] ) );
         }
 
         if (!top15.empty()) {
@@ -284,9 +284,10 @@ void AnimeGraph::writeToCSV() const {
                 }
                 outputGraph << "," << close->name;
             }
+            outputGraph << '"';
         }
 
-        outputGraph << '"' << '\n';
+        outputGraph << '\n';
     }
     std::cout << "Finished writing" << std::endl;
     outputGraph.close();
