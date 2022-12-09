@@ -86,11 +86,12 @@ void KDTree::buildCopy(TreeNode*& curr, const TreeNode* other) {
 
 void KDTree::deleteNode(TreeNode*& root) {
     if (root) {
-    deleteNode(root->left);
-    deleteNode(root->right);
-    delete root;
-    root = NULL;
-  }
+        root->anime = NULL;
+        deleteNode(root->left);
+        deleteNode(root->right);
+        delete root;
+        root = NULL;
+    }
 }
 
 Node* KDTree::findNearestNeighbor(const Node* query, int d, TreeNode* curr) const {
