@@ -13,7 +13,24 @@ AnimeGraph::AnimeGraph() : tree(NULL) {
 }
 
 AnimeGraph::~AnimeGraph() { 
-    // TODO: Implement function
+    for (auto& [id, node_ptr] : node_list) {
+        for (auto& [id_other, edge_ptr] : node_ptr->edges) {
+            delete edge_ptr;
+            edge_ptr = NULL;
+            node_list.at(id_other)->edges.erase(id);
+        }
+        
+        node_ptr->edges.clear();
+        delete node_ptr;
+        node_ptr = NULL;
+    }
+
+    node_list.clear();
+
+    if (tree != NULL) {
+        delete tree;
+      tree = NULL;
+    }
 }
     
 /* Graph Creator */
