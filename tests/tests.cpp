@@ -30,12 +30,6 @@ TEST_CASE("Edge Tests", "") {
   delete n3;
 }
 
-TEST_CASE("AnimeGraph::~AnimeGraph Test", "") {
-  AnimeGraph a;
-  a.makeGraph("../tests/data/test_anime.csv", "../tests/data/test_rating.csv");
-  REQUIRE_NOTHROW(a.~AnimeGraph());
-}
-
 TEST_CASE("AnimeGraph::importAnime Tests", "") {
   AnimeGraph a;
   a.makeGraph("../tests/data/test_anime.csv", "../tests/data/test_rating.csv");
