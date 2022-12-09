@@ -12,8 +12,25 @@ AnimeGraph::AnimeGraph() : tree(NULL) {
     node_list = std::unordered_map<unsigned, Node*>();
 }
 
-AnimeGraph::~AnimeGraph() { 
-    // TODO: Implement function
+AnimeGraph::~AnimeGraph() {
+    for (auto& [id, node_ptr] : node_list) {
+        for (auto& [id_other, edge_ptr] : node_ptr->edges) {
+            delete edge_ptr;
+            edge_ptr = NULL;
+            
+            node_list.at(id_other)->edges.erase(id);
+        } 
+        node_ptr->edges.clear();
+
+        delete node_ptr;
+        node_ptr = NULL;
+    }
+    node_list.clear();
+
+    if (tree != NULL) {
+        delete tree;
+        tree = NULL;
+    }
 }
     
 /* Graph Creator */
@@ -23,7 +40,7 @@ void AnimeGraph::makeGraph(std::string anime_list_frame, std::string rating_list
     importRatings(rating_list_frame);
     tree = new KDTree(node_list);
 }
-    
+ 
 /* Graph Getters*/
 
 // Returns the adjacent edges of a node. This function assumes the node exists within the graph
@@ -97,6 +114,21 @@ bool AnimeGraph::edgeExists(unsigned id_1, unsigned id_2) const {
     }
 
     return node_list.at(id_1)->edges.contains(id_2);
+}
+
+std::vector<std::string> AnimeGraph::findTop10Related(Node query) const {
+    Node* potential_query = getNode(query.id);
+    if (potential_query == NULL) potential_query = getNode(query.name);
+    if (potential_query == NULL) {
+        potential_query = tree->findNearestNeighbor(&query); // should also include query
+        std::vector<std::string> ret;
+        ret.push_back(potential_query->name);
+        for (const std::string& s : top10Related(potential_query)) ret.push_back(s);
+        if (ret.size() > 10) ret.pop_back();
+        return ret;
+    }
+    
+    return top10Related(potential_query);
 }
 
 /* Private Helpers */
@@ -201,7 +233,6 @@ void AnimeGraph::importRatings(std::string frame) {
     std::cout << std::endl;
 }
 
-
 // To be used for WriteToCSV and not to be called by the user.
 // A similar function exists to be called by the user
 std::vector<unsigned> AnimeGraph::Node15(Node query) const {
@@ -226,10 +257,6 @@ std::vector<unsigned> AnimeGraph::Node15(Node query) const {
     }
     return rec;
 }
-
-// Helper function to find the other anime_id in an edge
-unsigned AnimeGraph::getOtherId(unsigned curr_id, Edge* edge) const { return (curr_id == edge->id_1) ? edge->id_2 : edge->id_1; }
-
 
 // Writes the graph as a CSV from an anime to its top twenty closest shows.
 // *Note* The default value for the output of the CSV is in the data subfolder.
@@ -293,6 +320,69 @@ void AnimeGraph::writeToCSV() const {
     outputGraph.close();
 }
 
+std::vector<std::string> AnimeGraph::top10Related(Node* query) const {
+    std::unordered_map<unsigned, unsigned> visited;
+    for (const auto& [id, node] : node_list) visited[id] = 0;
+    visited[query->id] = -1;
+
+    auto cost = [&query, &visited, this] (unsigned id_1, unsigned id_2) {
+        if (id_1 == query->id) return getEdge(query->id, id_2)->getWeight();
+        if (id_2 == query->id) return getEdge(query->id, id_1)->getWeight();
+
+        unsigned prev_weight = (visited.at(id_1) != 0) ? visited.at(id_1) : visited.at(id_2);
+
+        return (prev_weight + getEdge(id_1, id_2)->getWeight()) / 2;
+    };
+
+    std::priority_queue<Edge> queue;
+    for (const auto& [id, edge] : query->edges) queue.push(*edge);
+    
+    std::vector<Edge> top_edges;
+    unsigned top_num = (queue.size() >= 10) ? 10 : queue.size();
+    for (unsigned i = 0; i < top_num; ++i) {
+        top_edges.push_back(queue.top());
+        queue.pop();
+    }
+
+    for (const Edge& edge : top_edges) {
+        queue.push(edge);
+        
+        unsigned curr_id = (edge.id_1 != query->id) ? edge.id_1 : edge.id_2;
+        Node* node = getNode(curr_id);
+        
+        visited.at(curr_id) = getEdge(query->id, curr_id)->getWeight();
+        
+        for (const auto& [id, edge] : node->edges) {
+            if (id != query->id) {
+                Edge e = *edge;
+                e.setWeight(cost(e.id_1, e.id_2));
+                if (e.id_1 == curr_id) e.id_1 = query->id;
+                else if (e.id_2 == curr_id) e.id_2 = query->id;
+                
+                // if this edge exists, update it
+                auto loc = std::find(top_edges.begin(), top_edges.end(), e);
+                if (loc != top_edges.end()) {
+                    if (e.getWeight() > (*loc).getWeight()) {
+                        (*loc).setWeight(e.getWeight());
+                    }
+                } else {
+                    queue.push(e);
+                }
+            }
+        }
+    }
+    
+    std::vector<std::string> ret;
+    top_num = (queue.size() >= 10) ? 10 : queue.size();
+    for (unsigned i = 0; i < top_num; ++i) {
+        unsigned curr_id = (queue.top().id_1 != query->id) ? queue.top().id_1 : queue.top().id_2;
+        queue.pop();
+        ret.push_back(getNode(curr_id)->name);
+    }
+    
+    return ret;
+}
+    
 std::vector<unsigned> AnimeGraph::dfsSearch(Node node) const {
     std::vector<unsigned> rec;
     std::stack<unsigned> stack;

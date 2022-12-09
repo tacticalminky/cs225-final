@@ -7,6 +7,7 @@ The graph of nodes and edges
 */
 
 #include <unordered_map>
+#include <vector>
 
 #include "node.h"
 #include "edge.h"
@@ -29,6 +30,8 @@ class AnimeGraph {
         bool nodeExists(unsigned anime_id) const;
         bool edgeExists(unsigned id_1, unsigned id_2) const;
 
+        std::vector<std::string> findTop10Related(Node query) const;
+
         KDTree* getTree() const;
         void writeToCSV() const;
 
@@ -40,8 +43,7 @@ class AnimeGraph {
 
         void importAnime(std::string fname);
         void importRatings(std::string fname);
-
+        
         std::vector<unsigned> Node15(Node query) const;
-        unsigned getOtherId(unsigned curr_id, Edge* edge) const;
+        std::vector<std::string> top10Related(Node* query) const;
 };
-
