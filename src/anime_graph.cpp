@@ -3,11 +3,8 @@
 #include <fstream>
 #include <iostream>
 #include <algorithm>
-<<<<<<< HEAD
 #include <queue>
-=======
 #include <stack>
->>>>>>> main
 
 /* Constructor and Deconstructor */
 
@@ -207,51 +204,27 @@ void AnimeGraph::importRatings(std::string frame) {
 
 // To be used for WriteToCSV and not to be called by the user.
 // A similar function exists to be called by the user
-std::vector<Node*> AnimeGraph::Node15(Node* query) const {
-    std::unordered_map<unsigned, unsigned> visited;
-    for (const auto& [id, node] : node_list) visited[id] = 0;
-    visited[query->id] = -1;
-
-    auto cost = [&query, &visited, this] (unsigned id_1, unsigned id_2) {
-        if (id_1 == query->id) { return getEdge(query->id, id_2)->getWeight(); }
-        if (id_2 == query->id) { return getEdge(query->id, id_1)->getWeight(); }
-
-        unsigned prev_weight = (visited.at(id_1) != 0) ? visited.at(id_1) : visited.at(id_2);
-
-        return (prev_weight + getEdge(id_1, id_2)->getWeight()) / 2;
-    };
-
-    std::priority_queue<Edge, std::vector<Edge>, std::greater<Edge>> queue;
-    for (const auto& [id, edge] : query->edges) { queue.push(*edge); }
-    
-    std::vector<Edge> top15;
-    for (int i = 0; i < 15; ++i) top15.push_back(queue.top());
-
-    for (const Edge& edge : top15) {
-        unsigned curr_id = (edge.id_1 != query->id) ? edge.id_1 : edge.id_2;
-        Node* node = getNode(curr_id);
-        
-        visited.at(curr_id) = getEdge(query->id, curr_id)->getWeight();
-        
-        for (const auto& [id, edge] : node->edges) {
-            if (id != query->id) {
-                Edge e = *edge;
-                e.setWeight(cost(e.id_1, e.id_2));
-                if (e.id_1 == curr_id) e.id_1 = query->id;
-                else if (e.id_2 == curr_id) e.id_2 = query->id;
-                queue.push(e);
-            }
+std::vector<unsigned> AnimeGraph::Node15(Node query) const {
+    std::vector<unsigned> rec;
+    std::stack<unsigned> stack;
+    Node* first = getNode(query.id);
+    if (first == NULL) first = getNode(query.name);
+    if (first == NULL) first = tree->findNearestNeighbor(&query);
+    rec.push_back(first->id);
+    for (const auto& e : first->edges) stack.push(e.first);
+    for (int i = 0; i < 14; i++) {
+        if (stack.empty()) return rec;
+        unsigned to_add = stack.top();
+        stack.pop();
+        while (std::find(rec.begin(), rec.end(), to_add) != rec.end()) {
+            if (stack.empty()) return rec;
+            to_add = stack.top();
+            stack.pop();
         }
+        rec.push_back(to_add);
+        for (const auto& e : getNode(to_add)->edges) stack.push(e.first);
     }
-    
-    std::vector<Node*> ret;
-    for (int i = 0; i < 15; ++i) {
-        unsigned curr_id = (queue.top().id_1 != query->id) ? queue.top().id_1 : queue.top().id_2;
-        queue.pop();
-        ret.push_back(getNode(curr_id));
-    }
-    
-    return ret;
+    return rec;
 }
 
 // Helper function to find the other anime_id in an edge
@@ -274,9 +247,9 @@ void AnimeGraph::writeToCSV() const {
     }
 
     // First Line
-    outputGraph << "id,name,genres,episodes,rating,members,top_related_id,weight" << std::endl;
+    outputGraph << "id,name,genres,episodes,rating,members,top_related_id" << std::endl;
 
-    // Write from NODE_DATA,"top1_id,weight1,top2_id,weight2,top3_id,weight3,... top15_id,weight15"
+    // Write from NODE_DATA,"top1_id,top2_id,... top15_id"
     // Only writing top15_id to cut runtime and to highlights connected components better
     // NODE_DATA will be similar to the anime-filtered.csv file
     for (auto nodes : node_list) {
@@ -293,8 +266,13 @@ void AnimeGraph::writeToCSV() const {
         outputGraph << ',' << node->rating; // rating
         outputGraph << ',' << node->members; // members
 
-        // Push top_related,weight
-        std::vector<Node*> top15 = Node15(node);
+        // Push top_related
+        std::vector<unsigned> top = Node15(*node);
+        std::vector<Node*> top15;
+        for (unsigned x : top) {
+            top15.push_back( node_list.at(x) );
+        }
+
         if (!top15.empty()) {
             outputGraph << ',' << '"';
             bool first = true;
@@ -304,13 +282,13 @@ void AnimeGraph::writeToCSV() const {
                     first = false;
                     continue;
                 }
-                outputGraph << ", " << close->name;
+                outputGraph << "," << close->name;
             }
         }
 
-        outputGraph << '\n';
+        outputGraph << '"' << '\n';
     }
-
+    std::cout << "Finished writing" << std::endl;
     outputGraph.close();
 }
 

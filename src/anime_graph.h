@@ -41,7 +41,7 @@ class AnimeGraph {
         void importAnime(std::string fname);
         void importRatings(std::string fname);
 
-        std::vector<Node*> Node15(Node* query) const;
+        std::vector<unsigned> Node15(Node query) const;
         unsigned getOtherId(unsigned curr_id, Edge* edge) const;
 };
 
