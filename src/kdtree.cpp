@@ -153,8 +153,10 @@ double KDTree::getSplitDist(const Node* node1, const Node* node2, int d) const {
             return dist;
         }
         case 1:
+            if (node1->episodes == 0 || node2->episodes == 0) return 50;
             return (node1->episodes - node2->episodes) * (node1->episodes - node2->episodes);
         case 2:
+            if (node1->rating == 0 || node2->rating == 0) return 50;
             return (node1->rating - node2->rating) * (node1->rating - node2->rating);
         case 3:
             // scale weight of members down by 10000^2
