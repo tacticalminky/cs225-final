@@ -17,11 +17,18 @@ AnimeGraph::~AnimeGraph() {
             edge_ptr = NULL;
             node_list.at(id_other)->edges.erase(id);
         }
+        
         node_ptr->edges.clear();
         delete node_ptr;
         node_ptr = NULL;
     }
+
     node_list.clear();
+
+    if (tree != NULL) {
+        delete tree;
+      tree = NULL;
+    }
 }
     
 /* Graph Creator */
