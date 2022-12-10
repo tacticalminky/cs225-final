@@ -23,6 +23,10 @@ We aim to create a graph from [Anime Recommendations Database](https://www.kaggl
     ./main
     ```
 
+3. Once everything is loaded in the program, you will be prompted if you want to search for an anime.
+
+4. If you wish to search enter in the appropriate information for some recomendations.
+
 ### Graphical output
 
 1. Install Dependencies
