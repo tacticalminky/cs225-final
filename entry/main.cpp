@@ -12,15 +12,18 @@ int main() {
     std::string res;
     std::cout << "Would you like some recommendations? (y/n) ";
     std::cin >> res;
-    if (res == "y" || res == "yes") {
+    while (res == "y" || res == "yes") {
+        res.clear();
+        
         Node node;
-        std::cout << std::endl << "Please input some of the following information" << std::endl;
 
+        std::cout << std::endl << "Please input some of the following information" << std::endl;
         std::cout << "For the folowing please put in a number or 0" << std::endl;
         
         std::cout << "ID: ";
         std::cin >> res;
         node.id = std::stoul(res);
+        res.clear();
 
         std::cout << "Name: ";
         std::cin >> node.name;
@@ -34,20 +37,24 @@ int main() {
             node.genres.push_back(res.substr(pos_1, pos_2));
             pos_1 = pos_2;
         }
+        res.clear();
         
         std::cout << "For the folowing please put in a number or 0" << std::endl;
 
         std::cout << "Episodes: ";
         std::cin >> res;
         node.episodes = std::stoi(res);
+        res.clear();
         
         std::cout << "Rating: ";
         std::cin >> res;
         node.rating = std::stod(res);
+        res.clear();
         
         std::cout << "Members: ";
         std::cin >> res;
         node.members = std::stoul(res);
+        res.clear();
 
         std::cout << "One moment Please." << std::endl;
 
@@ -57,6 +64,11 @@ int main() {
         for (unsigned i = 0; i < recommendations.size(); ++i) {
             std::cout << i + 1 << ": " << recommendations.at(i) << std::endl;
         }
+
+        res.clear();
+
+        std::cout << "Would you like another recommendations? (y/n) ";
+        std::cin >> res;
     }
 
     return 0;
