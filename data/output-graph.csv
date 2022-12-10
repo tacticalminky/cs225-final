@@ -1,6 +1,0 @@
-id,name,genres,episodes,rating,members,top_related_name
-15,Eyeshield 21,"Action, Comedy, Shounen, Sports",145,8.08,83648
-8,Beet the Vandel Buster,"Default",-1,-1,9848,"Cowboy Bebop,Witch Hunter Robin,Trigun,Trigun"
-7,Witch Hunter Robin,"Action, Drama, Magic, Mystery, Police, Supernatural",26,7.36,64905,"Cowboy Bebop,Trigun,Beet the Vandel Buster"
-6,Trigun,"Action, Comedy, Sci-Fi",26,8.32,283069,"Witch Hunter Robin,Cowboy Bebop,Beet the Vandel Buster,Beet the Vandel Buster"
-1,Cowboy Bebop,"Action, Adventure, Comedy, Drama, Sci-Fi, Space",26,8.82,486824,"Witch Hunter Robin,Trigun,Beet the Vandel Buster"
