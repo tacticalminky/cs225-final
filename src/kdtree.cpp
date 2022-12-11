@@ -2,23 +2,39 @@
 
 #include "kdtree.h"
 
-KDTree::KDTree(const std::unordered_map<unsigned, Node*>& adjacency_list) {
-    if (adjacency_list.empty()) {
+/**
+ * @brief Construct a new KDTree::KDTree object from a list of nodes
+ * 
+ * @param node_list map of id to node pointer
+ */
+KDTree::KDTree(const std::unordered_map<unsigned, Node*>& node_list) {
+    if (node_list.empty()) {
       root = nullptr;
       size = 0;
       return;
     }
     std::vector<Node*> points;
-    for (auto pair : adjacency_list) points.push_back(pair.second);
+    for (auto pair : node_list) points.push_back(pair.second);
     buildTree(points, 0, points.size() - 1, 0, root);
-    size = adjacency_list.size();
+    size = node_list.size();
 }
 
+/**
+ * @brief Construct a new KDTree::KDTree object as a deep copy of another
+ * 
+ * @param other 
+ */
 KDTree::KDTree(const KDTree& other) {
     buildCopy(root, other.root);
     size = other.size;
 }
 
+/**
+ * @brief Sets the KDTree to be the same object as another
+ * 
+ * @param other 
+ * @return KDTree const& 
+ */
 KDTree const& KDTree::operator=(const KDTree& other) {
     if (this->root == other.root) return *this;
     this->~KDTree();
@@ -26,13 +42,34 @@ KDTree const& KDTree::operator=(const KDTree& other) {
     return *this;
 }
 
+/**
+ * @brief Destroy the KDTree::KDTree object
+ * 
+ */
 KDTree::~KDTree() {
     size = 0;
     deleteNode(root);
 }
 
+/**
+ * @brief find the node closest the the query
+ * Calls helper starting at the root node and dimension 0
+ * 
+ * @param query
+ * @return Node* 
+ */
 Node* KDTree::findNearestNeighbor(const Node* query) const { return findNearestNeighbor(query, 0, root); }
 
+/**
+ * @brief puts all points between start and end to the left or right of the median node, based on the dimension
+ * 
+ * @param arr vector of node pointers
+ * @param start index of start point (inclusive)
+ * @param end index of end point (inclusive)
+ * @param p_idx index of median node in current dimension
+ * @param d current dimension
+ * @return index of median
+ */
 int KDTree::partition(std::vector<Node*>& arr, int start, int end, int p_idx, int d) {
     Node* pivot_value = arr[p_idx];
     Node* temp = arr[end];
@@ -53,6 +90,16 @@ int KDTree::partition(std::vector<Node*>& arr, int start, int end, int p_idx, in
     return idx;
 }
 
+/**
+ * @brief finds the index of the median value between start and end in a given dimension
+ * 
+ * @param arr vector of node pointers
+ * @param start index of start point (inclusive)
+ * @param end index of end point (inclusive)
+ * @param k desired mid point
+ * @param d current dimension
+ * @return index of median
+ */
 int KDTree::median(std::vector<Node*>& arr, int start, int end, int k, int d) {
     if (start == end) return start;
     int p_idx = k;
@@ -62,6 +109,16 @@ int KDTree::median(std::vector<Node*>& arr, int start, int end, int k, int d) {
     return median(arr, p_idx + 1, end, k, d);
 }
 
+/**
+ * @brief recursively builds a KDTree from an array, cycling through 5 dimensions
+ * NOTE: each dimension corresponds to an element of the Node structure
+ * 
+ * @param arr vector of node pointers
+ * @param start index of the start point (inclusive)
+ * @param end index of the end point (inclusive)
+ * @param d current dimension
+ * @param curr current TreeNode
+ */
 void KDTree::buildTree(std::vector<Node*>& arr, int start, int end, int d, TreeNode*& curr) {
     if (start <= end) {
     int middle = median(arr, start, end, (start+end)/2, d);
@@ -74,6 +131,12 @@ void KDTree::buildTree(std::vector<Node*>& arr, int start, int end, int d, TreeN
   }
 }
 
+/**
+ * @brief recursively build a copy of an existing KDTree
+ * 
+ * @param curr current TreeNode
+ * @param other TreeNode of existing KDTree
+ */
 void KDTree::buildCopy(TreeNode*& curr, const TreeNode* other) {
     if (other != NULL) {
     curr = new TreeNode(other->anime);
@@ -84,6 +147,11 @@ void KDTree::buildCopy(TreeNode*& curr, const TreeNode* other) {
     }
 }
 
+/**
+ * @brief recursively delete all TreeNodes
+ * 
+ * @param root
+ */
 void KDTree::deleteNode(TreeNode*& root) {
     if (root) {
         root->anime = NULL;
@@ -94,6 +162,14 @@ void KDTree::deleteNode(TreeNode*& root) {
     }
 }
 
+/**
+ * @brief 
+ * 
+ * @param query desired node
+ * @param d current dimension
+ * @param curr current TreeNode
+ * @return Node* 
+ */
 Node* KDTree::findNearestNeighbor(const Node* query, int d, TreeNode* curr) const {
     if (!curr->left && !curr->right) return curr->anime;
     int next_d = (d + 1) % 4;
@@ -112,12 +188,31 @@ Node* KDTree::findNearestNeighbor(const Node* query, int d, TreeNode* curr) cons
     return nearest;
 }
 
+/**
+ * @brief returns whether a node is closer to the desired node than the current closest
+ * 
+ * @param target desired node
+ * @param currentBest node closest to target
+ * @param potential node potentially closer to target
+ * @return true 
+ * @return false 
+ */
 bool KDTree::shouldReplace(const Node* target, const Node* currentBest, const Node* potential) const {
     double curr_dist = getRadius(target, currentBest);
     double new_dist = getRadius(target, potential);
     return ((curr_dist != new_dist) ? new_dist < curr_dist : potential < currentBest);
 }
 
+/**
+ * @brief determines whether the first node is smaller than the second node in the given dimension
+ * NOTE: dim 0 checks if any genre in the first node is also in the second node
+ * 
+ * @param first 
+ * @param second 
+ * @param curDim 
+ * @return true 
+ * @return false 
+ */
 bool KDTree::smallerDimVal(const Node* first, const Node* second, int curDim) const {
     switch(curDim) {
         case 0:
@@ -133,12 +228,28 @@ bool KDTree::smallerDimVal(const Node* first, const Node* second, int curDim) co
     return false;
 }
 
+/**
+ * @brief returns the distance between 2 nodes in every dimension
+ * 
+ * @param node1 
+ * @param node2 
+ * @return double 
+ */
 double KDTree::getRadius(const Node* node1, const Node* node2) const {
     double radius = 0;
     for (int i = 0; i < 4; i++) radius += getSplitDist(node1, node2, i);
     return radius;
 }
 
+/**
+ * @brief returns the distance between 2 nodes in a given dimension
+ * NOTE: distances are scaled based on decided importance of dimension
+ * 
+ * @param node1 
+ * @param node2 
+ * @param d dimension
+ * @return double 
+ */
 double KDTree::getSplitDist(const Node* node1, const Node* node2, int d) const {
     switch(d) {
         case 0: {

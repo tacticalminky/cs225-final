@@ -8,17 +8,28 @@
 
 /* Constructor and Deconstructor */
 
+/**
+ * @brief Construct a new Anime Graph:: Anime Graph object
+ * 
+ */
 AnimeGraph::AnimeGraph() : tree(NULL) {
     node_list = std::unordered_map<unsigned, Node*>();
 }
 
+/**
+ * @brief Destroy the Anime Graph:: Anime Graph object
+ * For every node: destroy edges, set other instance of edge to NULL, destroy node
+ * 
+ */
 AnimeGraph::~AnimeGraph() {
     for (auto& [id, node_ptr] : node_list) {
         for (auto& [id_other, edge_ptr] : node_ptr->edges) {
-            delete edge_ptr;
-            edge_ptr = NULL;
-            
-            node_list.at(id_other)->edges.erase(id);
+            if (edge_ptr != NULL) {
+                delete edge_ptr;
+                edge_ptr = NULL;
+                
+                node_list.at(id_other)->edges.at(id) = NULL;
+            }
         } 
         node_ptr->edges.clear();
 
@@ -35,6 +46,12 @@ AnimeGraph::~AnimeGraph() {
     
 /* Graph Creator */
 
+/**
+ * @brief takes two csv paths and passes them to importAnime and importRatings, then makes a KDTree from all the nodes
+ * 
+ * @param anime_list_frame 
+ * @param rating_list_frame 
+ */
 void AnimeGraph::makeGraph(std::string anime_list_frame, std::string rating_list_frame) {
     importAnime(anime_list_frame);
     importRatings(rating_list_frame);
@@ -43,14 +60,25 @@ void AnimeGraph::makeGraph(std::string anime_list_frame, std::string rating_list
  
 /* Graph Getters*/
 
-// Returns the adjacent edges of a node. This function assumes the node exists within the graph
-std::unordered_map<unsigned, Edge*> AnimeGraph::getAdjacentEdges(unsigned node) const {
-    if (!nodeExists(node)) return std::unordered_map<unsigned, Edge*>();
+/**
+ * @brief finds the map of all edges from a node at the given id
+ * 
+ * @param id
+ * @return unordered map of destination ids to edge pointers
+ */
+std::unordered_map<unsigned, Edge*> AnimeGraph::getAdjacentEdges(unsigned id) const {
+    if (!nodeExists(id)) return std::unordered_map<unsigned, Edge*>();
 
-    return node_list.at(node)->edges;
+    return node_list.at(id)->edges;
 }
 
-// Returns the edges of two nodes. This function assumes the node exists within the graph
+/**
+ * @brief finds the pointer to an edge between two nodes
+ * 
+ * @param first id of first anime
+ * @param second id of second anime
+ * @return Edge* 
+ */
 Edge* AnimeGraph::getEdge(unsigned first, unsigned second) const {
     if (!edgeExists(first, second)) {
         return NULL;
@@ -59,8 +87,11 @@ Edge* AnimeGraph::getEdge(unsigned first, unsigned second) const {
     return node_list.at(first)->edges.at(second);
 }
 
-// Return the node with the largest # of members. If two shows have the same # of members, the better rated shows gets taken.
-// If the map is empty, returns NULL
+/**
+ * @brief compares the members of all nodes, and ratings if tied
+ * 
+ * @return pointer to the node with the most members
+ */
 Node* AnimeGraph::getMostPopular() const { 
     if (node_list.empty()) { 
         return NULL;
@@ -80,7 +111,12 @@ Node* AnimeGraph::getMostPopular() const {
     return biggest;
 }
 
-// Returns the node associated with the specified anime_name. If it does not exist, return NULL
+/**
+ * @brief searches node_list for a node with the given name
+ * 
+ * @param anime_name 
+ * @return Node* 
+ */
 Node* AnimeGraph::getNode(std::string anime_name) const {
     for (const auto& [id, node] : node_list) {
         if (node->name == anime_name) {
@@ -90,24 +126,44 @@ Node* AnimeGraph::getNode(std::string anime_name) const {
     return NULL;
 }
 
-// Returns the node associated with the specified anime_name. If it does not exist, return NULL
+/**
+ * @brief finds the pointer to the anime node with the given id
+ * 
+ * @param anime_id 
+ * @return Node* 
+ */
 Node* AnimeGraph::getNode(unsigned anime_id) const {
     if (!node_list.contains(anime_id)) return NULL;
 
     return node_list.at(anime_id);
 }
 
-// Returns a constant pointer to the KDTree
+/**
+ * @brief return a constant pointer to the KDTree
+ * 
+ * @return KDTree* 
+ */
 KDTree* AnimeGraph::getTree() const { return tree; }
 
 /* Check existence of node or edge */
 
-// Returns whether the node exists in adjacency_list
+/**
+ * @brief return whether a node with the given id exists in node_list
+ * 
+ * @param anime_id 
+ * @return true if exists, false otherwise
+ */
 bool AnimeGraph::nodeExists(unsigned anime_id) const { 
     return node_list.contains(anime_id); 
 }
 
-// Returns whether the edge between two nodes exists
+/**
+ * @brief return whether an edge between two nodes exists
+ * 
+ * @param id_1 
+ * @param id_2 
+ * @return true if exists, false otherwise
+ */
 bool AnimeGraph::edgeExists(unsigned id_1, unsigned id_2) const { 
     if (!nodeExists(id_1) || !nodeExists(id_2)) {
         return false;
@@ -116,6 +172,13 @@ bool AnimeGraph::edgeExists(unsigned id_1, unsigned id_2) const {
     return node_list.at(id_1)->edges.contains(id_2);
 }
 
+/**
+ * @brief finds the graph node closest to the query and the 9 most related nodes
+ * NOTE: matching name or id is considered the closest if it exists
+ * 
+ * @param query 
+ * @return std::vector<std::string> 
+ */
 std::vector<std::string> AnimeGraph::findTop10Related(Node query) const {
     Node* potential_query = getNode(query.id);
     if (potential_query == NULL) potential_query = getNode(query.name);
@@ -133,6 +196,11 @@ std::vector<std::string> AnimeGraph::findTop10Related(Node query) const {
 
 /* Private Helpers */
 
+/**
+ * @brief parses each line of a given csv into a Node inserted into node_list
+ * 
+ * @param frame 
+ */
 void AnimeGraph::importAnime(std::string frame) {
     std::fstream f(frame);
     std::string line;
@@ -182,6 +250,12 @@ void AnimeGraph::importAnime(std::string frame) {
     }
 }
 
+/**
+ * @brief parses the ratings of a given csv into graph Edges
+ * NOTE: csv must be sorted by userid
+ * 
+ * @param frame 
+ */
 void AnimeGraph::importRatings(std::string frame) { 
     std::vector<unsigned> animes;
     
@@ -235,9 +309,12 @@ void AnimeGraph::importRatings(std::string frame) {
 
 /* Output the graph to CSV */
 
-// Outputs the id's of highly weighted shows
-// To be used for WriteToCSV and not to be called by the user.
-// A similar function exists to be called by the user
+/**
+ * @brief finds the 15 highest weighted edges of a given node
+ * 
+ * @param query 
+ * @return std::vector<unsigned> 
+ */
 std::vector<unsigned> AnimeGraph::Node15(Node* query) const {
     std::priority_queue<Edge> queue;  // Queue to keep the output ordered
     for (const auto& [id, edge] : query->edges) queue.push(*edge);
@@ -253,11 +330,10 @@ std::vector<unsigned> AnimeGraph::Node15(Node* query) const {
     return ret;
 }
 
-// Writes the graph as a CSV from an anime to its top twenty closest shows.
-// *Note* The default value for the output of the CSV is in the data subfolder.
-// We want the output to be in the same place as the python script, as that calls the file from
-// the same folder it exists in. If we want the user to choose the output, we would need to change the python script
-// to tell the user where to pick the CSV from.
+/**
+ * @brief writes every node and its closest 15 neighbors to output-graph.csv
+ * 
+ */
 void AnimeGraph::writeToCSV() const {
     
     // Opening the write-to-file
@@ -314,6 +390,12 @@ void AnimeGraph::writeToCSV() const {
     outputGraph.close();
 }
 
+/**
+ * @brief traverses the graph using Prim's Algorithm with distance decay to find a node and its 9 closest related nodes
+ * 
+ * @param query 
+ * @return std::vector<std::string> 
+ */
 std::vector<std::string> AnimeGraph::top10Related(Node* query) const {
     std::unordered_map<unsigned, unsigned> visited;
     for (const auto& [id, node] : node_list) visited[id] = 0;
@@ -376,7 +458,13 @@ std::vector<std::string> AnimeGraph::top10Related(Node* query) const {
     
     return ret;
 }
-    
+
+/**
+ * @brief finds the closest node to a query node and uses DFS to find a path from there spanning 10 nodes
+ * 
+ * @param node 
+ * @return std::vector<unsigned> 
+ */
 std::vector<unsigned> AnimeGraph::dfsSearch(Node node) const {
     std::vector<unsigned> rec;
     std::stack<unsigned> stack;
