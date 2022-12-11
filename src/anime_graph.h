@@ -35,7 +35,7 @@ class AnimeGraph {
         KDTree* getTree() const;
         void writeToCSV() const;
 
-        std::vector<unsigned> dfsSearch(Node node) const;
+        std::vector<std::string> dfsSearch(Node node) const;
 
     private:
         std::unordered_map<unsigned, Node*> node_list;

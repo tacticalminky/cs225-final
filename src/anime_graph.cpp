@@ -202,10 +202,27 @@ std::vector<std::string> AnimeGraph::findTop10Related(Node query) const {
  * @param frame 
  */
 void AnimeGraph::importAnime(std::string frame) {
+    std::cout << "Importing Anime" << std::endl;
+
     std::fstream f(frame);
     std::string line;
+
     std::getline(f, line); //skip first line
+
+    unsigned count = 0;
     while (std::getline(f, line)) {
+        if (count % 38 == 0) {
+            std::cout << "[";
+            int pos = count / 38;
+            for (int i = 0; i < 100; ++i) {
+                if (i < pos) std::cout << "=";
+                else if (i == pos) std::cout << ">";
+                else std::cout << " ";
+            }
+            std::cout << "] " << count / 38 << "%\r";
+            std::cout.flush();
+        }
+
         Node* anime = new Node;
 
         size_t pos1 = 0;
@@ -247,7 +264,12 @@ void AnimeGraph::importAnime(std::string frame) {
         anime->edges = std::unordered_map<unsigned, Edge*>();
         
         node_list[anime->id] = anime;
+
+        ++count;
     }
+    std::cout << "[";
+    for (int i = 0; i < 100; ++i) std::cout << "=";
+    std::cout << "] 100%" << std::endl;
 }
 
 /**
@@ -256,19 +278,22 @@ void AnimeGraph::importAnime(std::string frame) {
  * 
  * @param frame 
  */
-void AnimeGraph::importRatings(std::string frame) { 
+void AnimeGraph::importRatings(std::string frame) {
+    std::cout << "Importing Ratings" << std::endl;
+
     std::vector<unsigned> animes;
     
     std::fstream f(frame);
     std::string line;
     std::getline(f, line); // skip first line
+
     unsigned curr_userid = 0;
-    int count = 0;
+    unsigned count = 0;
     while (std::getline(f, line)) {
         if (count % 52836 == 0) {
             std::cout << "[";
             int pos = count / 52836;
-            for (int i = 0; i < 99; ++i) {
+            for (int i = 0; i < 100; ++i) {
                 if (i < pos) std::cout << "=";
                 else if (i == pos) std::cout << ">";
                 else std::cout << " ";
@@ -304,7 +329,9 @@ void AnimeGraph::importRatings(std::string frame) {
         }
         ++count;
     }
-    std::cout << std::endl;
+    std::cout << "[";
+    for (int i = 0; i < 100; ++i) std::cout << "=";
+    std::cout << "] 100%" << std::endl;
 }
 
 /* Output the graph to CSV */
@@ -465,25 +492,28 @@ std::vector<std::string> AnimeGraph::top10Related(Node* query) const {
  * @param node 
  * @return std::vector<unsigned> 
  */
-std::vector<unsigned> AnimeGraph::dfsSearch(Node node) const {
-    std::vector<unsigned> rec;
+    
+std::vector<std::string> AnimeGraph::dfsSearch(Node node) const {
+    std::vector<std::string> rec;
+    
     std::stack<unsigned> stack;
     Node* first = getNode(node.id);
     if (first == NULL) first = getNode(node.name);
     if (first == NULL) first = tree->findNearestNeighbor(&node);
-    rec.push_back(first->id);
+    rec.push_back(first->name);
     for (const auto& e : first->edges) stack.push(e.first);
     for (int i = 0; i < 9; i++) {
         if (stack.empty()) return rec;
         unsigned to_add = stack.top();
         stack.pop();
-        while (std::find(rec.begin(), rec.end(), to_add) != rec.end()) {
+        while (std::find(rec.begin(), rec.end(), getNode(to_add)->name) != rec.end()) {
             if (stack.empty()) return rec;
             to_add = stack.top();
             stack.pop();
         }
-        rec.push_back(to_add);
+        rec.push_back(getNode(to_add)->name);
         for (const auto& e : getNode(to_add)->edges) stack.push(e.first);
     }
+
     return rec;
 }
