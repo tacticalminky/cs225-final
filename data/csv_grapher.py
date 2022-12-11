@@ -7,8 +7,6 @@
 # Along with that, you have to make sure that the output-graph.csv is in the same folder as this
 # python script for it to work, and then it will paste the final image in the same location.
 
-# The code will ask for a user input, and the choices will be listed on screen. The default value will be white
-
 import matplotlib.pyplot as plot
 import networkx as nx
 # import scipy
@@ -16,11 +14,14 @@ import networkx as nx
 # All we require the scipy library is to be able to run these function on a larger # of nodes :)
 
 # Take CSV -> Graph
+# If you don't want to wait to make the "output-graph.csv", the pre-ran CSV exists as "large-output-graph.csv" and "small-output-graph.csv"
+# The size refers to whether it was ran on the test CSV or the actual one. The place to change the code is identified below, and 
+# renaming which file to open in the open() function is all that needs to be done.
 def make_graph(iterations):
     # Open file
     print("Starting CSV Parsing")
     graph = nx.Graph()
-    csv = open("output-graph.csv", encoding="utf8")
+    csv = open("output-graph.csv", encoding="utf8")  # CHANGE HERE
     lines = csv.readlines()[1:]  # Skip line 1
 
     # Go through lines to add edges
@@ -45,13 +46,13 @@ def make_graph(iterations):
 
     csv.close()
 
-    # Make pretty
+    # Make the pretty graph
     print("CSV has been parsed, starting graph creation")
     deg = dict(graph.degree)
     vals = list(deg.values())
     cols = []
 
-    color_map = {
+    color_map = {  # Assigns the degree (# of edges a node has) to a color
         0: "blue",
         1: "grey",
         2: "brown",
@@ -62,7 +63,7 @@ def make_graph(iterations):
         7: "red"
     }
 
-    vals.sort()
+    vals.sort()  # Assorts the nodes so the largest ones are displayed on top
 
     for v in vals:
         num = int(float(v) / 20.0)
@@ -85,6 +86,9 @@ nx.draw(g, node_size=[(v + 1) * .75 for v in val], node_color=[c for c in col])
 print("Completed :)")
 plot.savefig("connected.png")
 plot.clf()
+
+# This chunk of commented code is left here because this created the jumbo.png
+# If you want to run it, you can uncomment it, but then it will ask for a user input as it runs  
 
 # # Display for ALL the nodes at random to show strongest shows
 # rval, rcol, rg = make_graph(4000)

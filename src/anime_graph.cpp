@@ -233,20 +233,23 @@ void AnimeGraph::importRatings(std::string frame) {
     std::cout << std::endl;
 }
 
+/* Output the graph to CSV */
+
+// Outputs the id's of highly weighted shows
 // To be used for WriteToCSV and not to be called by the user.
 // A similar function exists to be called by the user
 std::vector<unsigned> AnimeGraph::Node15(Node* query) const {
-    std::priority_queue<Edge> queue;
+    std::priority_queue<Edge> queue;  // Queue to keep the output ordered
     for (const auto& [id, edge] : query->edges) queue.push(*edge);
     
-    std::vector<unsigned> ret;
+    std::vector<unsigned> ret;  // Iterated every elements in node->edges to find the top15 weighted shows
     unsigned top_num = (queue.size() >= 15) ? 15 : queue.size();
     for (unsigned i = 0; i < top_num; ++i) {
         unsigned curr_id = (queue.top().id_1 != query->id) ? queue.top().id_1 : queue.top().id_2;
         queue.pop();
         ret.push_back(getNode(curr_id)->id);
     }
-    
+
     return ret;
 }
 
@@ -285,7 +288,7 @@ void AnimeGraph::writeToCSV() const {
         outputGraph << ',' << node->rating; // rating
         outputGraph << ',' << node->members; // members
 
-        // Push top_related
+        // Write top_related_id and weight
         std::vector<unsigned> top15 = Node15(node);
 
         if (!top15.empty()) {
@@ -307,7 +310,7 @@ void AnimeGraph::writeToCSV() const {
 
         outputGraph << '\n';
     }
-    std::cout << "Finished writing" << std::endl;
+    std::cout << "Finished writing" << std::endl;  // Lets the user know the code has finished writing the CSV and closes the file
     outputGraph.close();
 }
 
