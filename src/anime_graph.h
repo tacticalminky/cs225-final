@@ -33,6 +33,7 @@ class AnimeGraph {
         std::vector<std::string> findTop10Related(Node query) const;
 
         KDTree* getTree() const;
+        void writeToCSV() const;
 
         std::vector<unsigned> dfsSearch(Node node) const;
 
@@ -43,5 +44,6 @@ class AnimeGraph {
         void importAnime(std::string fname);
         void importRatings(std::string fname);
         
+        std::vector<unsigned> Node15(Node* query) const;
         std::vector<std::string> top10Related(Node* query) const;
 };

@@ -233,6 +233,87 @@ void AnimeGraph::importRatings(std::string frame) {
     std::cout << std::endl;
 }
 
+/* Output the graph to CSV */
+
+// Outputs the id's of highly weighted shows
+// To be used for WriteToCSV and not to be called by the user.
+// A similar function exists to be called by the user
+std::vector<unsigned> AnimeGraph::Node15(Node* query) const {
+    std::priority_queue<Edge> queue;  // Queue to keep the output ordered
+    for (const auto& [id, edge] : query->edges) queue.push(*edge);
+    
+    std::vector<unsigned> ret;  // Iterated every elements in node->edges to find the top15 weighted shows
+    unsigned top_num = (queue.size() >= 15) ? 15 : queue.size();
+    for (unsigned i = 0; i < top_num; ++i) {
+        unsigned curr_id = (queue.top().id_1 != query->id) ? queue.top().id_1 : queue.top().id_2;
+        queue.pop();
+        ret.push_back(getNode(curr_id)->id);
+    }
+
+    return ret;
+}
+
+// Writes the graph as a CSV from an anime to its top twenty closest shows.
+// *Note* The default value for the output of the CSV is in the data subfolder.
+// We want the output to be in the same place as the python script, as that calls the file from
+// the same folder it exists in. If we want the user to choose the output, we would need to change the python script
+// to tell the user where to pick the CSV from.
+void AnimeGraph::writeToCSV() const {
+    
+    // Opening the write-to-file
+    std::ofstream outputGraph;
+    outputGraph.open("../data/output-graph.csv");
+    if (!outputGraph.is_open()) {
+        std::cout << "Issue with opening / creating the file" << std::endl;
+        return;
+    }
+
+    // First Line
+    outputGraph << "id,name,genres,episodes,rating,members,top_related_id,weight" << std::endl;
+
+    // Write from NODE_DATA,"top1_id,weight1,top2_id,weight2... top15_name,weight15,"
+    // Only writing top15_id to cut runtime and to highlights connected components better
+    // NODE_DATA will be similar to the anime-filtered.csv file
+    for (auto nodes : node_list) {
+        Node* node = nodes.second;
+
+        // Push NODE_DATA
+        outputGraph << node->id; // id
+        outputGraph << ',' << node->name << ',' << '"'; // name
+        for (unsigned x = 0; x < node->genres.size(); x++) { // genres :)
+            if (x == 0) { outputGraph <<  node->genres[x]; continue; }
+            outputGraph << ", " << node->genres[x];
+        }
+        outputGraph << '"' << ',' << node->episodes; // episodes
+        outputGraph << ',' << node->rating; // rating
+        outputGraph << ',' << node->members; // members
+
+        // Write top_related_id and weight
+        std::vector<unsigned> top15 = Node15(node);
+
+        if (!top15.empty()) {
+            outputGraph << ',' << '"';
+            bool first = true;
+            for (auto point : top15) {
+                
+                unsigned w = node->edges.at(point)->getWeight();
+
+                if (first) { 
+                    outputGraph << point << ',' << w;
+                    first = false;
+                    continue;
+                }
+                outputGraph << ',' << point << ',' << w;
+            }
+            outputGraph << '"';
+        }
+
+        outputGraph << '\n';
+    }
+    std::cout << "Finished writing" << std::endl;  // Lets the user know the code has finished writing the CSV and closes the file
+    outputGraph.close();
+}
+
 std::vector<std::string> AnimeGraph::top10Related(Node* query) const {
     std::unordered_map<unsigned, unsigned> visited;
     for (const auto& [id, node] : node_list) visited[id] = 0;
