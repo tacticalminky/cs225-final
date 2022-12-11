@@ -14,8 +14,8 @@ class Edge {
         /**
          * @brief Construct a new Edge object
          * 
-         * @param a 
-         * @param b 
+         * @param a id of an anime
+         * @param b id of a different anime
          * @param weight 
          */
         Edge(unsigned a, unsigned b, unsigned int weight) : id_1(a), id_2(b), weight_(weight) { }

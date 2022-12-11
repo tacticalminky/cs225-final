@@ -3,20 +3,20 @@
 #include "kdtree.h"
 
 /**
- * @brief Construct a new KDTree::KDTree object from the nodes of an adjacency list
+ * @brief Construct a new KDTree::KDTree object from a list of nodes
  * 
- * @param adjacency_list 
+ * @param node_list map of id to node pointer
  */
-KDTree::KDTree(const std::unordered_map<unsigned, Node*>& adjacency_list) {
-    if (adjacency_list.empty()) {
+KDTree::KDTree(const std::unordered_map<unsigned, Node*>& node_list) {
+    if (node_list.empty()) {
       root = nullptr;
       size = 0;
       return;
     }
     std::vector<Node*> points;
-    for (auto pair : adjacency_list) points.push_back(pair.second);
+    for (auto pair : node_list) points.push_back(pair.second);
     buildTree(points, 0, points.size() - 1, 0, root);
-    size = adjacency_list.size();
+    size = node_list.size();
 }
 
 /**
@@ -64,11 +64,11 @@ Node* KDTree::findNearestNeighbor(const Node* query) const { return findNearestN
  * @brief puts all points between start and end to the left or right of the median node, based on the dimension
  * 
  * @param arr vector of node pointers
- * @param start index of start point
- * @param end index of end point
+ * @param start index of start point (inclusive)
+ * @param end index of end point (inclusive)
  * @param p_idx index of median node in current dimension
  * @param d current dimension
- * @return int 
+ * @return index of median
  */
 int KDTree::partition(std::vector<Node*>& arr, int start, int end, int p_idx, int d) {
     Node* pivot_value = arr[p_idx];
@@ -94,11 +94,11 @@ int KDTree::partition(std::vector<Node*>& arr, int start, int end, int p_idx, in
  * @brief finds the index of the median value between start and end in a given dimension
  * 
  * @param arr vector of node pointers
- * @param start index of start point
- * @param end index of end point
+ * @param start index of start point (inclusive)
+ * @param end index of end point (inclusive)
  * @param k desired mid point
  * @param d current dimension
- * @return int 
+ * @return index of median
  */
 int KDTree::median(std::vector<Node*>& arr, int start, int end, int k, int d) {
     if (start == end) return start;
@@ -111,10 +111,11 @@ int KDTree::median(std::vector<Node*>& arr, int start, int end, int k, int d) {
 
 /**
  * @brief recursively builds a KDTree from an array, cycling through 5 dimensions
+ * NOTE: each dimension corresponds to an element of the Node structure
  * 
  * @param arr vector of node pointers
- * @param start index of the start point
- * @param end index of the end point
+ * @param start index of the start point (inclusive)
+ * @param end index of the end point (inclusive)
  * @param d current dimension
  * @param curr current TreeNode
  */

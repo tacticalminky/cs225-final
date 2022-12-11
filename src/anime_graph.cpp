@@ -61,22 +61,22 @@ void AnimeGraph::makeGraph(std::string anime_list_frame, std::string rating_list
 /* Graph Getters*/
 
 /**
- * @brief finds the map of all edges from a node
+ * @brief finds the map of all edges from a node at the given id
  * 
- * @param node 
- * @return std::unordered_map<unsigned, Edge*> 
+ * @param id
+ * @return unordered map of destination ids to edge pointers
  */
-std::unordered_map<unsigned, Edge*> AnimeGraph::getAdjacentEdges(unsigned node) const {
-    if (!nodeExists(node)) return std::unordered_map<unsigned, Edge*>();
+std::unordered_map<unsigned, Edge*> AnimeGraph::getAdjacentEdges(unsigned id) const {
+    if (!nodeExists(id)) return std::unordered_map<unsigned, Edge*>();
 
-    return node_list.at(node)->edges;
+    return node_list.at(id)->edges;
 }
 
 /**
  * @brief finds the pointer to an edge between two nodes
  * 
- * @param first 
- * @param second 
+ * @param first id of first anime
+ * @param second id of second anime
  * @return Edge* 
  */
 Edge* AnimeGraph::getEdge(unsigned first, unsigned second) const {
@@ -88,9 +88,9 @@ Edge* AnimeGraph::getEdge(unsigned first, unsigned second) const {
 }
 
 /**
- * @brief returns the node with the most members, or better rated if tie
+ * @brief compares the members of all nodes, and ratings if tied
  * 
- * @return Node* 
+ * @return pointer to the node with the most members
  */
 Node* AnimeGraph::getMostPopular() const { 
     if (node_list.empty()) { 
@@ -139,7 +139,7 @@ Node* AnimeGraph::getNode(unsigned anime_id) const {
 }
 
 /**
- * @brief return a constatn pointer to the KDTree
+ * @brief return a constant pointer to the KDTree
  * 
  * @return KDTree* 
  */
@@ -151,8 +151,7 @@ KDTree* AnimeGraph::getTree() const { return tree; }
  * @brief return whether a node with the given id exists in node_list
  * 
  * @param anime_id 
- * @return true 
- * @return false 
+ * @return true if exists, false otherwise
  */
 bool AnimeGraph::nodeExists(unsigned anime_id) const { 
     return node_list.contains(anime_id); 
@@ -163,8 +162,7 @@ bool AnimeGraph::nodeExists(unsigned anime_id) const {
  * 
  * @param id_1 
  * @param id_2 
- * @return true 
- * @return false 
+ * @return true if exists, false otherwise
  */
 bool AnimeGraph::edgeExists(unsigned id_1, unsigned id_2) const { 
     if (!nodeExists(id_1) || !nodeExists(id_2)) {
@@ -176,6 +174,7 @@ bool AnimeGraph::edgeExists(unsigned id_1, unsigned id_2) const {
 
 /**
  * @brief finds the graph node closest to the query and the 9 most related nodes
+ * NOTE: matching name or id is considered the closest if it exists
  * 
  * @param query 
  * @return std::vector<std::string> 
