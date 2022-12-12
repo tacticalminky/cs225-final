@@ -17,9 +17,8 @@ int main(int argc, char **argv) {
 
     std::string res;
     std::cout << "Would you like some recommendations? (y/n) ";
-    std::cin >> res;
+    std::getline(std::cin, res);
     while (res == "y" || res == "yes") {
-        std::cin.clear();
         res.clear();
         
         Node node;
@@ -39,12 +38,11 @@ int main(int argc, char **argv) {
         std::getline(std::cin, res);
 
         size_t pos_1 = 0;
-        while (pos_1 != res.length()) {
+        while (pos_1 < res.length()) {
             size_t pos_2 = res.find(' ', pos_1);
             if (pos_2 == std::string::npos) pos_2 = res.length();
-            node.genres.push_back(res.substr(pos_1, pos_2 - 1));
-            std::cout << node.genres.front() << std::endl;
-            pos_1 = pos_2;
+            node.genres.push_back(res.substr(pos_1, pos_2 - pos_1));
+            pos_1 = pos_2 + 1;
         }
         res.clear();
         
@@ -82,7 +80,7 @@ int main(int argc, char **argv) {
         std::cout << std::endl;
 
         std::cout << "Would you like another recommendations? (y/n) ";
-        std::cin >> res;
+        std::getline(std::cin, res);
     }
     std::cout << std::endl;
 
