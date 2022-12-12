@@ -52,7 +52,7 @@ KDTree::~KDTree() {
 }
 
 /**
- * @brief find the node closest the the query
+ * @brief find the node closest to the query
  * Calls helper starting at the root node and dimension 0
  * 
  * @param query
