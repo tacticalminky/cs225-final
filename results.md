@@ -1,6 +1,8 @@
 # Results
 
-We wrote test cases to test each main function in our code. We had a test case that made sure that the CSV for ratings and animes was read and traslated into nodes and edges correctly. We made a separate, smaller CSV to test these functions at first to simplify debugging.
+We wrote test cases to test each main function in our code. We used a smaller CSV to test our code at first so it was easier to debug and find problems in our code. We had a test case that made sure that the CSV for ratings and animes was read and traslated into nodes and edges correctly. We made sure to test edge cases like handling empty strings correctly. We then tested that our make graph created the graph correctly by making sure that select edges had the correct weight and that edges were formed between the right nodes. There are also test cases that test that our adjacency list was populated correctly and some cases that ensured that we implemented our modified version of Prim's Algorithm correctly to find the 10 closest related animes when provided an anime. Our find nearest neighbor algorithm used different ways of calculating distance for each dimension, and our test cases accounted for this when determining which node to return. We then have test cases to make sure that our graph is traversed in the right way using DFS.
 
-Doing this project led us to discover which Animes had the most connections and which ones seemed to be the most popular. We also learned which specific Animes were related
+Our leading question for this was what a list of anime recommendations would look like given a specific show that a user liked. We answered this question by parsing a dataset and creating nodes and edges with weights based on criteria like which user reviewed the anime. With these nodes and edges we then created a graph with distance between nodes corresponding to how large the weights between them were. Doing this project led us to discover which Animes had the most connections and which ones seemed to be the most popular. We also were able to make a graph to visualize which specific Animes were related to each other. 
+
+
 
