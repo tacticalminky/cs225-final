@@ -163,12 +163,12 @@ void KDTree::deleteNode(TreeNode*& root) {
 }
 
 /**
- * @brief 
+ * @brief given a node containing desired anime traits, find the anime that is most similar
  * 
  * @param query desired node
  * @param d current dimension
  * @param curr current TreeNode
- * @return Node* 
+ * @return pointer to node that is most similar to query
  */
 Node* KDTree::findNearestNeighbor(const Node* query, int d, TreeNode* curr) const {
     if (!curr->left && !curr->right) return curr->anime;
