@@ -1,8 +1,6 @@
-# cs225-final
+# Final Project for CS 225
 
-Final Project for CS 225
-
-We aim to create a graph from [Anime Recommendations Database](https://www.kaggle.com/datasets/CooperUnion/anime-recommendations-database) that you can use to recommend anime similiar to a provide name, id, or other criteria.
+We aim to create a graph from [Anime Recommendations Database](https://www.kaggle.com/datasets/CooperUnion/anime-recommendations-database) that you can use to recommend anime similiar to a provide name, id, or other criteria. A video presentation of our project can be found [here](https://www.youtube.com/watch?v=V6yvvtxJ_vg).
 
 ## Instructions
 
@@ -43,19 +41,7 @@ We aim to create a graph from [Anime Recommendations Database](https://www.kaggl
     python3 ./data/csv_grapher.py
     ```
 
-## Organization
-
-Main C++ file is in the `entry` directory
-
-C++ header and source files are in the `src` directory
-
-Test source file is in the `tests` directory
-
-Our data sets and python graphing scripts are in the `data` directory
-
-## Tests Suite
-
-### Test Instructions
+### Tests
 
 1. Follow the build instructions as described above.
 
@@ -66,4 +52,16 @@ Our data sets and python graphing scripts are in the `data` directory
     ./test
     ```
 
-### Tests
+## Test Suite
+
+We wrote test cases to test each main function in our code. We used a smaller CSV to test our code at first so it was easier to debug and find problems in our code. We had a test case that made sure that the CSV for ratings and animes was read and traslated into nodes and edges correctly. We made sure to test edge cases like handling empty strings correctly. We then tested that our make graph created the graph correctly by making sure that select edges had the correct weight and that edges were formed between the right nodes. There are also test cases that test that our adjacency list was populated correctly and some cases that ensured that we implemented our modified version of Prim's Algorithm correctly to find the 10 closest related animes when provided an anime. Our find nearest neighbor algorithm used different ways of calculating distance for each dimension, and our test cases accounted for this when determining which node to return. We then have test cases to make sure that our graph is traversed in the right way using DFS.
+
+## Organization
+
+Main C++ file is in the `entry` directory
+
+C++ header and source files are in the `src` directory
+
+Test source file is in the `tests` directory
+
+Our data sets and python graphing scripts are in the `data` directory
