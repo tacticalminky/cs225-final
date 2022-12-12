@@ -4,25 +4,29 @@
 
 int main(int argc, char **argv) {
     if (argc != 3) {
-        std::cout << "Please use as: " << argv[0] << "[anime-list] [ratings-list]" << std::endl;
+        std::cout << "Please use as: " << argv[0] << " [anime-list] [ratings-list]" << std::endl;
         return 1;
     }
 
     AnimeGraph graph;
     graph.makeGraph(argv[1], argv[2]);
     
+    std::cout << "Press [Enter] to continue" << std::endl;
+
     std::cin.ignore();
 
     std::string res;
     std::cout << "Would you like some recommendations? (y/n) ";
-    std::getline(std::cin, res);
+    std::cin >> res;
     while (res == "y" || res == "yes") {
+        std::cin.clear();
         res.clear();
         
         Node node;
 
         std::cout << std::endl << "Please input some of the following information" << std::endl;
 
+        std::cout << "Enter in a numerical number or just press enter." << std::endl;
         std::cout << "ID: ";
         std::getline(std::cin, res);
         node.id = (res != "") ? std::stoul(res) : 0;
@@ -44,6 +48,7 @@ int main(int argc, char **argv) {
         }
         res.clear();
         
+        std::cout << "Enter in a numerical number for the following or just press enter." << std::endl;
         std::cout << "Episodes: ";
         std::getline(std::cin, res);
         node.episodes = (res != "") ? std::stoi(res) : 0;
@@ -59,7 +64,7 @@ int main(int argc, char **argv) {
         node.members = (res != "") ? std::stoul(res) : 0;
         res.clear();
 
-        std::cout << "One moment Please." << std::endl << std::endl;
+        std::cout << std::endl << "One moment Please." << std::endl << std::endl;
 
         std::vector<std::string> top10 = graph.findTop10Related(node);
         std::vector<std::string> top10_dfs = graph.dfsSearch(node);
@@ -77,7 +82,7 @@ int main(int argc, char **argv) {
         std::cout << std::endl;
 
         std::cout << "Would you like another recommendations? (y/n) ";
-        std::getline(std::cin, res);
+        std::cin >> res;
     }
     std::cout << std::endl;
 

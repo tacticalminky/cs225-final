@@ -25,13 +25,22 @@ We aim to create a graph from [Anime Recommendations Database](https://www.kaggl
 
 3. Once everything is loaded in the program, you will be prompted if you want to search for an anime.
 
-4. If you wish to search enter in the appropriate information for some recomendations.
+4. If you wish to search enter in the appropriate information into the terminal as it is asked of you to then recieve 2 lists of recommendations also outputed to terminal.
 
 ### Graphical output
 
 1. Install Dependencies
 
     ```bash
+    python3 -m pip install mayplotlib scipy networkx
+    ```
+
+2. You must run the main program at least once to create output-graph.csv
+
+3. Then run the program from the projects root folder.
+
+    ```bash
+    python3 ./data/csv_grapher.py
     ```
 
 ## Organization
@@ -42,4 +51,19 @@ C++ header and source files are in the `src` directory
 
 Test source file is in the `tests` directory
 
-Our data sets and python scripts are in the `data` directory
+Our data sets and python graphing scripts are in the `data` directory
+
+## Tests Suite
+
+### Test Instructions
+
+1. Follow the build instructions as described above.
+
+2. Make the tests and run it with the following command:
+
+    ```bash
+    make test
+    ./test
+    ```
+
+### Tests

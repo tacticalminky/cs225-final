@@ -362,6 +362,7 @@ std::vector<unsigned> AnimeGraph::Node15(Node* query) const {
  * 
  */
 void AnimeGraph::writeToCSV() const {
+    std::cout << "Writing graph to CSV" << std::endl;
     
     // Opening the write-to-file
     std::ofstream outputGraph;
@@ -377,11 +378,22 @@ void AnimeGraph::writeToCSV() const {
     // Write from NODE_DATA,"top1_id,weight1,top2_id,weight2... top15_name,weight15,"
     // Only writing top15_id to cut runtime and to highlights connected components better
     // NODE_DATA will be similar to the anime-filtered.csv file
-    for (auto nodes : node_list) {
-        Node* node = nodes.second;
+    unsigned count = 0;
+    for (const auto& [id, node] : node_list) {
+        if (count % 38 == 0) {
+            std::cout << "[";
+            int pos = count / 38;
+            for (int i = 0; i < 100; ++i) {
+                if (i < pos) std::cout << "=";
+                else if (i == pos) std::cout << ">";
+                else std::cout << " ";
+            }
+            std::cout << "] " << count / 38 << "%\r";
+            std::cout.flush();
+        }
 
         // Push NODE_DATA
-        outputGraph << node->id; // id
+        outputGraph << id; // id
         outputGraph << ',' << node->name << ',' << '"'; // name
         for (unsigned x = 0; x < node->genres.size(); x++) { // genres :)
             if (x == 0) { outputGraph <<  node->genres[x]; continue; }
@@ -395,26 +407,30 @@ void AnimeGraph::writeToCSV() const {
         std::vector<unsigned> top15 = Node15(node);
 
         if (!top15.empty()) {
-            outputGraph << ',' << '"';
+            outputGraph << ",\"";
             bool first = true;
-            for (auto point : top15) {
+            for (unsigned id_2 : top15) {
                 
-                unsigned w = node->edges.at(point)->getWeight();
+                unsigned w = node->edges.at(id_2)->getWeight();
 
                 if (first) { 
-                    outputGraph << point << ',' << w;
+                    outputGraph << id_2 << ',' << w;
                     first = false;
                     continue;
                 }
-                outputGraph << ',' << point << ',' << w;
+                outputGraph << ',' << id_2 << ',' << w;
             }
             outputGraph << '"';
         }
 
         outputGraph << '\n';
+        ++count;
     }
-    std::cout << "Finished writing" << std::endl;  // Lets the user know the code has finished writing the CSV and closes the file
     outputGraph.close();
+    
+    std::cout << "[";
+    for (int i = 0; i < 100; ++i) std::cout << "=";
+    std::cout << "] 100%" << std::endl;
 }
 
 /**
